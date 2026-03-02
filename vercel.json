@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    { "source": "/2022/09/19/:slug*", "destination": "/press/:slug*", "permanent": true },
+    { "source": "/2022/09/21/:slug*", "destination": "/press/:slug*", "permanent": true },
+    { "source": "/2022/09/22/:slug*", "destination": "/press/:slug*", "permanent": true },
+
+    { "source": "/es/:path*", "destination": "/", "permanent": true },
+    { "source": "/elementor-26525", "destination": "/", "permanent": true },
+    { "source": "/home-jan-24", "destination": "/", "permanent": true },
+    { "source": "/home2025", "destination": "/", "permanent": true },
+    { "source": "/lp-100k-group-travel-playbook", "destination": "/", "permanent": true },
+    { "source": "/lp-saas-focused", "destination": "/", "permanent": true },
+
+    { "source": "/wp-content/:path*", "destination": "/images/:path*", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
+}

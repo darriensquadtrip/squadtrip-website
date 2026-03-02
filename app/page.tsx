@@ -1,65 +1,68 @@
-import Image from "next/image";
+import { Hero } from "@/components/sections/Hero";
+import { SocialProof } from "@/components/sections/SocialProof";
+import { FeatureBentoGrid } from "@/components/sections/FeatureBentoGrid";
+import { HowItWorks } from "@/components/sections/HowItWorks";
+import { WhoUsesSquadTrip } from "@/components/sections/WhoUsesSquadTrip";
+import { TestimonialCarousel } from "@/components/ui/TestimonialCarousel";
+import { FAQ } from "@/components/ui/FAQ";
+import { FAQSchema } from "@/components/seo/FAQSchema";
+import { SoftwareAppSchema } from "@/components/seo/SoftwareAppSchema";
+import { SIGNUP_URL } from "@/lib/constants";
 
-export default function Home() {
+const homeFAQ = [
+  {
+    question: "What are processing fees and how do they work?",
+    answer:
+      "Processing fees are 6%. This includes the merchant fee (2.9% + 30¢) that Stripe charges for processing credit card payments. You can hide fees from travelers and use a pricing calculator to adjust rates accordingly. For example, a $1,000 trip costs travelers $1,060, and the organizer receives $1,000.",
+  },
+  {
+    question: "How do I get paid?",
+    answer:
+      "When your customers make a payment, the funds are processed through your Stripe account and sent directly to your bank account. Stripe usually takes 7-14 days to release your first payment, after which you can receive payments anytime. You can also set up daily payouts.",
+  },
+  {
+    question: "What payment options are available?",
+    answer:
+      "Travelers can pay by credit card, Apple Pay, or sign up for installment plans through monthly auto-billing, Klarna, or AfterPay.",
+  },
+  {
+    question: "Do you send receipts and payment reminders?",
+    answer:
+      "Yes! We automatically send receipts, confirmation emails, payment reminders, and payment failure notifications to your travelers.",
+  },
+  {
+    question: "How do I view my sales?",
+    answer:
+      "In addition to getting email alerts when travelers make payments, you can view your sales in real-time on your SquadTrip dashboard. You can also export data anytime.",
+  },
+  {
+    question: "Who is SquadTrip best for?",
+    answer:
+      "SquadTrip is best for individual group travel planners, travel agencies, tour operators, retreat organizers, and destination wedding planners who need an online booking process and payment gateway for group travel.",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <SoftwareAppSchema />
+      <FAQSchema items={homeFAQ} />
+
+      <Hero
+        headline="Stop Chasing Payments for Your Group Trip"
+        subheadline="Create a booking page, set up automatic payment plans, and track who paid — all in one place. So you can focus on the trip, not the spreadsheet."
+        ctaText="Create your trip for free"
+        ctaHref={SIGNUP_URL}
+        secondaryCta={{ text: "See how it works", href: "/features" }}
+        trustLine="Trusted by 2,000+ trip organizers | 50,000+ travelers booked"
+      />
+
+      <SocialProof />
+      <FeatureBentoGrid />
+      <HowItWorks />
+      <WhoUsesSquadTrip />
+      <TestimonialCarousel />
+      <FAQ items={homeFAQ} />
+    </>
   );
 }

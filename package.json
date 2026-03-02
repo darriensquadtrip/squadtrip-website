@@ -5,22 +5,36 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "extract": "npx tsx scripts/extract-wp-content.ts",
+    "download-images": "npx tsx scripts/download-wp-images.ts",
+    "generate-redirects": "npx tsx scripts/generate-redirects.ts"
   },
   "dependencies": {
+    "@next/third-parties": "^16.1.6",
+    "gray-matter": "^4.0.3",
     "next": "16.1.6",
+    "next-mdx-remote": "^6.0.0",
+    "next-sitemap": "^4.2.3",
+    "posthog-js": "^1.357.0",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "reading-time": "^1.5.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/node": "^20.19.35",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/turndown": "^5.0.6",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
+    "turndown": "^7.2.2",
     "typescript": "^5"
   }
 }

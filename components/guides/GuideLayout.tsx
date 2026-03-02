@@ -1,0 +1,91 @@
+import Image from "next/image";
+import type { GuideFrontmatter, GuideSummary } from "@/lib/guides";
+import { SIGNUP_URL } from "@/lib/constants";
+import { TableOfContents } from "./TableOfContents";
+import { RelatedGuides } from "./RelatedGuides";
+
+interface GuideLayoutProps {
+  frontmatter: GuideFrontmatter;
+  children: React.ReactNode;
+  relatedGuides: GuideSummary[];
+}
+
+export function GuideLayout({
+  frontmatter,
+  children,
+  relatedGuides,
+}: GuideLayoutProps) {
+  return (
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+      <div className="lg:grid lg:grid-cols-[1fr_250px] lg:gap-12 xl:grid-cols-[1fr_280px]">
+        {/* Main content */}
+        <div className="max-w-3xl">
+          {/* Header */}
+          <header className="mb-8">
+            <span className="inline-block text-sm font-semibold text-purple uppercase tracking-wide mb-3">
+              {frontmatter.category.replace(/-/g, " ")}
+            </span>
+            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
+              {frontmatter.title}
+            </h1>
+            <div className="flex items-center gap-4 mt-4 text-sm text-gray-500">
+              <span>{frontmatter.author}</span>
+              <span>&middot;</span>
+              <time dateTime={frontmatter.date}>
+                {new Date(frontmatter.date).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </time>
+              <span>&middot;</span>
+              <span>{frontmatter.readingTime} min read</span>
+            </div>
+          </header>
+
+          {/* Featured image */}
+          {frontmatter.featuredImage && (
+            <div className="relative aspect-[16/9] rounded-xl overflow-hidden mb-10">
+              <Image
+                src={frontmatter.featuredImage}
+                alt={frontmatter.title}
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, 720px"
+              />
+            </div>
+          )}
+
+          {/* Article body */}
+          <article className="prose prose-lg max-w-none prose-headings:scroll-mt-24 prose-headings:font-bold prose-a:text-purple prose-a:no-underline hover:prose-a:underline">
+            {children}
+          </article>
+
+          {/* CTA */}
+          <div className="mt-12 rounded-2xl bg-purple-50 p-8 text-center">
+            <h3 className="text-xl font-bold text-gray-900 mb-2">
+              Ready to plan your group trip?
+            </h3>
+            <p className="text-gray-600 mb-6">
+              Create a booking page, collect payments, and manage travelers — all in one place.
+            </p>
+            <a
+              href={SIGNUP_URL}
+              className="inline-block rounded-lg bg-purple px-6 py-3 font-semibold text-white hover:bg-purple-dark transition-colors"
+            >
+              Create your trip for free
+            </a>
+          </div>
+
+          <RelatedGuides guides={relatedGuides} />
+        </div>
+
+        {/* Sidebar */}
+        <aside className="hidden lg:block">
+          <TableOfContents />
+        </aside>
+      </div>
+    </div>
+  );
+}
