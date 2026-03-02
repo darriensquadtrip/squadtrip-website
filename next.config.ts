@@ -6,6 +6,18 @@ const nextConfig: NextConfig = {
 
   images: {
     formats: ["image/avif", "image/webp"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "squadtrip.com",
+        pathname: "/wp-content/uploads/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.squadtrip.com",
+        pathname: "/wp-content/uploads/**",
+      },
+    ],
   },
 
   // Redirects for old WordPress URLs not covered by vercel.json
