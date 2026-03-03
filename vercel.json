@@ -12,7 +12,31 @@
     { "source": "/lp-saas-focused", "destination": "/", "permanent": true },
     { "source": "/elementor-landing-page-1201", "destination": "/", "permanent": true },
 
-    { "source": "/wp-content/:path*", "destination": "/images/:path*", "permanent": true }
+    { "source": "/wp-content/:path*", "destination": "/images/:path*", "permanent": true },
+
+    { "source": "/product/trip-pages", "destination": "/product/create-stunning-trip-landing-pages-in-5-minutes-with-squadtrip", "permanent": true },
+    { "source": "/product/payment-collection", "destination": "/product/squadtrip-simplifies-payments-for-group-travel-organizers", "permanent": true },
+    { "source": "/product/checkout-experience", "destination": "/product/build-a-professional-checkout-experience-for-your-group-trips", "permanent": true },
+    { "source": "/product/registration", "destination": "/product/collect-registration-information-for-your-group-trip", "permanent": true },
+    { "source": "/product/e-sign-docs", "destination": "/product/embed-e-signature-process-into-your-traveler-checkout-forms", "permanent": true },
+    { "source": "/product/messaging", "destination": "/product/message-your-group-trip-guests-with-squadtrip", "permanent": true },
+    { "source": "/product/affiliate-tracking", "destination": "/product/track-affiliate-sales-for-your-group-trip-with-squadtrip", "permanent": true },
+
+    { "source": "/how-it-works", "destination": "/features", "permanent": true },
+    { "source": "/trips/:path*", "destination": "/guides", "permanent": true },
+
+    { "source": "/guides/how-to-build-retreat-itineraries", "destination": "/guides/retreat-itinerary-planning-for-group-trips", "permanent": true },
+    { "source": "/guides/how-to-be-a-great-tour-guide-tips-and-trade-secrets-for-beginners", "destination": "/guides/how-to-be-a-great-tour-guide", "permanent": true },
+    { "source": "/guides/diy-wellness-retreat", "destination": "/guides/diy-wellness-retreat-plan-your-own-at-home-self-care-escape", "permanent": true },
+    { "source": "/guides/the-best-places-for-a-retreat", "destination": "/guides/find-the-best-places-to-host-a-retreat", "permanent": true },
+    { "source": "/guides/how-to-market-your-wellness-retreat-and-sell-out-fast", "destination": "/guides/how-to-host-a-wellness-retreat-that-sells-out", "permanent": true },
+    { "source": "/guides/best-travel-agent-tools-for-trip-management", "destination": "/guides/travel-agent-tools", "permanent": true },
+    { "source": "/guides/best-travel-agent-software-for-group-trip-reservations", "destination": "/guides/travel-agent-software", "permanent": true },
+    { "source": "/guides/the-wellness-tourism-market", "destination": "/guides/wellness-tourism-market-guide-for-practitioners", "permanent": true },
+    { "source": "/guides/retreat-marketing-tips-for-hosts-who-want-real-results", "destination": "/guides/marketing-a-retreat-in-2025-tips-for-hosts-who-want-real-results", "permanent": true },
+    { "source": "/guides/best-tour-booking-sites-what-they-get-right-and-how-to-cop", "destination": "/guides/best-tour-booking-sites-what-they-get-right-and-how-to-copy-them", "permanent": true },
+
+    { "source": "/images/guides/:year(\\d{4})/:month(\\d{2})/:file*", "destination": "/images/guides/:file", "permanent": true }
   ],
   "headers": [
     {

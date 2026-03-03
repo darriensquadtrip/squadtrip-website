@@ -14,7 +14,7 @@ export const metadata = generatePageMetadata({
   title: "E-Sign Docs & Waivers",
   description:
     "Collect signed waivers, contracts, and travel agreements before departure. SquadTrip's built-in e-sign makes document collection effortless for group trips.",
-  path: "/product/e-sign-docs",
+  path: "/product/embed-e-signature-process-into-your-traveler-checkout-forms",
 });
 
 const esignFAQ = [
@@ -57,7 +57,7 @@ export default function ESignDocsPage() {
         items={[
           { name: "Home", href: "/" },
           { name: "Product", href: "/product" },
-          { name: "E-Sign Docs", href: "/product/e-sign-docs" },
+          { name: "E-Sign Docs", href: "/product/embed-e-signature-process-into-your-traveler-checkout-forms" },
         ]}
       />
       <FAQSchema items={esignFAQ} />

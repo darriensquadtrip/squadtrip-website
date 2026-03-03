@@ -14,7 +14,7 @@ export const metadata = generatePageMetadata({
   title: "Public Trip Pages & Itineraries",
   description:
     "Create shareable trip pages with detailed itineraries, photos, and pricing. Let travelers see everything about the trip before they book with SquadTrip.",
-  path: "/product/trip-pages",
+  path: "/product/create-stunning-trip-landing-pages-in-5-minutes-with-squadtrip",
 });
 
 const tripPagesFAQ = [
@@ -57,7 +57,7 @@ export default function TripPagesPage() {
         items={[
           { name: "Home", href: "/" },
           { name: "Product", href: "/product" },
-          { name: "Trip Pages", href: "/product/trip-pages" },
+          { name: "Trip Pages", href: "/product/create-stunning-trip-landing-pages-in-5-minutes-with-squadtrip" },
         ]}
       />
       <FAQSchema items={tripPagesFAQ} />

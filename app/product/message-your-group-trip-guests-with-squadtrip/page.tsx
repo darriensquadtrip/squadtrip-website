@@ -14,7 +14,7 @@ export const metadata = generatePageMetadata({
   title: "Group Trip Messaging & Reminders",
   description:
     "Send targeted emails and SMS to your travelers. Automate payment reminders, trip updates, and announcements from one place with SquadTrip.",
-  path: "/product/messaging",
+  path: "/product/message-your-group-trip-guests-with-squadtrip",
 });
 
 const messagingFAQ = [
@@ -52,7 +52,7 @@ export default function MessagingPage() {
         items={[
           { name: "Home", href: "/" },
           { name: "Product", href: "/product" },
-          { name: "Messaging", href: "/product/messaging" },
+          { name: "Messaging", href: "/product/message-your-group-trip-guests-with-squadtrip" },
         ]}
       />
       <FAQSchema items={messagingFAQ} />

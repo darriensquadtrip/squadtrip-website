@@ -15,7 +15,7 @@ export const metadata = generatePageMetadata({
   title: "Group Trip Checkout Pages",
   description:
     "Build branded checkout pages for your group trips with packages, add-ons, and itineraries. Travelers book and pay online in minutes with SquadTrip.",
-  path: "/product/checkout-experience",
+  path: "/product/build-a-professional-checkout-experience-for-your-group-trips",
 });
 
 const checkoutFAQ = [
@@ -53,7 +53,7 @@ export default function CheckoutExperiencePage() {
         items={[
           { name: "Home", href: "/" },
           { name: "Product", href: "/product" },
-          { name: "Checkout Experience", href: "/product/checkout-experience" },
+          { name: "Checkout Experience", href: "/product/build-a-professional-checkout-experience-for-your-group-trips" },
         ]}
       />
       <FAQSchema items={checkoutFAQ} />

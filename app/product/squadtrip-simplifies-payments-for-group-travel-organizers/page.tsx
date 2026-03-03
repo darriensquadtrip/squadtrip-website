@@ -14,7 +14,7 @@ export const metadata = generatePageMetadata({
   title: "Group Trip Payment Collection",
   description:
     "Automate group trip payment collection with flexible payment plans, auto-billing, and Stripe payouts. Stop chasing payments and let SquadTrip handle collections.",
-  path: "/product/payment-collection",
+  path: "/product/squadtrip-simplifies-payments-for-group-travel-organizers",
 });
 
 const paymentFAQ = [
@@ -57,7 +57,7 @@ export default function PaymentCollectionPage() {
         items={[
           { name: "Home", href: "/" },
           { name: "Product", href: "/product" },
-          { name: "Payment Collection", href: "/product/payment-collection" },
+          { name: "Payment Collection", href: "/product/squadtrip-simplifies-payments-for-group-travel-organizers" },
         ]}
       />
       <FAQSchema items={paymentFAQ} />

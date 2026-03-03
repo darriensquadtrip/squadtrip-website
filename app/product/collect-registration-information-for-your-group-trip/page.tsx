@@ -14,7 +14,7 @@ export const metadata = generatePageMetadata({
   title: "Traveler Registration & Forms",
   description:
     "Collect traveler details, passport info, dietary needs, and emergency contacts during booking. SquadTrip registration forms keep all your traveler data organized.",
-  path: "/product/registration",
+  path: "/product/collect-registration-information-for-your-group-trip",
 });
 
 const registrationFAQ = [
@@ -52,7 +52,7 @@ export default function RegistrationPage() {
         items={[
           { name: "Home", href: "/" },
           { name: "Product", href: "/product" },
-          { name: "Registration", href: "/product/registration" },
+          { name: "Registration", href: "/product/collect-registration-information-for-your-group-trip" },
         ]}
       />
       <FAQSchema items={registrationFAQ} />

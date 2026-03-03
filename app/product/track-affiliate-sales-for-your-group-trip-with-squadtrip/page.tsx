@@ -14,7 +14,7 @@ export const metadata = generatePageMetadata({
   title: "Affiliate & Referral Tracking",
   description:
     "Track referrals, manage affiliate commissions, and grow your group trips through word of mouth. SquadTrip's affiliate tracking makes referral programs easy.",
-  path: "/product/affiliate-tracking",
+  path: "/product/track-affiliate-sales-for-your-group-trip-with-squadtrip",
 });
 
 const affiliateFAQ = [
@@ -57,7 +57,7 @@ export default function AffiliateTrackingPage() {
         items={[
           { name: "Home", href: "/" },
           { name: "Product", href: "/product" },
-          { name: "Affiliate Tracking", href: "/product/affiliate-tracking" },
+          { name: "Affiliate Tracking", href: "/product/track-affiliate-sales-for-your-group-trip-with-squadtrip" },
         ]}
       />
       <FAQSchema items={affiliateFAQ} />
