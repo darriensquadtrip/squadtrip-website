@@ -66,18 +66,141 @@ export default function AboutUsPage() {
               <div className="who-uses-card hover-lift">
                 <div className="who-uses-icon">{"\uD83D\uDE80"}</div>
                 <h3>Darrien Watson</h3>
+                <p style={{ fontWeight: 600, color: "var(--purple-primary)", marginBottom: "0.5rem" }}>
+                  Co-Founder &amp; CEO
+                </p>
                 <p>
-                  Co-Founder &amp; CEO. Darrien leads product and strategy,
-                  driven by a passion for making group travel accessible to
-                  everyone.
+                  Darrien leads product and strategy at SquadTrip, driven by a
+                  passion for making group travel accessible to everyone. Before
+                  founding SquadTrip, Darrien organized dozens of group trips and
+                  experienced the headaches of chasing payments, managing
+                  spreadsheets, and juggling group chat threads. That frustration
+                  became the spark for SquadTrip. He brings a deep understanding
+                  of what organizers need because he has been one himself. Darrien
+                  is focused on building a product that saves organizers time and
+                  gives them confidence that every detail is handled.
                 </p>
               </div>
               <div className="who-uses-card hover-lift">
                 <div className="who-uses-icon">{"\uD83D\uDCBB"}</div>
                 <h3>Stevon Judd</h3>
+                <p style={{ fontWeight: 600, color: "var(--purple-primary)", marginBottom: "0.5rem" }}>
+                  Co-Founder &amp; CTO
+                </p>
                 <p>
-                  Co-Founder &amp; CTO. Stevon leads engineering, building the
-                  technology that powers thousands of group trips.
+                  Stevon leads engineering at SquadTrip, building the technology
+                  that powers thousands of group trips. With a background in
+                  software development and a love for travel, Stevon saw the
+                  opportunity to apply modern technology to a space that had been
+                  overlooked. He architects the systems behind automated payment
+                  plans, real-time dashboards, and seamless Stripe integrations.
+                  Stevon is committed to building a reliable, scalable platform
+                  that organizers can trust with their most important trips.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Our Story */}
+      <section className="feature-overview" style={{ background: "var(--bg-light)" }}>
+        <div className="feature-overview-container">
+          <ScrollReveal>
+            <h2>Our Story</h2>
+          </ScrollReveal>
+          <ScrollReveal>
+            <div style={{ maxWidth: "720px", margin: "0 auto", fontSize: "1.125rem", color: "var(--text-muted)", lineHeight: 1.8 }}>
+              <p style={{ marginBottom: "1.25rem" }}>
+                SquadTrip started the way a lot of great companies start — with a
+                real problem that the founders could not ignore. Darrien and Stevon
+                were planning their own group trips and kept running into the same
+                wall. There was no single tool designed for the job. Instead, they
+                were cobbling together spreadsheets to track who had paid, sending
+                Venmo requests that went unanswered, and drowning in group chat
+                threads trying to coordinate logistics.
+              </p>
+              <p style={{ marginBottom: "1.25rem" }}>
+                Every trip was the same cycle: excitement at the start, followed by
+                weeks of chasing people for money and fielding endless questions
+                about dates, prices, and room assignments. The organizer always bore
+                the burden, and the tools available were never built for group travel.
+                They were general-purpose apps awkwardly repurposed for a very
+                specific and complex use case.
+              </p>
+              <p style={{ marginBottom: "1.25rem" }}>
+                Darrien and Stevon knew there had to be a better way. So they built
+                it. SquadTrip was born out of that firsthand frustration — a platform
+                purpose-built for group travel organizers, where everything from
+                creating a booking page to collecting payments to sending reminders
+                lives in one place. No more spreadsheets. No more chasing payments.
+                No more guesswork.
+              </p>
+              <p>
+                What started as a solution to their own problem quickly resonated
+                with thousands of other organizers who were dealing with the exact
+                same pain points. Today, SquadTrip serves more than 2,000 organizers
+                and 50,000 travelers, and the team continues to build features that
+                make group travel simpler, more transparent, and more enjoyable for
+                everyone involved.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Our Values */}
+      <section className="feature-overview">
+        <div className="feature-overview-container">
+          <ScrollReveal>
+            <h2>Our Values</h2>
+            <p className="feature-overview-subtitle">
+              These are the principles that guide everything we build and every decision we make at SquadTrip.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal stagger>
+            <div className="who-uses-grid">
+              <div className="who-uses-card hover-lift">
+                <div className="who-uses-icon">{"\u2728"}</div>
+                <h3>Simplicity</h3>
+                <p>
+                  We remove complexity so organizers can focus on what matters — the
+                  trip itself. Every feature we build is designed to reduce steps,
+                  eliminate confusion, and make group travel management feel
+                  effortless. If it does not make things simpler, we do not ship it.
+                </p>
+              </div>
+              <div className="who-uses-card hover-lift">
+                <div className="who-uses-icon">{"\uD83D\uDCAA"}</div>
+                <h3>Empowerment</h3>
+                <p>
+                  We give organizers superpowers. Whether you are a first-time planner
+                  coordinating a friends trip or a professional travel advisor managing
+                  dozens of groups, SquadTrip gives you the tools to operate like a
+                  pro. We believe anyone should be able to create amazing travel
+                  experiences, regardless of experience level.
+                </p>
+              </div>
+              <div className="who-uses-card hover-lift">
+                <div className="who-uses-icon">{"\uD83D\uDD12"}</div>
+                <h3>Trust</h3>
+                <p>
+                  Trust is the foundation of group travel. Travelers trust organizers
+                  with their money and their plans. We earn that trust through
+                  transparent pricing with no hidden fees, secure payment processing
+                  via Stripe, and clear communication tools that keep everyone on the
+                  same page.
+                </p>
+              </div>
+              <div className="who-uses-card hover-lift">
+                <div className="who-uses-icon">{"\uD83C\uDF0D"}</div>
+                <h3>Community</h3>
+                <p>
+                  We celebrate group travel culture. Travel is better together, and we
+                  are building more than a platform — we are building a community of
+                  organizers who share a passion for bringing people together through
+                  travel. We support, learn from, and grow alongside the people who
+                  use SquadTrip every day.
                 </p>
               </div>
             </div>

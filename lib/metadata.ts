@@ -17,9 +17,11 @@ export function generatePageMetadata({
   noIndex = false,
 }: PageMetadataOptions): Metadata {
   const url = `${SITE_URL}${path}`;
+  // If title exceeds 50 chars, skip the " | SquadTrip" suffix to stay under ~60 chars in SERPs
+  const pageTitle = title.length > 50 ? { absolute: title } : title;
 
   return {
-    title,
+    title: pageTitle,
     description,
     alternates: {
       canonical: url,

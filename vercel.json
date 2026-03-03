@@ -10,6 +10,7 @@
     { "source": "/home2025", "destination": "/", "permanent": true },
     { "source": "/lp-100k-group-travel-playbook", "destination": "/", "permanent": true },
     { "source": "/lp-saas-focused", "destination": "/", "permanent": true },
+    { "source": "/elementor-landing-page-1201", "destination": "/", "permanent": true },
 
     { "source": "/wp-content/:path*", "destination": "/images/:path*", "permanent": true }
   ],
