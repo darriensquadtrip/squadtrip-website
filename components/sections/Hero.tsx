@@ -7,6 +7,9 @@ interface HeroProps {
   ctaHref?: string;
   secondaryCta?: { text: string; href: string };
   trustLine?: string;
+  eyebrow?: string;
+  layout?: "centered" | "split";
+  mockup?: React.ReactNode;
 }
 
 export function Hero({
@@ -16,37 +19,66 @@ export function Hero({
   ctaHref = SIGNUP_URL,
   secondaryCta,
   trustLine,
+  eyebrow,
+  layout = "centered",
+  mockup,
 }: HeroProps) {
-  return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-purple-50 to-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32">
-        <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight">
-            {headline}
-          </h1>
-          <p className="mt-6 text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
-            {subheadline}
-          </p>
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href={ctaHref}
-              className="w-full sm:w-auto rounded-lg bg-purple px-8 py-4 text-lg font-semibold text-white hover:bg-purple-dark transition-colors text-center"
-            >
+  if (layout === "split" && mockup) {
+    return (
+      <section className="hero">
+        <div className="hero-container">
+          <h1 className="hero-headline">{headline}</h1>
+          <p className="hero-subtitle">{subheadline}</p>
+          <div className="hero-visual">{mockup}</div>
+          {eyebrow && (
+            <div className="hero-eyebrow">
+              <span>{eyebrow}</span>
+            </div>
+          )}
+          <div className="hero-ctas">
+            <a href={ctaHref} className="btn-primary">
               {ctaText}
             </a>
             {secondaryCta && (
-              <a
-                href={secondaryCta.href}
-                className="text-purple font-semibold hover:text-purple-dark transition-colors"
-              >
+              <a href={secondaryCta.href} className="btn-secondary">
                 {secondaryCta.text} &rarr;
               </a>
             )}
           </div>
-          {trustLine && (
-            <p className="mt-6 text-sm text-gray-500">{trustLine}</p>
+          {trustLine && <p className="hero-trust">{trustLine}</p>}
+        </div>
+      </section>
+    );
+  }
+
+  // Centered layout (default)
+  return (
+    <section className="hero" style={{ textAlign: "center" }}>
+      <div style={{ maxWidth: 800, margin: "0 auto", padding: "0 24px" }}>
+        {eyebrow && (
+          <div className="hero-eyebrow" style={{ justifyContent: "center", marginBottom: 16 }}>
+            <span>{eyebrow}</span>
+          </div>
+        )}
+        <h1 className="hero-headline" style={{ fontSize: "3rem", marginBottom: 16 }}>
+          {headline}
+        </h1>
+        <p className="hero-subtitle" style={{ maxWidth: "100%", marginBottom: 32 }}>
+          {subheadline}
+        </p>
+        <div className="hero-ctas" style={{ justifyContent: "center" }}>
+          <a href={ctaHref} className="btn-primary">
+            {ctaText}
+          </a>
+          {secondaryCta && (
+            <a href={secondaryCta.href} className="btn-secondary">
+              {secondaryCta.text} &rarr;
+            </a>
           )}
         </div>
+        {trustLine && (
+          <p className="hero-trust" style={{ marginTop: 16 }}>{trustLine}</p>
+        )}
       </div>
     </section>
   );

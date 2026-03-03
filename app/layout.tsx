@@ -8,6 +8,7 @@ import { PostHogProvider } from "@/components/analytics/PostHogProvider";
 import { IntercomWidget } from "@/components/analytics/IntercomWidget";
 import { UTMTracker } from "@/components/analytics/UTMTracker";
 import { OrganizationSchema } from "@/components/seo/OrganizationSchema";
+import { AnimationProvider } from "@/components/ui/AnimationProvider";
 import { SITE_NAME, SITE_URL, SITE_DESCRIPTION } from "@/lib/constants";
 import "./globals.css";
 
@@ -56,6 +57,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <AnimationProvider />
           <IntercomWidget />
         </PostHogProvider>
       </body>

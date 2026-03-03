@@ -1,64 +1,55 @@
 import Link from "next/link";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const audiences = [
   {
+    icon: "\u2708\uFE0F",
     title: "Tour Operators & Travel Agencies",
-    description:
-      "Manage group bookings, automate payments, and track inventory across multiple trips.",
+    quote: "Manage group bookings, automate payments, and track inventory across multiple trips.",
     href: "/travel-agents",
   },
   {
+    icon: "\uD83C\uDFD6\uFE0F",
     title: "Group Trip Organizers",
-    description:
-      "Plan bachelor parties, family reunions, and friend trips without the spreadsheet headache.",
+    quote: "Plan bachelor parties, family reunions, and friend trips without the spreadsheet headache.",
     href: "/travel-groups",
   },
   {
-    title: "Destination Weddings & Events",
-    description:
-      "Collect payments, gather RSVPs, and manage guest communications for your big day.",
+    icon: "\uD83D\uDC8D",
+    title: "Destination Weddings",
+    quote: "Collect payments, gather RSVPs, and manage guest communications for your big day.",
     href: "/destination-wedding-planners",
   },
   {
+    icon: "\uD83E\uDDD8",
     title: "Retreat Organizers",
-    description:
-      "Sell wellness retreats, yoga trips, and group experiences with flexible payment plans.",
+    quote: "Sell wellness retreats, yoga trips, and group experiences with flexible payment plans.",
     href: "/travel-groups",
   },
 ];
 
 export function WhoUsesSquadTrip() {
   return (
-    <section className="py-16 sm:py-24 bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-            Who Uses SquadTrip
-          </h2>
-          <p className="mt-4 text-lg text-gray-600">
-            Built for anyone organizing group travel
-          </p>
-        </div>
+    <section className="who-uses">
+      <div className="who-uses-container">
+        <ScrollReveal>
+          <h2>Who Uses SquadTrip</h2>
+        </ScrollReveal>
 
-        <div className="grid sm:grid-cols-2 gap-6">
-          {audiences.map((audience) => (
-            <Link
-              key={audience.title}
-              href={audience.href}
-              className="group rounded-2xl border border-gray-200 p-8 hover:border-purple hover:shadow-md transition-all"
-            >
-              <h3 className="text-xl font-semibold text-gray-900 group-hover:text-purple transition-colors mb-3">
-                {audience.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {audience.description}
-              </p>
-              <span className="inline-block mt-4 text-purple font-medium">
-                Learn more &rarr;
-              </span>
-            </Link>
-          ))}
-        </div>
+        <ScrollReveal stagger>
+          <div className="who-uses-grid">
+            {audiences.map((a) => (
+              <div key={a.title} className="who-uses-card hover-lift">
+                <div className="who-uses-icon">{a.icon}</div>
+                <h3>{a.title}</h3>
+                <p>&ldquo;{a.quote}&rdquo;</p>
+                <Link href={a.href}>
+                  Learn more &rarr;
+                </Link>
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

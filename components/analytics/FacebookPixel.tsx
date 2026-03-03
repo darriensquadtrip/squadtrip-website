@@ -2,7 +2,7 @@ import Script from "next/script";
 import { FB_PIXEL_ID } from "@/lib/constants";
 
 export function FacebookPixel() {
-  if (!FB_PIXEL_ID || FB_PIXEL_ID === "XXXXXXXXXX") return null;
+  if (!FB_PIXEL_ID) return null;
 
   return (
     <Script id="facebook-pixel" strategy="afterInteractive">

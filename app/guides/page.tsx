@@ -3,6 +3,9 @@ import { generatePageMetadata } from "@/lib/metadata";
 import { getAllGuides, getCategories } from "@/lib/guides";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { GuideCard } from "@/components/guides/GuideCard";
+import { Hero } from "@/components/sections/Hero";
+import { LearnMoreCTA } from "@/components/sections/LearnMoreCTA";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = generatePageMetadata({
   title: "Group Travel Guides & Resources",
@@ -24,31 +27,43 @@ export default function GuidesIndexPage() {
         ]}
       />
 
-      {/* Hero */}
-      <section className="bg-gradient-to-b from-purple-50 to-white py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900">
-            Group Travel Guides
-          </h1>
-          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            Expert advice on planning group trips, collecting payments, and
-            growing your travel business.
-          </p>
-        </div>
-      </section>
+      <Hero
+        layout="centered"
+        headline="Group Travel Guides"
+        subheadline="Expert advice on planning group trips, collecting payments, and growing your travel business."
+      />
 
       {/* Category filter */}
       {categories.length > 0 && (
-        <section className="border-b border-gray-200">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex gap-4 overflow-x-auto py-4 no-scrollbar">
-              <span className="shrink-0 px-4 py-2 rounded-full bg-purple text-white text-sm font-medium">
+        <section style={{ borderBottom: "1px solid #e5e7eb" }}>
+          <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 2rem" }}>
+            <div
+              style={{
+                display: "flex",
+                gap: "0.75rem",
+                overflowX: "auto",
+                padding: "1rem 0",
+              }}
+            >
+              <span className="btn-primary" style={{ fontSize: "0.875rem", padding: "0.5rem 1.25rem" }}>
                 All
               </span>
               {categories.map((cat) => (
                 <span
                   key={cat}
-                  className="shrink-0 px-4 py-2 rounded-full bg-gray-100 text-gray-600 text-sm font-medium hover:bg-gray-200 transition-colors cursor-pointer capitalize"
+                  style={{
+                    flexShrink: 0,
+                    padding: "0.5rem 1.25rem",
+                    borderRadius: "9999px",
+                    background: "var(--bg-light)",
+                    color: "var(--text-muted)",
+                    fontSize: "0.875rem",
+                    fontWeight: 500,
+                    cursor: "pointer",
+                    textTransform: "capitalize",
+                    transition: "background 0.2s",
+                    whiteSpace: "nowrap",
+                  }}
                 >
                   {cat.replace(/-/g, " ")}
                 </span>
@@ -59,21 +74,33 @@ export default function GuidesIndexPage() {
       )}
 
       {/* Guide grid */}
-      <section className="py-12 sm:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="feature-overview">
+        <div className="feature-overview-container">
           {guides.length > 0 ? (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {guides.map((guide) => (
-                <GuideCard key={guide.slug} guide={guide} />
-              ))}
-            </div>
+            <ScrollReveal stagger>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+                  gap: "1.5rem",
+                }}
+              >
+                {guides.map((guide) => (
+                  <div key={guide.slug} className="hover-lift">
+                    <GuideCard guide={guide} />
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
           ) : (
-            <p className="text-center text-gray-500 py-12">
+            <p style={{ textAlign: "center", color: "var(--text-muted)", padding: "3rem 0" }}>
               Guides are being migrated. Check back soon!
             </p>
           )}
         </div>
       </section>
+
+      <LearnMoreCTA />
     </>
   );
 }

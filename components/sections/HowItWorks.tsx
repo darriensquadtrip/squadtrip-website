@@ -1,4 +1,19 @@
-const steps = [
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { SIGNUP_URL } from "@/lib/constants";
+
+interface Step {
+  step: string;
+  title: string;
+  description: string;
+}
+
+interface HowItWorksProps {
+  steps?: Step[];
+  ctaText?: string;
+  ctaHref?: string;
+}
+
+const defaultSteps: Step[] = [
   {
     step: "1",
     title: "Create Your Trip",
@@ -19,33 +34,34 @@ const steps = [
   },
 ];
 
-export function HowItWorks() {
+export function HowItWorks({
+  steps = defaultSteps,
+  ctaText = "Create your trip for free",
+  ctaHref = SIGNUP_URL,
+}: HowItWorksProps) {
   return (
-    <section className="py-16 sm:py-24 bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-            How It Works
-          </h2>
-          <p className="mt-4 text-lg text-gray-600">
-            Get started in three simple steps
-          </p>
-        </div>
+    <section className="how-it-works">
+      <div className="how-it-works-container">
+        <ScrollReveal>
+          <h2>How It Works</h2>
+        </ScrollReveal>
 
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-          {steps.map((step) => (
-            <div key={step.step} className="text-center">
-              <div className="mx-auto w-14 h-14 rounded-full bg-purple text-white flex items-center justify-center text-xl font-bold mb-6">
-                {step.step}
+        <ScrollReveal stagger>
+          <div className="steps-grid">
+            {steps.map((step) => (
+              <div key={step.step} className="step-card">
+                <div className="step-number">{step.step}</div>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                {step.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {step.description}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
+        </ScrollReveal>
+
+        <div className="cta-center">
+          <a href={ctaHref} className="btn-primary">
+            {ctaText}
+          </a>
         </div>
       </div>
     </section>

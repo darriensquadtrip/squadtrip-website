@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/metadata";
+import { Hero } from "@/components/sections/Hero";
+import { ComparisonTable } from "@/components/sections/ComparisonTable";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { TrustSignals } from "@/components/sections/TrustSignals";
 import { FAQ } from "@/components/ui/FAQ";
+import { FinalCTA } from "@/components/sections/FinalCTA";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { SIGNUP_URL } from "@/lib/constants";
@@ -64,6 +70,39 @@ const launchFeatures = [
   "Priority support",
 ];
 
+const comparisonRows = [
+  {
+    task: "Platform fee",
+    diy: "8-10% on other platforms",
+    squadtrip: "6% all-inclusive",
+  },
+  {
+    task: "Stripe processing",
+    diy: "Extra 2.9% + 30¢ on top",
+    squadtrip: "Included in 6%",
+  },
+  {
+    task: "Monthly subscription",
+    diy: "$50-99/month elsewhere",
+    squadtrip: "Free plan available",
+  },
+  {
+    task: "Payment plans",
+    diy: "Manual tracking required",
+    squadtrip: "Auto-billed monthly",
+  },
+  {
+    task: "Payment reminders",
+    diy: "Chase travelers yourself",
+    squadtrip: "Automatic email + SMS",
+  },
+  {
+    task: "Payouts",
+    diy: "Wait days or weeks",
+    squadtrip: "Direct to your Stripe",
+  },
+];
+
 export default function PricingPage() {
   return (
     <>
@@ -76,87 +115,387 @@ export default function PricingPage() {
       <FAQSchema items={pricingFAQ} />
 
       {/* Hero */}
-      <section className="bg-gradient-to-b from-purple-50 to-white py-20 sm:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900">
-            Simple, Transparent Pricing
-          </h1>
-          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            Start free. Upgrade when you need advanced features. No hidden fees.
-          </p>
-        </div>
-      </section>
+      <Hero
+        layout="centered"
+        headline="Simple, Transparent Pricing"
+        subheadline="Start free. Upgrade when you need advanced features. No hidden fees — our 6% includes Stripe processing costs."
+        ctaText="Start for free"
+        ctaHref={SIGNUP_URL}
+        secondaryCta={{ text: "Compare plans", href: "#plans" }}
+        trustLine="No credit card required. Free forever on the Starter plan."
+      />
 
       {/* Pricing Cards */}
-      <section className="py-16 -mt-8">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Starter */}
-            <div className="rounded-2xl border border-gray-200 p-8">
-              <h2 className="text-2xl font-bold text-gray-900">Starter</h2>
-              <p className="mt-2 text-gray-600">
-                For the person who always plans the trip
-              </p>
-              <div className="mt-6">
-                <span className="text-5xl font-bold text-gray-900">$0</span>
-                <span className="text-gray-500">/month</span>
-              </div>
-              <a
-                href={SIGNUP_URL}
-                className="mt-8 block w-full rounded-lg border-2 border-purple py-3 text-center font-semibold text-purple hover:bg-purple-50 transition-colors"
+      <section id="plans" className="feature-overview">
+        <div className="feature-overview-container">
+          <ScrollReveal>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+                gap: "32px",
+                maxWidth: "900px",
+                margin: "0 auto",
+              }}
+            >
+              {/* Starter Card */}
+              <div
+                className="hover-lift"
+                style={{
+                  borderRadius: "20px",
+                  border: "1px solid var(--border-light)",
+                  padding: "40px 32px",
+                  background: "var(--bg-white)",
+                  display: "flex",
+                  flexDirection: "column",
+                }}
               >
-                Get started free
-              </a>
-              <ul className="mt-8 space-y-3">
-                {starterFeatures.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-success mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                    <span className="text-gray-600">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                <div>
+                  <h2
+                    style={{
+                      fontSize: "1.5rem",
+                      fontWeight: 700,
+                      color: "var(--text-dark)",
+                      marginBottom: "8px",
+                      textAlign: "left",
+                    }}
+                  >
+                    Starter
+                  </h2>
+                  <p
+                    style={{
+                      color: "var(--text-gray)",
+                      fontSize: "1rem",
+                      marginBottom: "24px",
+                      textAlign: "left",
+                    }}
+                  >
+                    For the person who always plans the trip
+                  </p>
+                  <div style={{ marginBottom: "32px", textAlign: "left" }}>
+                    <span
+                      style={{
+                        fontSize: "3.5rem",
+                        fontWeight: 800,
+                        color: "var(--text-dark)",
+                        lineHeight: 1,
+                      }}
+                    >
+                      $0
+                    </span>
+                    <span
+                      style={{
+                        fontSize: "1.125rem",
+                        color: "var(--text-gray)",
+                        marginLeft: "4px",
+                      }}
+                    >
+                      /month
+                    </span>
+                  </div>
+                </div>
 
-            {/* Launch */}
-            <div className="rounded-2xl border-2 border-purple p-8 relative">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-purple text-white px-4 py-1 rounded-full text-sm font-semibold">
-                Most Popular
+                <a
+                  href={SIGNUP_URL}
+                  className="btn-secondary"
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    textAlign: "center",
+                    padding: "14px 24px",
+                    borderRadius: "12px",
+                    fontWeight: 600,
+                    fontSize: "1rem",
+                    marginBottom: "32px",
+                    textDecoration: "none",
+                  }}
+                >
+                  Get started free
+                </a>
+
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, flex: 1 }}>
+                  {starterFeatures.map((feature) => (
+                    <li
+                      key={feature}
+                      style={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        gap: "12px",
+                        marginBottom: "14px",
+                        fontSize: "0.95rem",
+                        color: "var(--text-gray)",
+                      }}
+                    >
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        strokeWidth={2.5}
+                        stroke="var(--success-green)"
+                        style={{ flexShrink: 0, marginTop: "2px" }}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M4.5 12.75l6 6 9-13.5"
+                        />
+                      </svg>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h2 className="text-2xl font-bold text-gray-900">Launch</h2>
-              <p className="mt-2 text-gray-600">
-                For the travel enthusiast ready to start a business
-              </p>
-              <div className="mt-6">
-                <span className="text-5xl font-bold text-gray-900">$29</span>
-                <span className="text-gray-500">/month</span>
-              </div>
-              <p className="text-sm text-gray-500 mt-1">
-                or $299/year (save 14%)
-              </p>
-              <a
-                href={SIGNUP_URL}
-                className="mt-8 block w-full rounded-lg bg-purple py-3 text-center font-semibold text-white hover:bg-purple-dark transition-colors"
+
+              {/* Launch Card (Most Popular) */}
+              <div
+                className="hover-lift"
+                style={{
+                  borderRadius: "20px",
+                  border: "2px solid var(--purple-primary)",
+                  padding: "40px 32px",
+                  background: "var(--bg-white)",
+                  position: "relative",
+                  display: "flex",
+                  flexDirection: "column",
+                  boxShadow: "0 8px 30px rgba(107, 70, 193, 0.12)",
+                }}
               >
-                Start free trial
-              </a>
-              <ul className="mt-8 space-y-3">
-                {launchFeatures.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-success mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                    <span className="text-gray-600">{feature}</span>
-                  </li>
-                ))}
-              </ul>
+                {/* Most Popular Badge */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "-14px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    background: "var(--yellow-primary)",
+                    color: "var(--text-dark)",
+                    padding: "6px 20px",
+                    borderRadius: "999px",
+                    fontSize: "0.85rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.02em",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  Most Popular
+                </div>
+
+                <div>
+                  <h2
+                    style={{
+                      fontSize: "1.5rem",
+                      fontWeight: 700,
+                      color: "var(--text-dark)",
+                      marginBottom: "8px",
+                      textAlign: "left",
+                    }}
+                  >
+                    Launch
+                  </h2>
+                  <p
+                    style={{
+                      color: "var(--text-gray)",
+                      fontSize: "1rem",
+                      marginBottom: "24px",
+                      textAlign: "left",
+                    }}
+                  >
+                    For the travel enthusiast ready to start a business
+                  </p>
+                  <div style={{ marginBottom: "8px", textAlign: "left" }}>
+                    <span
+                      style={{
+                        fontSize: "3.5rem",
+                        fontWeight: 800,
+                        color: "var(--text-dark)",
+                        lineHeight: 1,
+                      }}
+                    >
+                      $29
+                    </span>
+                    <span
+                      style={{
+                        fontSize: "1.125rem",
+                        color: "var(--text-gray)",
+                        marginLeft: "4px",
+                      }}
+                    >
+                      /month
+                    </span>
+                  </div>
+                  <p
+                    style={{
+                      fontSize: "0.875rem",
+                      color: "var(--text-gray)",
+                      marginBottom: "32px",
+                      textAlign: "left",
+                    }}
+                  >
+                    or $299/year (save 14%)
+                  </p>
+                </div>
+
+                <a
+                  href={SIGNUP_URL}
+                  className="btn-primary"
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    textAlign: "center",
+                    padding: "14px 24px",
+                    borderRadius: "12px",
+                    fontWeight: 600,
+                    fontSize: "1rem",
+                    marginBottom: "32px",
+                    textDecoration: "none",
+                  }}
+                >
+                  Start free trial
+                </a>
+
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, flex: 1 }}>
+                  {launchFeatures.map((feature) => (
+                    <li
+                      key={feature}
+                      style={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        gap: "12px",
+                        marginBottom: "14px",
+                        fontSize: "0.95rem",
+                        color:
+                          feature === "Everything in Starter, plus:"
+                            ? "var(--purple-primary)"
+                            : "var(--text-gray)",
+                        fontWeight:
+                          feature === "Everything in Starter, plus:" ? 600 : 400,
+                      }}
+                    >
+                      {feature !== "Everything in Starter, plus:" && (
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          strokeWidth={2.5}
+                          stroke="var(--success-green)"
+                          style={{ flexShrink: 0, marginTop: "2px" }}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M4.5 12.75l6 6 9-13.5"
+                          />
+                        </svg>
+                      )}
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
+
+          {/* Processing Fee Callout */}
+          <ScrollReveal>
+            <div
+              style={{
+                maxWidth: "700px",
+                margin: "48px auto 0",
+                textAlign: "center",
+                padding: "24px 32px",
+                background: "var(--bg-light)",
+                borderRadius: "16px",
+                border: "1px solid var(--border-light)",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: "1rem",
+                  color: "var(--text-dark)",
+                  fontWeight: 600,
+                  marginBottom: "4px",
+                }}
+              >
+                6% processing fee on both plans
+              </p>
+              <p
+                style={{
+                  fontSize: "0.9rem",
+                  color: "var(--text-gray)",
+                  margin: 0,
+                }}
+              >
+                This includes Stripe&apos;s 2.9% + 30&cent; credit card fee.
+                No surprise charges.
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      <FAQ items={pricingFAQ} />
+      {/* Comparison Table */}
+      <ComparisonTable
+        headline="How Our Pricing Compares"
+        intro="SquadTrip's 6% includes what other platforms charge separately."
+        columnHeaders={["", "Other Platforms", "SquadTrip"]}
+        rows={comparisonRows}
+        ctaText="Start collecting payments"
+        ctaHref={SIGNUP_URL}
+      />
+
+      {/* Testimonials */}
+      <TestimonialsSection
+        headline="Organizers Trust SquadTrip With Their Business"
+        subtitle="See how real organizers save time and grow revenue with transparent pricing."
+        featured={{
+          quote:
+            "If it wasn't for SquadTrip, I wouldn't have been able to grow my group trips from 50 guests to 500.",
+          author: "Collin D. Williams Jr.",
+          company: "CDE Antigua",
+          initials: "CW",
+          badge: "Top Organizer",
+          metrics: [
+            { value: "50\u2192500", label: "Travelers" },
+            { value: "10x", label: "Growth" },
+          ],
+        }}
+        side={[
+          {
+            quote:
+              "The platform's ability to track trip package inventory and offer payment plans has made it easier for me to manage my bookings.",
+            author: "Andrew Bennett",
+            company: "Passport Society",
+            initials: "AB",
+            badge: "Verified Organizer",
+          },
+          {
+            quote:
+              "SquadTrip streamlines the process of tracking payment plans, promoting the itinerary, and selling extra add-ons.",
+            author: "Chef Ahki",
+            company: "The Supernatural Woman",
+            initials: "CA",
+            badge: "Verified Organizer",
+          },
+        ]}
+      />
+
+      {/* Trust Signals */}
+      <TrustSignals />
+
+      {/* FAQ */}
+      <FAQ items={pricingFAQ} title="Pricing Questions" />
+
+      {/* Final CTA */}
+      <FinalCTA
+        headline="Ready to Simplify Group Travel Payments?"
+        subheadline="Create your first trip in 10 minutes. Free to start, no credit card required."
+        primaryText="Create your trip for free"
+        primaryHref={SIGNUP_URL}
+        secondaryText="See how it works"
+        secondaryHref="/features"
+      />
     </>
   );
 }

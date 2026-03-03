@@ -1,7 +1,15 @@
 import { generatePageMetadata } from "@/lib/metadata";
 import { SIGNUP_URL } from "@/lib/constants";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
-import { CTASection } from "@/components/sections/CTASection";
+import { Hero } from "@/components/sections/Hero";
+import { ProblemValidation } from "@/components/sections/ProblemValidation";
+import { HowItWorks } from "@/components/sections/HowItWorks";
+import { FeatureBlock } from "@/components/sections/FeatureBlock";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { FinalCTA } from "@/components/sections/FinalCTA";
+import { BookingPageMockup } from "@/components/mockups/BookingPageMockup";
+import { PaymentPlanMockup } from "@/components/mockups/PaymentPlanMockup";
+import { EmailMockup } from "@/components/mockups/EmailMockup";
 
 export const metadata = generatePageMetadata({
   title: "Collect Payments for Your Travel Group",
@@ -9,29 +17,6 @@ export const metadata = generatePageMetadata({
     "Everything you need to plan a group trip stress free. Create booking pages, set up flexible payment plans, and manage your travel group with SquadTrip.",
   path: "/travel-groups",
 });
-
-const features = [
-  {
-    title: "Booking Pages",
-    description:
-      "Create professional booking pages that let travelers browse trip details, select packages, and pay online in minutes.",
-  },
-  {
-    title: "Flexible Payment Plans",
-    description:
-      "Offer automatic installment plans so travelers can pay over time. No more chasing payments or tracking spreadsheets.",
-  },
-  {
-    title: "Reporting Dashboard",
-    description:
-      "See who has paid, who owes, and your total revenue at a glance. Export data anytime you need it.",
-  },
-  {
-    title: "Email & SMS Communications",
-    description:
-      "Send payment reminders, trip updates, and promotional messages to your travelers via email and SMS.",
-  },
-];
 
 export default function TravelGroupsPage() {
   return (
@@ -43,65 +28,128 @@ export default function TravelGroupsPage() {
         ]}
       />
 
-      {/* Hero */}
-      <section className="bg-gradient-to-b from-purple-50 to-white py-16 sm:py-24">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Collect Payments for your Travel Group
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Everything you need to plan a group trip stress free
-          </p>
-          <a
-            href={SIGNUP_URL}
-            className="inline-block rounded-lg bg-purple px-8 py-4 text-lg font-semibold text-white hover:bg-purple-dark transition-colors"
-          >
-            Start planning today!
-          </a>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">
-            Everything You Need to Run Your Group Trip
-          </h2>
-          <div className="grid gap-8 sm:grid-cols-2">
-            {features.map((feature) => (
-              <div
-                key={feature.title}
-                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
-              >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonial */}
-      <section className="py-16 sm:py-20 bg-gray-50">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <blockquote className="text-xl sm:text-2xl font-medium text-gray-900 italic mb-6">
-            &ldquo;If it wasn&apos;t for SquadTrip, I wouldn&apos;t have been
-            able to grow my group trips from 50 guests to 500.&rdquo;
-          </blockquote>
-          <p className="text-lg font-semibold text-gray-900">
-            Collin D. Williams, Jr.
-          </p>
-          <p className="text-gray-600">CDE Antigua</p>
-        </div>
-      </section>
-
-      <CTASection
-        headline="Start planning today!"
-        subheadline="Create your first trip in 10 minutes. Free to start, no credit card required."
-        ctaText="Create your trip for free"
+      {/* Hero (split) */}
+      <Hero
+        layout="split"
+        headline="Collect Payments for Your Travel Group"
+        subheadline="Create a booking page, set up automatic payment plans, and track every dollar — so you can focus on the trip, not the spreadsheet."
+        ctaText="Start planning today"
         ctaHref={SIGNUP_URL}
+        secondaryCta={{ text: "See how it works", href: "/features" }}
+        eyebrow="Trusted by 2,000+ group trip organizers"
+        mockup={<BookingPageMockup />}
+      />
+
+      {/* ProblemValidation — reuse homepage stats */}
+      <ProblemValidation />
+
+      {/* HowItWorks — 3 steps */}
+      <HowItWorks
+        steps={[
+          {
+            step: "1",
+            title: "Create Your Trip",
+            description:
+              "Build a professional booking page with your itinerary, packages, add-ons, and pricing in minutes.",
+          },
+          {
+            step: "2",
+            title: "Share With Your Group",
+            description:
+              "Send your booking link to travelers. They can view the trip, select their package, and pay online.",
+          },
+          {
+            step: "3",
+            title: "Track & Get Paid",
+            description:
+              "Monitor payments in real-time, send automated reminders, and receive payouts directly to your bank.",
+          },
+        ]}
+      />
+
+      {/* FeatureBlock — Payment Plans */}
+      <div className="feature-blocks">
+        <FeatureBlock
+          title="Automatic Payment Plans That Collect Themselves"
+          description="Set up monthly auto-billing and let SquadTrip handle the rest. Failed payments are retried automatically, and travelers get reminders without you lifting a finger."
+          mockup={<PaymentPlanMockup />}
+          highlights={[
+            { icon: "\uD83D\uDD04", text: "Auto-retry failed payments" },
+            { icon: "\u23F0", text: "Scheduled reminders" },
+            { icon: "\uD83D\uDCB3", text: "Apple Pay & cards" },
+            { icon: "\uD83D\uDED2", text: "Klarna & Afterpay" },
+          ]}
+          bonus="Travelers can also pay in full upfront or use buy-now-pay-later options."
+          linkText="Set up payment plans"
+          linkHref={SIGNUP_URL}
+        />
+
+        {/* FeatureBlock — Email & SMS */}
+        <FeatureBlock
+          title="Keep Your Group in the Loop"
+          description="Send payment reminders, trip updates, and promotional emails to your entire group. Automated notifications mean no one misses a deadline."
+          mockup={<EmailMockup />}
+          reverse
+          highlights={[
+            { icon: "\uD83D\uDCE7", text: "Payment reminders" },
+            { icon: "\uD83D\uDCF2", text: "SMS notifications" },
+            { icon: "\uD83D\uDCE3", text: "Trip announcements" },
+            { icon: "\u2705", text: "Confirmation emails" },
+          ]}
+          testimonial={{
+            quote:
+              "SquadTrip streamlines the process of tracking payment plans, promoting the itinerary, and selling extra add-ons.",
+            attribution: "Chef Ahki Taylor, The Supernatural Woman Retreats",
+          }}
+          linkText="See communication tools"
+          linkHref={SIGNUP_URL}
+        />
+      </div>
+
+      {/* TestimonialsSection — Collin D. Williams featured */}
+      <TestimonialsSection
+        headline="Trusted by 2,000+ Trip Organizers"
+        subtitle="Here's what real organizers say about SquadTrip."
+        featured={{
+          quote:
+            "If it wasn't for SquadTrip, I wouldn't have been able to grow my group trips from 50 guests to 500.",
+          author: "Collin D. Williams Jr.",
+          company: "CDE Antigua",
+          initials: "CW",
+          badge: "Group Trip Organizer",
+          metrics: [
+            { value: "50\u2192500", label: "Travelers" },
+            { value: "10x", label: "Growth" },
+          ],
+        }}
+        side={[
+          {
+            quote:
+              "SquadTrip streamlines the process of tracking payment plans, promoting the itinerary, and selling extra add-ons.",
+            author: "Chef Ahki",
+            company: "The Supernatural Woman Retreats",
+            initials: "CA",
+            badge: "Retreat Organizer",
+          },
+          {
+            quote:
+              "Switching to SquadTrip was one of the best decisions I've made for my business. The platform's ability to track trip package inventory and offer payment plans has made it easier for me to manage my bookings.",
+            author: "Andrew Bennett",
+            company: "Passport Society",
+            initials: "AB",
+            badge: "Travel Agent",
+          },
+        ]}
+      />
+
+      {/* FinalCTA */}
+      <FinalCTA
+        headline="Ready to Grow Your Travel Group?"
+        subheadline="Create your first trip in 10 minutes. Free to start, no credit card required."
+        primaryText="Create your trip for free"
+        primaryHref={SIGNUP_URL}
+        secondaryText="See how it works"
+        secondaryHref="/features"
       />
     </>
   );

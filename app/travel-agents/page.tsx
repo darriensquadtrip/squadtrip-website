@@ -1,7 +1,17 @@
 import { generatePageMetadata } from "@/lib/metadata";
 import { SIGNUP_URL } from "@/lib/constants";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
-import { CTASection } from "@/components/sections/CTASection";
+import { FAQSchema } from "@/components/seo/FAQSchema";
+import { Hero } from "@/components/sections/Hero";
+import { ProblemValidation } from "@/components/sections/ProblemValidation";
+import { FeatureBlock } from "@/components/sections/FeatureBlock";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { ComparisonTable } from "@/components/sections/ComparisonTable";
+import { FAQ } from "@/components/ui/FAQ";
+import { FinalCTA } from "@/components/sections/FinalCTA";
+import { DashboardMockup } from "@/components/mockups/DashboardMockup";
+import { PaymentPlanMockup } from "@/components/mockups/PaymentPlanMockup";
+import { BookingPageMockup } from "@/components/mockups/BookingPageMockup";
 
 export const metadata = generatePageMetadata({
   title: "Collect Payments for Your Travel Agency Group Trips",
@@ -10,36 +20,69 @@ export const metadata = generatePageMetadata({
   path: "/travel-agents",
 });
 
-const features = [
+const agencyFAQ = [
   {
-    title: "Booking Pages",
-    description:
-      "Create professional booking pages that let travelers browse trip details, select packages, and pay online in minutes.",
+    question: "How does SquadTrip work for travel agencies?",
+    answer:
+      "SquadTrip lets you create professional booking pages for each trip, set up flexible payment plans, and track all your traveler payments from one dashboard. Your clients book and pay online, and you get paid directly via Stripe.",
   },
   {
-    title: "Flexible Payment Plans",
-    description:
-      "Offer automatic installment plans so travelers can pay over time. No more chasing payments or tracking spreadsheets.",
+    question: "What are the costs or fees?",
+    answer:
+      "SquadTrip offers a free version and paid plans starting at $29 per month. The booking fee is 6%, which includes Stripe's processing costs.",
   },
   {
-    title: "Reporting Dashboard",
-    description:
-      "See who has paid, who owes, and your total revenue at a glance. Export data anytime you need it.",
+    question: "Can I manage multiple trips at the same time?",
+    answer:
+      "Yes. Your agency dashboard shows all active trips with real-time payment status, traveler counts, and revenue collected. You can manage dozens of trips simultaneously.",
   },
   {
-    title: "Email & SMS Communications",
-    description:
-      "Send payment reminders, trip updates, and promotional messages to your travelers via email and SMS.",
+    question: "How do payment plans work for my clients?",
+    answer:
+      "You set up a payment schedule for each trip and your travelers are billed automatically each month. Failed payments are retried automatically, and travelers get email reminders without you lifting a finger.",
   },
   {
-    title: "Registration",
-    description:
-      "Collect passport details, dietary preferences, emergency contacts, and any custom information you need from travelers at checkout.",
+    question: "Can I customize booking pages with my agency branding?",
+    answer:
+      "Yes. Each booking page can be customized with your agency logo, colors, trip photos, itineraries, and package options so travelers see a polished, professional experience.",
   },
   {
-    title: "Data Exports",
-    description:
-      "Download traveler data, payment reports, and registration details as CSV files for your records or to share with suppliers.",
+    question: "Can I schedule a demo?",
+    answer:
+      "Of course! Visit our website and click the chat icon to schedule a demo with our team.",
+  },
+];
+
+const comparisonRows = [
+  {
+    task: "Collect client payments",
+    diy: "Manual invoices, Zelle, checks",
+    squadtrip: "Automated payment plans",
+  },
+  {
+    task: "Send payment reminders",
+    diy: "Manual emails and phone calls",
+    squadtrip: "Auto email + SMS reminders",
+  },
+  {
+    task: "Track who has paid",
+    diy: "Spreadsheets and paper ledgers",
+    squadtrip: "Real-time dashboard",
+  },
+  {
+    task: "Trip booking page",
+    diy: "PDF flyers and email threads",
+    squadtrip: "Professional booking page",
+  },
+  {
+    task: "Handle refunds",
+    diy: "Manual bank transfers",
+    squadtrip: "One-click refunds",
+  },
+  {
+    task: "Receive payouts",
+    diy: "Wait for all payments to clear",
+    squadtrip: "Daily Stripe payouts",
   },
 ];
 
@@ -52,66 +95,189 @@ export default function TravelAgentsPage() {
           { name: "Travel Agents", href: "/travel-agents" },
         ]}
       />
+      <FAQSchema items={agencyFAQ} />
 
-      {/* Hero */}
-      <section className="bg-gradient-to-b from-purple-50 to-white py-16 sm:py-24">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Collect Payments for your Travel Agency Group Trips
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Everything you need to plan a group trip stress free
-          </p>
-          <a
-            href={SIGNUP_URL}
-            className="inline-block rounded-lg bg-purple px-8 py-4 text-lg font-semibold text-white hover:bg-purple-dark transition-colors"
-          >
-            Start planning today!
-          </a>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">
-            Built for Travel Agencies
-          </h2>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature) => (
-              <div
-                key={feature.title}
-                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
-              >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonial */}
-      <section className="py-16 sm:py-20 bg-gray-50">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <blockquote className="text-xl sm:text-2xl font-medium text-gray-900 italic mb-6">
-            &ldquo;Switching to SquadTrip was one of the best decisions
-            I&apos;ve made for my business. The platform&apos;s ability to track
-            trip package inventory and offer payment plans has made it easier for
-            me to manage my bookings.&rdquo;
-          </blockquote>
-          <p className="text-lg font-semibold text-gray-900">Andrew Bennett</p>
-          <p className="text-gray-600">Passport Society</p>
-        </div>
-      </section>
-
-      <CTASection
-        headline="Start planning today!"
-        subheadline="Create your first trip in 10 minutes. Free to start, no credit card required."
-        ctaText="Create your trip for free"
+      {/* Hero (split) */}
+      <Hero
+        layout="split"
+        headline="Collect Payments for Your Travel Agency Group Trips"
+        subheadline="Create booking pages, set up flexible payment plans, and manage all your agency trips from one dashboard. Stop chasing invoices and start scaling."
+        ctaText="Start planning today"
         ctaHref={SIGNUP_URL}
+        secondaryCta={{ text: "See how it works", href: "/features" }}
+        eyebrow="Built for travel agencies"
+        mockup={
+          <DashboardMockup
+            tripName="Bali Retreat 2026"
+            collected="$42,600"
+            total="$54,000"
+            percent={79}
+            travelers={[
+              { initials: "LR", name: "Lisa R.", amount: "$2,400", status: "paid" },
+              { initials: "DP", name: "David P.", amount: "$1,600", status: "partial" },
+              { initials: "KW", name: "Karen W.", amount: "$2,400", status: "paid" },
+              { initials: "TJ", name: "Tanya J.", amount: "$0", status: "pending" },
+            ]}
+          />
+        }
+      />
+
+      {/* ProblemValidation */}
+      <ProblemValidation
+        headline="Running a Travel Agency Shouldn't Feel Like This"
+        subtitle="You started an agency to create amazing experiences, not to chase payments."
+        stats={[
+          { icon: "\u23F1\uFE0F", value: 12, suffix: " hrs/wk", label: "Spent billing and invoicing clients" },
+          { icon: "\uD83D\uDCE8", value: 40, suffix: "+", label: "Payment reminder emails sent monthly" },
+          { icon: "\uD83D\uDCC9", value: 30, suffix: "%", label: "Of travelers miss a payment deadline" },
+          { icon: "\uD83D\uDCCB", value: 8, suffix: " trips", label: "Managed in spreadsheets at once" },
+        ]}
+        caption="Based on surveys of travel agency owners using manual billing"
+        ctaText="There's a better way"
+        ctaHref="#features"
+      />
+
+      {/* Feature Blocks */}
+      <div id="features" className="feature-blocks">
+        <FeatureBlock
+          title="Automatic Payment Plans That Collect Themselves"
+          description="Set up monthly auto-billing for every trip and let SquadTrip handle collections. Failed payments are retried automatically, and your travelers get reminders without you making a single phone call."
+          mockup={<PaymentPlanMockup />}
+          highlights={[
+            { icon: "\uD83D\uDD04", text: "Auto-retry failed payments" },
+            { icon: "\u23F0", text: "Scheduled email reminders" },
+            { icon: "\uD83D\uDCB3", text: "Apple Pay & cards accepted" },
+            { icon: "\uD83D\uDED2", text: "Klarna & Afterpay available" },
+          ]}
+          bonus="Travelers can also pay in full upfront or use buy-now-pay-later options."
+          testimonial={{
+            quote: "The payment plans have made it so much easier for me to manage my bookings.",
+            attribution: "Andrew Bennett, Passport Society",
+          }}
+          linkText="Set up payment plans"
+          linkHref={SIGNUP_URL}
+        />
+
+        <FeatureBlock
+          title="Build Professional Booking Pages for Every Trip"
+          description="Create polished trip pages with itineraries, packages, room types, and add-ons. Your travelers see a branded checkout experience that builds trust and converts."
+          mockup={
+            <BookingPageMockup
+              tripTitle="Greek Islands Cruise"
+              tripMeta="Sep 8-15 \u2022 7 nights \u2022 All-inclusive"
+              packages={[
+                {
+                  name: "Interior Cabin",
+                  price: "$1,800",
+                  features: ["Cabin", "Meals", "Entertainment", "Port Excursions"],
+                },
+              ]}
+              itinerary={[
+                { day: "Day 1", title: "Embark from Athens" },
+                { day: "Day 2", title: "Mykonos Beach Day" },
+                { day: "Day 3", title: "Santorini Sunset Tour" },
+              ]}
+              orderSummary={[
+                { label: "Interior Cabin", value: "$1,800" },
+                { label: "Processing fee", value: "$108" },
+              ]}
+              total="$1,908"
+            />
+          }
+          reverse
+          highlights={[
+            { icon: "\uD83C\uDFA8", text: "Custom agency branding" },
+            { icon: "\uD83D\uDCCB", text: "Detailed itineraries" },
+            { icon: "\uD83C\uDF81", text: "Packages & add-ons" },
+            { icon: "\uD83D\uDCF1", text: "Mobile-friendly checkout" },
+          ]}
+          linkText="Create your first trip"
+          linkHref={SIGNUP_URL}
+        />
+
+        <FeatureBlock
+          title="Manage All Your Trips From One Dashboard"
+          description="See every trip your agency is running, who has paid, who owes, and how much you've collected across all trips in real time. Export data for your records or share with suppliers."
+          mockup={
+            <DashboardMockup
+              tripName="Agency Overview"
+              collected="$127,400"
+              total="$162,000"
+              percent={79}
+              travelers={[
+                { initials: "BR", name: "Bali Retreat", amount: "$42,600", status: "paid" },
+                { initials: "GC", name: "Greek Cruise", amount: "$38,200", status: "partial" },
+                { initials: "CR", name: "Costa Rica", amount: "$28,800", status: "partial" },
+                { initials: "SK", name: "Ski Whistler", amount: "$17,800", status: "pending" },
+              ]}
+            />
+          }
+          highlights={[
+            { icon: "\uD83D\uDCCA", text: "Real-time payment tracking" },
+            { icon: "\uD83D\uDCE4", text: "Export to CSV" },
+            { icon: "\uD83D\uDD14", text: "Payment alerts" },
+            { icon: "\uD83D\uDCB0", text: "Revenue reports" },
+          ]}
+          linkText="See the dashboard"
+          linkHref={SIGNUP_URL}
+        />
+      </div>
+
+      {/* Testimonials */}
+      <TestimonialsSection
+        headline="Trusted by Travel Agencies Nationwide"
+        subtitle="Here's what agency owners say about running trips with SquadTrip."
+        featured={{
+          quote:
+            "Switching to SquadTrip was one of the best decisions I've made for my business. The platform's ability to track trip package inventory and offer payment plans has made it easier for me to manage my bookings.",
+          author: "Andrew Bennett",
+          company: "Passport Society",
+          initials: "AB",
+          badge: "Featured Agency",
+          metrics: [
+            { value: "3x", label: "Booking efficiency" },
+            { value: "90%", label: "Collection rate" },
+          ],
+        }}
+        side={[
+          {
+            quote:
+              "SquadTrip streamlines the process of tracking payment plans, promoting the itinerary, and selling extra add-ons.",
+            author: "Chef Ahki Taylor",
+            company: "The Supernatural Woman Retreats",
+            initials: "CA",
+          },
+          {
+            quote:
+              "If it wasn't for SquadTrip, I wouldn't have been able to grow my group trips from 50 guests to 500.",
+            author: "Collin D. Williams, Jr.",
+            company: "CDE Antigua",
+            initials: "CW",
+          },
+        ]}
+      />
+
+      {/* Comparison Table */}
+      <ComparisonTable
+        headline="Manual Agency Billing vs. SquadTrip"
+        intro="You could keep managing payments yourself. Here's what that looks like compared to SquadTrip."
+        columnHeaders={["Task", "Manual Billing", "SquadTrip"]}
+        rows={comparisonRows}
+        ctaText="Try SquadTrip free"
+        ctaHref={SIGNUP_URL}
+      />
+
+      {/* FAQ */}
+      <FAQ items={agencyFAQ} title="Frequently Asked Questions" />
+
+      {/* Final CTA */}
+      <FinalCTA
+        headline="Ready to Streamline Your Agency?"
+        subheadline="Create your first trip in 10 minutes. Free to start, no credit card required."
+        primaryText="Create your trip for free"
+        primaryHref={SIGNUP_URL}
+        secondaryText="See how it works"
+        secondaryHref="/features"
       />
     </>
   );

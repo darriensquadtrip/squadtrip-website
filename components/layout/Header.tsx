@@ -1,85 +1,126 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { NAV_ITEMS, SIGNUP_URL, LOGIN_URL } from "@/lib/constants";
-import { MobileMenu } from "./MobileMenu";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  const closeMobile = useCallback(() => {
+    setMobileOpen(false);
+    document.body.style.overflow = "";
+  }, []);
+
+  const toggleMobile = useCallback(() => {
+    setMobileOpen((prev) => {
+      const next = !prev;
+      document.body.style.overflow = next ? "hidden" : "";
+      return next;
+    });
+  }, []);
+
+  // Close on Escape
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && mobileOpen) closeMobile();
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [mobileOpen, closeMobile]);
+
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-purple">SquadTrip</span>
+    <>
+      <header className="header" role="banner">
+        <div className="header-container">
+          <Link href="/" className="logo">
+            <img
+              src="https://squadtrip.com/wp-content/uploads/2022/09/squad-trip-Blog-Logo-300x73.png"
+              alt="SquadTrip"
+              width={150}
+              height={37}
+            />
           </Link>
 
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <nav className="nav" role="navigation" aria-label="Main navigation">
             {NAV_ITEMS.map((item) =>
               "external" in item && item.external ? (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-medium text-gray-600 hover:text-purple transition-colors"
-                >
-                  {item.label}
-                </a>
+                <div key={item.label} className="nav-item">
+                  <a
+                    href={item.href}
+                    className="nav-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {item.label}
+                  </a>
+                </div>
               ) : (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="text-sm font-medium text-gray-600 hover:text-purple transition-colors"
-                >
-                  {item.label}
-                </Link>
+                <div key={item.label} className="nav-item">
+                  <Link href={item.href} className="nav-link">
+                    {item.label}
+                  </Link>
+                </div>
               )
             )}
-          </div>
+          </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-4">
-            <a
-              href={LOGIN_URL}
-              className="text-sm font-medium text-gray-600 hover:text-purple transition-colors"
-            >
+          <div className="header-cta">
+            <a href={LOGIN_URL} className="btn-login">
               Log in
             </a>
-            <a
-              href={SIGNUP_URL}
-              className="rounded-lg bg-purple px-5 py-2.5 text-sm font-semibold text-white hover:bg-purple-dark transition-colors"
-            >
+            <a href={SIGNUP_URL} className="btn-signup">
               Sign up for free
             </a>
           </div>
 
-          {/* Mobile menu button */}
           <button
-            type="button"
-            className="md:hidden p-2 text-gray-600"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
+            className={`mobile-menu-toggle${mobileOpen ? " active" : ""}`}
+            onClick={toggleMobile}
+            aria-label="Toggle mobile menu"
+            aria-expanded={mobileOpen}
+            aria-controls="mobileNav"
           >
-            {mobileOpen ? (
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-            )}
+            <span></span>
+            <span></span>
+            <span></span>
           </button>
         </div>
-      </nav>
+      </header>
 
-      {/* Mobile menu */}
-      <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />
-    </header>
+      {/* Mobile Nav Overlay */}
+      <div
+        className={`mobile-nav-overlay${mobileOpen ? " active" : ""}`}
+        id="mobileNav"
+      >
+        <div className="mobile-nav-section">
+          {NAV_ITEMS.map((item) =>
+            "external" in item && item.external ? (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={closeMobile}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {item.label}
+              </a>
+            ) : (
+              <Link key={item.label} href={item.href} onClick={closeMobile}>
+                {item.label}
+              </Link>
+            )
+          )}
+        </div>
+        <div className="mobile-cta">
+          <a href={LOGIN_URL} className="btn-login">
+            Log in
+          </a>
+          <a href={SIGNUP_URL} className="btn-signup-mobile">
+            Sign up for free
+          </a>
+        </div>
+      </div>
+    </>
   );
 }

@@ -1,5 +1,10 @@
 import { generatePageMetadata } from "@/lib/metadata";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import { Hero } from "@/components/sections/Hero";
+import { ProblemValidation } from "@/components/sections/ProblemValidation";
+import { FinalCTA } from "@/components/sections/FinalCTA";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { SIGNUP_URL } from "@/lib/constants";
 
 export const metadata = generatePageMetadata({
   title: "Press & Media",
@@ -41,71 +46,66 @@ export default function PressPage() {
         ]}
       />
 
-      {/* Hero */}
-      <section className="bg-gradient-to-b from-purple-50 to-white py-16 sm:py-24">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Press &amp; Media
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-            SquadTrip is redefining how group trips are organized and paid for.
-            Here is what the press is saying.
-          </p>
-        </div>
-      </section>
+      <Hero
+        layout="centered"
+        headline="Press & Media"
+        subheadline="SquadTrip is redefining how group trips are organized and paid for. Here is what the press is saying."
+      />
 
-      {/* Funding Achievement */}
-      <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-5xl sm:text-6xl font-bold text-purple-700 mb-4">
-            $1.5M
-          </p>
-          <p className="text-xl text-gray-600">
-            raised in pre-seed funding to build the future of group travel
-          </p>
-        </div>
-      </section>
+      <ProblemValidation
+        headline="Funded & Growing"
+        stats={[
+          { value: 1.5, suffix: "M", prefix: "$", label: "Pre-Seed Raised" },
+          { value: 4, label: "Press Features" },
+          { value: 2000, suffix: "+", label: "Organizers" },
+          { value: 50, suffix: "K+", label: "Trips Managed" },
+        ]}
+        caption="Building the future of group travel."
+      />
 
       {/* Press Mentions */}
-      <section className="py-16 sm:py-20 bg-gray-50">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">
-            In the News
-          </h2>
-          <div className="grid gap-6 sm:grid-cols-2">
-            {pressItems.map((item) => (
-              <div
-                key={item.publication}
-                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
-              >
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  {item.publication}
-                </h3>
-                <p className="text-gray-600">{item.description}</p>
-              </div>
-            ))}
-          </div>
+      <section className="feature-overview">
+        <div className="feature-overview-container">
+          <ScrollReveal>
+            <h2>In the News</h2>
+          </ScrollReveal>
+          <ScrollReveal stagger>
+            <div className="who-uses-grid">
+              {pressItems.map((item) => (
+                <div key={item.publication} className="who-uses-card hover-lift">
+                  <h3>{item.publication}</h3>
+                  <p>{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Contact CTA */}
-      <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Press Inquiries
-          </h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            For media inquiries, interview requests, or press kit access, please
-            reach out to our team.
-          </p>
-          <a
-            href="mailto:support@squadtrip.com"
-            className="inline-block rounded-lg bg-purple px-8 py-4 text-lg font-semibold text-white hover:bg-purple-dark transition-colors"
-          >
-            Contact us for press inquiries
-          </a>
+      <section className="feature-overview" style={{ background: "var(--bg-light)" }}>
+        <div className="feature-overview-container" style={{ textAlign: "center" }}>
+          <ScrollReveal>
+            <h2>Press Inquiries</h2>
+            <p className="feature-overview-subtitle">
+              For media inquiries, interview requests, or press kit access, please
+              reach out to our team.
+            </p>
+            <a href="mailto:support@squadtrip.com" className="btn-primary" style={{ marginTop: "1.5rem", display: "inline-block" }}>
+              Contact us for press inquiries
+            </a>
+          </ScrollReveal>
         </div>
       </section>
+
+      <FinalCTA
+        headline="Ready to see what the buzz is about?"
+        subheadline="Join 2,000+ organizers using SquadTrip to manage group travel."
+        primaryText="Get started for free"
+        primaryHref={SIGNUP_URL}
+        secondaryText="See features"
+        secondaryHref="/features"
+      />
     </>
   );
 }

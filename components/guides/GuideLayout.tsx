@@ -63,17 +63,22 @@ export function GuideLayout({
           </article>
 
           {/* CTA */}
-          <div className="mt-12 rounded-2xl bg-purple-50 p-8 text-center">
-            <h3 className="text-xl font-bold text-gray-900 mb-2">
+          <div
+            style={{
+              marginTop: "3rem",
+              borderRadius: "16px",
+              background: "var(--bg-light)",
+              padding: "2.5rem",
+              textAlign: "center",
+            }}
+          >
+            <h3 style={{ fontSize: "1.25rem", fontWeight: 700, color: "var(--text-dark)", marginBottom: "0.5rem" }}>
               Ready to plan your group trip?
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p style={{ color: "var(--text-muted)", marginBottom: "1.5rem" }}>
               Create a booking page, collect payments, and manage travelers — all in one place.
             </p>
-            <a
-              href={SIGNUP_URL}
-              className="inline-block rounded-lg bg-purple px-6 py-3 font-semibold text-white hover:bg-purple-dark transition-colors"
-            >
+            <a href={SIGNUP_URL} className="btn-primary">
               Create your trip for free
             </a>
           </div>

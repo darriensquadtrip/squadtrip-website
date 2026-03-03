@@ -2,7 +2,7 @@ import Script from "next/script";
 import { INTERCOM_APP_ID } from "@/lib/constants";
 
 export function IntercomWidget() {
-  if (!INTERCOM_APP_ID || INTERCOM_APP_ID === "XXXXXXXXXX") return null;
+  if (!INTERCOM_APP_ID) return null;
 
   return (
     <Script id="intercom-widget" strategy="lazyOnload">

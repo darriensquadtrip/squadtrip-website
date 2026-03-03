@@ -1,9 +1,18 @@
 import type { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/metadata";
+import { Hero } from "@/components/sections/Hero";
+import { FeatureBentoGrid } from "@/components/sections/FeatureBentoGrid";
+import { FeatureBlock } from "@/components/sections/FeatureBlock";
+import { ComparisonTable } from "@/components/sections/ComparisonTable";
+import { TrustSignals } from "@/components/sections/TrustSignals";
 import { FAQ } from "@/components/ui/FAQ";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
-import { CTASection } from "@/components/sections/CTASection";
+import { FinalCTA } from "@/components/sections/FinalCTA";
+import { BookingPageMockup } from "@/components/mockups/BookingPageMockup";
+import { ShareLinkMockup } from "@/components/mockups/ShareLinkMockup";
+import { PaymentPlanMockup } from "@/components/mockups/PaymentPlanMockup";
+import { DashboardMockup } from "@/components/mockups/DashboardMockup";
 import { SIGNUP_URL } from "@/lib/constants";
 
 export const metadata: Metadata = generatePageMetadata({
@@ -12,66 +21,6 @@ export const metadata: Metadata = generatePageMetadata({
     "Collect group travel payments online — fast, secure, and stress-free. Accept cards, offer Buy Now Pay Later, and set flexible payment plans.",
   path: "/features",
 });
-
-const tabs = [
-  {
-    id: "build",
-    label: "Build",
-    headline:
-      "Create a sell-out trip page with stunning photos, detailed itineraries, add-ons, and packages.",
-    features: [
-      { title: "Trip Pages", description: "Design beautiful and user-friendly trip pages with eye-catching images and icons." },
-      { title: "Itineraries", description: "Showcase the activity schedule for each day of the trip." },
-      { title: "Add-ons", description: "Offer a la carte trip add-ons for your travelers to purchase at checkout." },
-      { title: "Packages", description: "Build the right packages for your trips, from Double vs Single to Basic vs Premium." },
-      { title: "Custom Branding", description: "Let your brand stand out with custom colors on trip pages." },
-    ],
-  },
-  {
-    id: "promote",
-    label: "Promote",
-    headline: "Use our built-in marketing tools to share and promote your trip with ease.",
-    features: [
-      { title: "Embeddable Booking Pages", description: "Use your own website and embed our checkout options directly." },
-      { title: "Traveler Referrals & Tracking", description: "Pay travelers to share your trip with unique links to track referrals." },
-      { title: "Affiliate Program", description: "Invite affiliates to promote your trip and track their sales from your dashboard." },
-    ],
-  },
-  {
-    id: "sell",
-    label: "Sell",
-    headline:
-      "Get more bookings with less effort using our flexible auto-billing payment plans and automatic inventory management.",
-    features: [
-      { title: "Flexible Fee Handling", description: "Pass processing fees to customer or hide fees and show an all-in rate." },
-      { title: "Monthly Auto-Billing", description: "Save time and make trips more affordable with auto-billing on monthly plans." },
-      { title: "Flexible Deposit Amounts", description: "Set a minimum and allow travelers to deposit as much as they want." },
-      { title: "Traveler Portal", description: "Allow guests to purchase add-ons, manage payments, and review the itinerary." },
-      { title: "Inventory Management", description: "Set quantity limits for bookings, packages, and add-ons." },
-    ],
-  },
-  {
-    id: "manage",
-    label: "Manage",
-    headline: "Streamline your traveler experience with simplified data and communication management tools.",
-    features: [
-      { title: "Custom Scheduled Emails", description: "Set up automated email workflows for hands-off communication management." },
-      { title: "Registration Questions", description: "Collect valuable data from travelers, like flight info or passport uploads." },
-      { title: "Data Reports & Exports", description: "Track who's paid and what they booked, then export data to suppliers." },
-      { title: "Dispute Management", description: "Monitor disputes from your dashboard." },
-    ],
-  },
-  {
-    id: "get-paid",
-    label: "Get Paid",
-    headline:
-      "Quickly and securely process payments through Stripe and receive daily payouts sent to your bank account.",
-    features: [
-      { title: "Secure Payment Processing", description: "Process payments quickly and securely with Apple Pay, Credit/Debit cards through Stripe." },
-      { title: "Daily Payouts via Stripe", description: "Set up payouts through Stripe and get funds sent straight to your bank account daily." },
-    ],
-  },
-];
 
 const featuresFAQ = [
   {
@@ -101,6 +50,15 @@ const featuresFAQ = [
   },
 ];
 
+const comparisonRows = [
+  { task: "Collect payments", diy: "Venmo, Zelle, spreadsheets", squadtrip: "Automated payment plans" },
+  { task: "Send reminders", diy: "Manual texts & emails", squadtrip: "Auto email + SMS reminders" },
+  { task: "Track who paid", diy: "Spreadsheet updates", squadtrip: "Real-time dashboard" },
+  { task: "Booking page", diy: "Google Forms or DMs", squadtrip: "Professional booking page" },
+  { task: "Refunds", diy: "Manual bank transfers", squadtrip: "One-click refunds" },
+  { task: "Get paid", diy: "Wait for everyone", squadtrip: "Daily Stripe payouts" },
+];
+
 export default function FeaturesPage() {
   return (
     <>
@@ -112,68 +70,125 @@ export default function FeaturesPage() {
       />
       <FAQSchema items={featuresFAQ} />
 
-      {/* Hero */}
-      <section className="bg-gradient-to-b from-purple-50 to-white py-20 sm:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900">
-            How It Works
-          </h1>
-          <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-            Collect group travel payments online — fast, secure, and stress-free.
-            Accept cards, offer Buy Now Pay Later, and set flexible payment plans
-            — so travelers pay their way and you get paid on time, automatically.
-          </p>
-          <div className="mt-8">
-            <a
-              href={SIGNUP_URL}
-              className="inline-block rounded-lg bg-purple px-8 py-4 text-lg font-semibold text-white hover:bg-purple-dark transition-colors"
-            >
-              Create your trip for free
-            </a>
-          </div>
-        </div>
-      </section>
+      <Hero
+        layout="split"
+        headline="Everything You Need to Run Group Trips"
+        subheadline="Collect group travel payments online — fast, secure, and stress-free. Accept cards, offer Buy Now Pay Later, and set flexible payment plans."
+        ctaText="Create your trip for free"
+        ctaHref={SIGNUP_URL}
+        secondaryCta={{ text: "See pricing", href: "/pricing" }}
+        eyebrow="Trusted by 2,000+ organizers"
+        mockup={<DashboardMockup />}
+      />
 
-      {/* Feature Tabs */}
-      {tabs.map((tab) => (
-        <section
-          key={tab.id}
-          id={tab.id}
-          className={`py-16 sm:py-20 ${
-            tabs.indexOf(tab) % 2 === 0 ? "bg-white" : "bg-bg-light"
-          }`}
-        >
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-12">
-              <span className="inline-block bg-purple-100 text-purple text-sm font-semibold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wide">
-                {tab.label}
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 max-w-3xl">
-                {tab.headline}
-              </h2>
-            </div>
+      <FeatureBentoGrid />
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {tab.features.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="rounded-xl border border-gray-200 bg-white p-6"
-                >
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      ))}
+      <div className="feature-blocks">
+        <FeatureBlock
+          title="Build a Professional Booking Page"
+          description="Create stunning trip pages with itineraries, packages, add-ons, and custom branding. Your travelers see a polished checkout — not a Google Form."
+          mockup={<BookingPageMockup />}
+          highlights={[
+            { icon: "\uD83C\uDFA8", text: "Custom branding" },
+            { icon: "\uD83D\uDCCB", text: "Itineraries" },
+            { icon: "\uD83C\uDF81", text: "Packages & add-ons" },
+            { icon: "\uD83D\uDCF1", text: "Mobile-friendly" },
+          ]}
+          testimonial={{
+            quote: "The booking pages look so professional. My travelers trust it immediately.",
+            attribution: "Chef Ahki Taylor, The Supernatural Woman Retreats",
+          }}
+          linkText="Create your first trip"
+          linkHref={SIGNUP_URL}
+        />
+
+        <FeatureBlock
+          title="Share One Link, Reach Everyone"
+          description="Get a short, shareable booking link for every trip. Embed it on your website, share on social media, or text it directly to travelers."
+          mockup={<ShareLinkMockup />}
+          reverse
+          highlights={[
+            { icon: "\uD83D\uDD17", text: "Short links" },
+            { icon: "\uD83C\uDF10", text: "Embed on website" },
+            { icon: "\uD83D\uDCE7", text: "Email campaigns" },
+            { icon: "\uD83D\uDCF2", text: "Text & social" },
+          ]}
+          linkText="See how promotion works"
+          linkHref={SIGNUP_URL}
+        />
+
+        <FeatureBlock
+          title="Automatic Payment Plans That Collect Themselves"
+          description="Set up monthly auto-billing and let SquadTrip handle the rest. Failed payments are retried automatically, and travelers get reminders without you lifting a finger."
+          mockup={<PaymentPlanMockup />}
+          highlights={[
+            { icon: "\uD83D\uDD04", text: "Auto-retry failed payments" },
+            { icon: "\u23F0", text: "Scheduled reminders" },
+            { icon: "\uD83D\uDCB3", text: "Apple Pay & cards" },
+            { icon: "\uD83D\uDED2", text: "Klarna & Afterpay" },
+          ]}
+          bonus="Travelers can also pay in full upfront or use buy-now-pay-later options."
+          testimonial={{
+            quote: "Switching to SquadTrip was one of the best decisions I've made for my business.",
+            attribution: "Andrew Bennett, Passport Society",
+          }}
+          linkText="Set up payment plans"
+          linkHref={SIGNUP_URL}
+        />
+
+        <FeatureBlock
+          title="Manage Everything From One Dashboard"
+          description="See who's paid, who hasn't, and how much you've collected — all in real time. Export data anytime for your records or suppliers."
+          mockup={<DashboardMockup />}
+          reverse
+          highlights={[
+            { icon: "\uD83D\uDCCA", text: "Real-time tracking" },
+            { icon: "\uD83D\uDCE4", text: "Export to CSV" },
+            { icon: "\uD83D\uDD14", text: "Payment alerts" },
+            { icon: "\uD83D\uDCB0", text: "Revenue reports" },
+          ]}
+          linkText="See the dashboard"
+          linkHref={SIGNUP_URL}
+        />
+
+        <FeatureBlock
+          title="Get Paid Fast With Stripe"
+          description="Payments are processed securely through Stripe and deposited directly to your bank account. Set up daily or weekly payouts."
+          mockup={
+            <DashboardMockup
+              tripName="Payout Summary"
+              collected="$24,800"
+              total="$28,000"
+              percent={89}
+              travelers={[
+                { initials: "ST", name: "Stripe Payout", amount: "$4,200", status: "paid" },
+                { initials: "ST", name: "Stripe Payout", amount: "$3,800", status: "paid" },
+                { initials: "ST", name: "Pending", amount: "$2,400", status: "partial" },
+              ]}
+            />
+          }
+          highlights={[
+            { icon: "\u26A1", text: "Daily payouts" },
+            { icon: "\uD83D\uDD12", text: "Bank-level security" },
+            { icon: "\uD83C\uDF0D", text: "International cards" },
+            { icon: "\uD83E\uDDFE", text: "Automatic receipts" },
+          ]}
+          linkText="Start getting paid"
+          linkHref={SIGNUP_URL}
+        />
+      </div>
+
+      <ComparisonTable
+        headline="Why Not Just DIY?"
+        intro="You could manage everything yourself. Here's what that looks like."
+        rows={comparisonRows}
+      />
+
+      <TrustSignals />
 
       <FAQ items={featuresFAQ} />
-      <CTASection />
+
+      <FinalCTA />
     </>
   );
 }

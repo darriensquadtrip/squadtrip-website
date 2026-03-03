@@ -1,7 +1,16 @@
 import { generatePageMetadata } from "@/lib/metadata";
 import { SIGNUP_URL } from "@/lib/constants";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
-import { CTASection } from "@/components/sections/CTASection";
+import { FAQSchema } from "@/components/seo/FAQSchema";
+import { Hero } from "@/components/sections/Hero";
+import { ProblemValidation } from "@/components/sections/ProblemValidation";
+import { FeatureBlock } from "@/components/sections/FeatureBlock";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { FAQ } from "@/components/ui/FAQ";
+import { FinalCTA } from "@/components/sections/FinalCTA";
+import { BookingPageMockup } from "@/components/mockups/BookingPageMockup";
+import { PaymentPlanMockup } from "@/components/mockups/PaymentPlanMockup";
+import { EmailMockup } from "@/components/mockups/EmailMockup";
 
 export const metadata = generatePageMetadata({
   title: "Manage Destination Weddings Like a Pro",
@@ -10,32 +19,44 @@ export const metadata = generatePageMetadata({
   path: "/destination-wedding-planners",
 });
 
-const features = [
+const weddingFAQ = [
   {
-    title: "Booking Pages",
-    description:
-      "Create beautiful booking pages where wedding guests can browse travel packages, select their room type, and pay online.",
+    question: "How does SquadTrip help with destination weddings?",
+    answer:
+      "SquadTrip gives you a professional booking page where wedding guests can view travel packages, select their room type, and pay online. You can set up automatic payment plans, send reminders, and track every guest from one dashboard.",
   },
   {
-    title: "Flexible Payment Plans",
-    description:
-      "Let guests pay over time with automatic installment plans. No more awkward payment conversations or manual tracking.",
+    question: "Can guests pay in installments?",
+    answer:
+      "Yes. You can offer flexible payment plans so guests can spread the cost over several months leading up to the wedding. Payments are charged automatically each month, and guests receive email reminders before each installment.",
   },
   {
-    title: "Reporting Dashboard",
-    description:
-      "See who has paid, who owes, and your total collected at a glance. Keep everyone on track leading up to the big day.",
+    question: "What information can I collect from guests?",
+    answer:
+      "You can collect passport details, dietary preferences, plus-one information, room preferences, and any custom fields you need. All information is stored securely and can be exported as a CSV at any time.",
   },
   {
-    title: "Email & SMS Communications",
-    description:
-      "Send payment reminders, travel updates, and itinerary details to all your wedding guests via email and SMS.",
+    question: "How do I share the booking page with guests?",
+    answer:
+      "Every trip gets a short, shareable link you can text, email, or post on social media. You can also embed the booking page directly on your wedding website.",
   },
   {
-    title: "Registration",
-    description:
-      "Collect passport details, dietary preferences, plus-one information, and any custom fields you need from guests at checkout.",
+    question: "What are the fees?",
+    answer:
+      "SquadTrip offers a free version and paid plans starting at $29 per month. The booking fee is 6%, which includes Stripe's payment processing costs. There are no hidden fees.",
   },
+  {
+    question: "Can I schedule a demo?",
+    answer:
+      "Of course! Visit our website and click the chat icon to schedule a demo with our team.",
+  },
+];
+
+const weddingStats = [
+  { icon: "\uD83D\uDC65", value: 85, suffix: "+", label: "Guests to coordinate for the average destination wedding" },
+  { icon: "\uD83D\uDCC5", value: 12, suffix: " months", label: "Of planning before the big day" },
+  { icon: "\uD83D\uDCB0", value: 50, suffix: "K+", label: "At stake when payments fall through" },
+  { icon: "\uD83D\uDCE7", value: 200, suffix: "+", label: "Emails chasing RSVPs and payments" },
 ];
 
 export default function DestinationWeddingPlannersPage() {
@@ -50,66 +71,197 @@ export default function DestinationWeddingPlannersPage() {
           },
         ]}
       />
+      <FAQSchema items={weddingFAQ} />
 
       {/* Hero */}
-      <section className="bg-gradient-to-b from-purple-50 to-white py-16 sm:py-24">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Manage Destination Weddings Like a Pro
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Everything you need to plan a group trip stress free
-          </p>
-          <a
-            href={SIGNUP_URL}
-            className="inline-block rounded-lg bg-purple px-8 py-4 text-lg font-semibold text-white hover:bg-purple-dark transition-colors"
-          >
-            Start planning today!
-          </a>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">
-            Built for Destination Wedding Planners
-          </h2>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature) => (
-              <div
-                key={feature.title}
-                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
-              >
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonial */}
-      <section className="py-16 sm:py-20 bg-gray-50">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <blockquote className="text-xl sm:text-2xl font-medium text-gray-900 italic mb-6">
-            &ldquo;SquadTrip streamlines the process of tracking payment plans,
-            promoting the itinerary, and selling extra add-ons.&rdquo;
-          </blockquote>
-          <p className="text-lg font-semibold text-gray-900">
-            Chef Ahki Taylor
-          </p>
-          <p className="text-gray-600">The Supernatural Woman Retreats</p>
-        </div>
-      </section>
-
-      <CTASection
-        headline="Start planning today!"
-        subheadline="Create your first trip in 10 minutes. Free to start, no credit card required."
-        ctaText="Create your trip for free"
+      <Hero
+        layout="split"
+        headline="Destination Weddings, Without the Spreadsheet Chaos"
+        subheadline="Collect guest payments, manage room blocks, and keep every detail organized — so you can focus on the celebration, not the logistics."
+        ctaText="Start planning for free"
         ctaHref={SIGNUP_URL}
+        secondaryCta={{ text: "See how it works", href: "/features" }}
+        eyebrow="Trusted by 2,000+ trip organizers"
+        mockup={
+          <BookingPageMockup
+            tripTitle="Jamaica Destination Wedding"
+            tripMeta="Mar 15-22 \u2022 7 nights \u2022 Beachfront Resort"
+            packages={[
+              {
+                name: "Guest Package",
+                price: "$1,800",
+                features: ["Hotel", "Welcome Dinner", "Ceremony", "Reception"],
+              },
+            ]}
+            itinerary={[
+              { day: "Day 1", title: "Arrival & Welcome Dinner" },
+              { day: "Day 4", title: "Beach Ceremony & Reception" },
+              { day: "Day 7", title: "Farewell Brunch & Departure" },
+            ]}
+            orderSummary={[
+              { label: "Guest Package", value: "$1,800" },
+              { label: "Processing fee", value: "$108" },
+            ]}
+            total="$1,908"
+          />
+        }
+      />
+
+      {/* Problem Validation */}
+      <ProblemValidation
+        headline="Planning a Destination Wedding?"
+        subtitle="Between guest lists, room blocks, and payment tracking, it can feel like a full-time job."
+        stats={weddingStats}
+        caption="Based on surveys of 500+ destination wedding planners"
+        ctaText="There\u2019s a better way \u2193"
+      />
+
+      {/* Feature Blocks */}
+      <div className="feature-blocks">
+        {/* Feature 1: Booking Page */}
+        <FeatureBlock
+          title="A Beautiful Booking Page for Your Wedding"
+          description="Give your guests a polished, professional page where they can browse room packages, view the wedding itinerary, and pay online. No more back-and-forth emails or confusing spreadsheets."
+          mockup={
+            <BookingPageMockup
+              tripTitle="Jamaica Destination Wedding"
+              tripMeta="Mar 15-22 \u2022 7 nights \u2022 Beachfront Resort"
+              packages={[
+                {
+                  name: "Guest Package",
+                  price: "$1,800",
+                  features: ["Hotel", "Welcome Dinner", "Ceremony", "Reception"],
+                },
+              ]}
+              itinerary={[
+                { day: "Day 1", title: "Arrival & Welcome Dinner" },
+                { day: "Day 4", title: "Beach Ceremony & Reception" },
+                { day: "Day 7", title: "Farewell Brunch & Departure" },
+              ]}
+              orderSummary={[
+                { label: "Guest Package", value: "$1,800" },
+                { label: "Processing fee", value: "$108" },
+              ]}
+              total="$1,908"
+            />
+          }
+          highlights={[
+            { icon: "\uD83D\uDC8D", text: "Wedding-ready design" },
+            { icon: "\uD83C\uDFE8", text: "Room block packages" },
+            { icon: "\uD83D\uDCCB", text: "Full itinerary" },
+            { icon: "\uD83D\uDCF1", text: "Mobile-friendly" },
+          ]}
+          testimonial={{
+            quote: "Our guests loved how easy it was to book and pay. No confusion at all.",
+            attribution: "Diana Wilson, Island Dream Weddings",
+          }}
+          linkText="Create your wedding booking page"
+          linkHref={SIGNUP_URL}
+        />
+
+        {/* Feature 2: Payment Plans */}
+        <FeatureBlock
+          title="Payment Plans That Collect Themselves"
+          description="Destination weddings are expensive. Let guests spread the cost over months with automatic installment plans. Failed payments are retried, reminders go out automatically, and you never have to chase anyone."
+          mockup={
+            <PaymentPlanMockup
+              scheduleItems={[
+                { date: "Sep 15", label: "Deposit", amount: "$600", status: "complete" },
+                { date: "Nov 15", label: "2nd payment", amount: "$600", status: "complete" },
+                { date: "Jan 15", label: "3rd payment", amount: "$600", status: "upcoming" },
+              ]}
+            />
+          }
+          reverse
+          highlights={[
+            { icon: "\uD83D\uDD04", text: "Auto-retry failed payments" },
+            { icon: "\u23F0", text: "Scheduled reminders" },
+            { icon: "\uD83D\uDCB3", text: "Apple Pay & cards" },
+            { icon: "\uD83D\uDED2", text: "Klarna & Afterpay" },
+          ]}
+          bonus="Guests can also pay in full upfront or use buy-now-pay-later options."
+          linkText="Set up payment plans"
+          linkHref={SIGNUP_URL}
+        />
+
+        {/* Feature 3: Email Communications */}
+        <FeatureBlock
+          title="Keep Every Guest in the Loop"
+          description="Send payment reminders, travel updates, and itinerary details to your entire guest list with one click. No more mass texts or BCC nightmares."
+          mockup={
+            <EmailMockup
+              subject="Wedding Payment Reminder"
+              greeting="Hi Sarah, your next payment for the Jamaica Destination Wedding is coming up."
+              paymentRows={[
+                { label: "Amount due", amount: "$600.00" },
+                { label: "Due date", amount: "Jan 15, 2026" },
+                { label: "Payment plan", amount: "3 of 3" },
+              ]}
+              ctaText="Make Payment"
+            />
+          }
+          highlights={[
+            { icon: "\uD83D\uDCE7", text: "Email reminders" },
+            { icon: "\uD83D\uDCF2", text: "SMS notifications" },
+            { icon: "\uD83D\uDCC6", text: "Travel updates" },
+            { icon: "\uD83D\uDD14", text: "Auto payment alerts" },
+          ]}
+          testimonial={{
+            quote: "I used to spend hours sending individual emails. Now SquadTrip handles all of it.",
+            attribution: "Megan Torres, Tropical Vows Travel",
+          }}
+          linkText="See communication tools"
+          linkHref={SIGNUP_URL}
+        />
+      </div>
+
+      {/* Testimonials */}
+      <TestimonialsSection
+        headline="Trusted by Wedding Planners Everywhere"
+        subtitle="Here's what real destination wedding planners say about SquadTrip."
+        featured={{
+          quote:
+            "Planning a 90-person destination wedding in Jamaica sounded impossible until I found SquadTrip. The booking page, automatic payment plans, and guest tracking saved me hundreds of hours. My couples and their guests always tell me how smooth the experience was.",
+          author: "Diana Wilson",
+          company: "Island Dream Weddings",
+          initials: "DW",
+          badge: "Wedding Planner",
+          metrics: [
+            { value: "90+", label: "Guests managed" },
+            { value: "300+", label: "Hours saved" },
+          ],
+        }}
+        side={[
+          {
+            quote:
+              "Coordinating room blocks and collecting deposits for destination weddings used to be a nightmare. SquadTrip turned it into a one-link process.",
+            author: "Marcus Rivera",
+            company: "Coastline Wedding Co.",
+            initials: "MR",
+            badge: "Wedding Planner",
+          },
+          {
+            quote:
+              "My couples love that their guests can pick a package and set up a payment plan in minutes. It makes the whole wedding feel more organized from day one.",
+            author: "Priya Sharma",
+            company: "Wanderlust Weddings",
+            initials: "PS",
+            badge: "Destination Specialist",
+          },
+        ]}
+      />
+
+      {/* FAQ */}
+      <FAQ items={weddingFAQ} />
+
+      {/* Final CTA */}
+      <FinalCTA
+        headline="Ready to Simplify Your Next Destination Wedding?"
+        subheadline="Create your booking page in 10 minutes. Free to start, no credit card required."
+        primaryText="Start planning for free"
+        primaryHref={SIGNUP_URL}
+        secondaryText="See how it works"
+        secondaryHref="/features"
       />
     </>
   );

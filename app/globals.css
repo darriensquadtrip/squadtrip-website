@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import './design-system.css';
+@import './mockups.css';
 @plugin "@tailwindcss/typography";
 
 @theme inline {
@@ -29,17 +31,6 @@
   --color-gray-800: #1F2937;
   --color-gray-900: #111827;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-}
-
-body {
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
 }
 
 /* Focus styles */

@@ -8,12 +8,12 @@ export const HELP_URL = "https://help.squadtrip.com";
 export const SIGNUP_URL = `${APP_URL}/organizer-info/0`;
 export const LOGIN_URL = `${APP_URL}/organizer-login`;
 
-// Analytics IDs - replace with actual values
-export const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
-export const FB_PIXEL_ID = "XXXXXXXXXX";
-export const POSTHOG_KEY = ""; // Configure later
+// Analytics IDs
+export const GA_MEASUREMENT_ID = "G-3NZKWM9L6K";
+export const FB_PIXEL_ID = "1000431533341595";
+export const POSTHOG_KEY = "phc_dgJAmzgSLHv1G5fhmOSpQsAMQArJMi6YJcsSqmKwThb";
 export const POSTHOG_HOST = "https://us.i.posthog.com";
-export const INTERCOM_APP_ID = "XXXXXXXXXX";
+export const INTERCOM_APP_ID = "iq5gq02t";
 
 // Social links
 export const LINKEDIN_URL = "https://www.linkedin.com/company/squadtrip";

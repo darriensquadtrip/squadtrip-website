@@ -18,26 +18,36 @@ export default function PrivacyPage() {
         ]}
       />
 
-      <section className="py-16 sm:py-24">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-8">
+      <section className="feature-overview">
+        <div className="feature-overview-container" style={{ maxWidth: "800px" }}>
+          <h1 style={{ fontSize: "2.5rem", fontWeight: 800, color: "var(--text-dark)", marginBottom: "2rem" }}>
             Privacy Policy
           </h1>
 
-          <div className="prose prose-lg max-w-none text-gray-600">
+          <div style={{ color: "var(--text-muted)", fontSize: "1.125rem", lineHeight: 1.8 }}>
             <p>
               This Privacy Policy describes how SquadTrip collects, uses, and
               shares information. For questions, contact us at{" "}
               <a
                 href="mailto:support@squadtrip.com"
-                className="text-purple-700 hover:text-purple-900 underline"
+                style={{ color: "var(--purple-primary)", textDecoration: "underline" }}
               >
                 support@squadtrip.com
               </a>
               .
             </p>
 
-            <p className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200 text-gray-500 italic">
+            <p
+              style={{
+                marginTop: "1.5rem",
+                padding: "1.5rem",
+                background: "var(--bg-light)",
+                borderRadius: "12px",
+                border: "1px solid #e5e7eb",
+                fontStyle: "italic",
+                color: "var(--text-muted)",
+              }}
+            >
               The full privacy policy is currently being migrated. A
               comprehensive version will be published here shortly. In the
               meantime, if you have any questions about how we handle your data,
