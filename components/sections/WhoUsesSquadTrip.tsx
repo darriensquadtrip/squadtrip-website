@@ -3,25 +3,25 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const audiences = [
   {
-    icon: "\u2708\uFE0F",
+    icon: "✈️",
     title: "Tour Operators & Travel Agencies",
     quote: "Manage group bookings, automate payments, and track inventory across multiple trips.",
     href: "/travel-agents",
   },
   {
-    icon: "\uD83C\uDFD6\uFE0F",
+    icon: "🏖️",
     title: "Group Trip Organizers",
     quote: "Plan bachelor parties, family reunions, and friend trips without the spreadsheet headache.",
     href: "/travel-groups",
   },
   {
-    icon: "\uD83D\uDC8D",
+    icon: "💍",
     title: "Destination Weddings",
     quote: "Collect payments, gather RSVPs, and manage guest communications for your big day.",
     href: "/destination-wedding-planners",
   },
   {
-    icon: "\uD83E\uDDD8",
+    icon: "🧘",
     title: "Retreat Organizers",
     quote: "Sell wellness retreats, yoga trips, and group experiences with flexible payment plans.",
     href: "/travel-groups",

@@ -100,7 +100,7 @@ const featureSections: FeatureSection[] = [
       {
         title: "Add-ons",
         description:
-          "Offer \u00e0 la carte trip add-ons for your travelers to purchase at checkout.",
+          "Offer à la carte trip add-ons for your travelers to purchase at checkout.",
         mockup: <AddOnsMockup />,
       },
       {
@@ -202,7 +202,7 @@ const featureSections: FeatureSection[] = [
       {
         title: "Data reports & exports",
         description:
-          "Track who\u2019s paid and what they booked then export data to share with suppliers.",
+          "Track who’s paid and what they booked then export data to share with suppliers.",
         mockup: <DataExportsMockup />,
       },
       {

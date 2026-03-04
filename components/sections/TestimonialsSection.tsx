@@ -23,7 +23,7 @@ interface TestimonialsSectionProps {
 
 export function TestimonialsSection({
   headline = "Trusted by 2,000+ Trip Organizers",
-  subtitle = "Here\u2019s what real organizers say about SquadTrip.",
+  subtitle = "Here’s what real organizers say about SquadTrip.",
   featured,
   side,
   bottom,

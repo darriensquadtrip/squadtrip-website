@@ -74,7 +74,7 @@ export default function GroupTripPlanningPage() {
         mockup={
           <BookingPageMockup
             tripTitle="Costa Rica Adventure"
-            tripMeta="Mar 15-22 \u2022 7 nights \u2022 All-inclusive"
+            tripMeta="Mar 15-22 • 7 nights • All-inclusive"
             packages={[
               {
                 name: "Jungle Lodge",
@@ -101,10 +101,10 @@ export default function GroupTripPlanningPage() {
         headline="Planning a Group Trip Shouldn't Be This Stressful"
         subtitle="Coordinating schedules, collecting deposits, and answering the same questions over and over takes the fun out of planning."
         stats={[
-          { icon: "\u23F1\uFE0F", value: 20, suffix: " hrs", label: "Spent planning before the trip even starts" },
-          { icon: "\uD83D\uDCE8", value: 60, suffix: "+", label: "Messages answering 'how do I pay?'" },
-          { icon: "\uD83D\uDCC9", value: 25, suffix: "%", label: "Of interested people never actually book" },
-          { icon: "\uD83E\uDDE9", value: 4, suffix: " apps", label: "Used to coordinate one trip" },
+          { icon: "⏱️", value: 20, suffix: " hrs", label: "Spent planning before the trip even starts" },
+          { icon: "📨", value: 60, suffix: "+", label: "Messages answering 'how do I pay?'" },
+          { icon: "📉", value: 25, suffix: "%", label: "Of interested people never actually book" },
+          { icon: "🧩", value: 4, suffix: " apps", label: "Used to coordinate one trip" },
         ]}
         caption="Based on feedback from group trip organizers"
         ctaText="There's a better way"
@@ -119,7 +119,7 @@ export default function GroupTripPlanningPage() {
           mockup={
             <BookingPageMockup
               tripTitle="Tulum Wellness Retreat"
-              tripMeta="Apr 5-11 \u2022 6 nights \u2022 Boutique resort"
+              tripMeta="Apr 5-11 • 6 nights • Boutique resort"
               packages={[
                 {
                   name: "Shared Suite",
@@ -140,10 +140,10 @@ export default function GroupTripPlanningPage() {
             />
           }
           highlights={[
-            { icon: "\uD83C\uDF10", text: "Shareable link for easy distribution" },
-            { icon: "\uD83D\uDCCB", text: "Full itinerary display" },
-            { icon: "\uD83C\uDF81", text: "Multiple packages and add-ons" },
-            { icon: "\uD83D\uDCF1", text: "Mobile-optimized for all devices" },
+            { icon: "🌐", text: "Shareable link for easy distribution" },
+            { icon: "📋", text: "Full itinerary display" },
+            { icon: "🎁", text: "Multiple packages and add-ons" },
+            { icon: "📱", text: "Mobile-optimized for all devices" },
           ]}
           bonus="Travelers can browse packages, read the itinerary, and book in under five minutes."
           testimonial={{
@@ -160,10 +160,10 @@ export default function GroupTripPlanningPage() {
           mockup={<PaymentPlanMockup />}
           reverse
           highlights={[
-            { icon: "\uD83D\uDD04", text: "Automatic monthly billing" },
-            { icon: "\u23F0", text: "Payment reminders sent automatically" },
-            { icon: "\uD83D\uDCB3", text: "Cards, Apple Pay, Google Pay" },
-            { icon: "\uD83D\uDED2", text: "Klarna and Afterpay supported" },
+            { icon: "🔄", text: "Automatic monthly billing" },
+            { icon: "⏰", text: "Payment reminders sent automatically" },
+            { icon: "💳", text: "Cards, Apple Pay, Google Pay" },
+            { icon: "🛒", text: "Klarna and Afterpay supported" },
           ]}
           testimonial={{
             quote: "Switching to SquadTrip was one of the best decisions I've made for my business.",
@@ -191,10 +191,10 @@ export default function GroupTripPlanningPage() {
             />
           }
           highlights={[
-            { icon: "\uD83D\uDCCA", text: "Real-time revenue tracking" },
-            { icon: "\uD83D\uDC65", text: "Full traveler roster" },
-            { icon: "\uD83D\uDD14", text: "Instant booking notifications" },
-            { icon: "\uD83D\uDCE4", text: "CSV export for records" },
+            { icon: "📊", text: "Real-time revenue tracking" },
+            { icon: "👥", text: "Full traveler roster" },
+            { icon: "🔔", text: "Instant booking notifications" },
+            { icon: "📤", text: "CSV export for records" },
           ]}
           linkText="See the dashboard"
           linkHref={SIGNUP_URL}

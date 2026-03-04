@@ -74,10 +74,10 @@ export default function TravelGroupsPage() {
           description="Set up monthly auto-billing and let SquadTrip handle the rest. Failed payments are retried automatically, and travelers get reminders without you lifting a finger."
           mockup={<PaymentPlanMockup />}
           highlights={[
-            { icon: "\uD83D\uDD04", text: "Auto-retry failed payments" },
-            { icon: "\u23F0", text: "Scheduled reminders" },
-            { icon: "\uD83D\uDCB3", text: "Apple Pay & cards" },
-            { icon: "\uD83D\uDED2", text: "Klarna & Afterpay" },
+            { icon: "🔄", text: "Auto-retry failed payments" },
+            { icon: "⏰", text: "Scheduled reminders" },
+            { icon: "💳", text: "Apple Pay & cards" },
+            { icon: "🛒", text: "Klarna & Afterpay" },
           ]}
           bonus="Travelers can also pay in full upfront or use buy-now-pay-later options."
           linkText="Set up payment plans"
@@ -91,10 +91,10 @@ export default function TravelGroupsPage() {
           mockup={<EmailMockup />}
           reverse
           highlights={[
-            { icon: "\uD83D\uDCE7", text: "Payment reminders" },
-            { icon: "\uD83D\uDCF2", text: "SMS notifications" },
-            { icon: "\uD83D\uDCE3", text: "Trip announcements" },
-            { icon: "\u2705", text: "Confirmation emails" },
+            { icon: "📧", text: "Payment reminders" },
+            { icon: "📲", text: "SMS notifications" },
+            { icon: "📣", text: "Trip announcements" },
+            { icon: "✅", text: "Confirmation emails" },
           ]}
           testimonial={{
             quote:
@@ -118,7 +118,7 @@ export default function TravelGroupsPage() {
           initials: "CW",
           badge: "Group Trip Organizer",
           metrics: [
-            { value: "50\u2192500", label: "Travelers" },
+            { value: "50→500", label: "Travelers" },
             { value: "10x", label: "Growth" },
           ],
         }}

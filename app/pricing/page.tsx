@@ -24,12 +24,12 @@ const pricingFAQ = [
   {
     question: "What are processing fees and how do they work?",
     answer:
-      "Processing fees are 6%. This includes the merchant fee (2.9% + 30\u00a2) that Stripe charges for processing credit card payments. So if your trip costs $1,000, your traveler pays $1,060\u2014you receive $1,000, and the $60 covers Stripe and our platform fee. You can hide fees from travelers and use a pricing calculator to adjust rates accordingly.",
+      "Processing fees are 6%. This includes the merchant fee (2.9% + 30¢) that Stripe charges for processing credit card payments. So if your trip costs $1,000, your traveler pays $1,060—you receive $1,000, and the $60 covers Stripe and our platform fee. You can hide fees from travelers and use a pricing calculator to adjust rates accordingly.",
   },
   {
     question: "How do I get paid?",
     answer:
-      "When your customers make a payment on our website, the funds will be processed on your Stripe account and sent to your bank account. You can set up daily or weekly payouts. SquadTrip never holds your money\u2014it goes directly from your traveler\u2019s card to your bank through Stripe. Stripe usually takes 7-14 days to release your first payment, after which you can receive payments any time you desire.",
+      "When your customers make a payment on our website, the funds will be processed on your Stripe account and sent to your bank account. You can set up daily or weekly payouts. SquadTrip never holds your money—it goes directly from your traveler’s card to your bank through Stripe. Stripe usually takes 7-14 days to release your first payment, after which you can receive payments any time you desire.",
   },
   {
     question: "What payment options are available?",
@@ -39,7 +39,7 @@ const pricingFAQ = [
   {
     question: "Do you send receipts and payment reminders?",
     answer:
-      "Yes! We send receipts after every payment, confirmation emails when travelers book, payment reminders before each installment is due, and payment failure notifications if a charge doesn\u2019t go through. Everything is automatic\u2014you don\u2019t have to send a single reminder manually.",
+      "Yes! We send receipts after every payment, confirmation emails when travelers book, payment reminders before each installment is due, and payment failure notifications if a charge doesn’t go through. Everything is automatic—you don’t have to send a single reminder manually.",
   },
   {
     question: "Can travelers change credit card info & retry payments?",
@@ -49,7 +49,7 @@ const pricingFAQ = [
   {
     question: "What happens if I cancel my Launch subscription?",
     answer:
-      "If you cancel your Launch plan, your account reverts to the free Starter plan at the end of your billing period. You\u2019ll keep all your existing trips and traveler data, but Launch-only features like custom branding, promo codes, and BNPL options will be disabled. You can re-subscribe at any time.",
+      "If you cancel your Launch plan, your account reverts to the free Starter plan at the end of your billing period. You’ll keep all your existing trips and traveler data, but Launch-only features like custom branding, promo codes, and BNPL options will be disabled. You can re-subscribe at any time.",
   },
   {
     question: "Can I pass the processing fee to my travelers?",
@@ -66,7 +66,7 @@ const comparisonRows = [
   },
   {
     task: "Stripe processing",
-    diy: "Extra 2.9% + 30\u00a2 on top",
+    diy: "Extra 2.9% + 30¢ on top",
     squadtrip: "Included in 6%",
   },
   {
@@ -138,20 +138,20 @@ export default function PricingPage() {
         subtitle="See how real organizers save time and grow revenue with transparent pricing."
         featured={{
           quote:
-            "If it wasn\u2019t for SquadTrip, I wouldn\u2019t have been able to grow my group trips from 50 guests to 500.",
+            "If it wasn’t for SquadTrip, I wouldn’t have been able to grow my group trips from 50 guests to 500.",
           author: "Collin D. Williams Jr.",
           company: "CDE Antigua",
           initials: "CW",
           badge: "Top Organizer",
           metrics: [
-            { value: "50\u2192500", label: "Travelers" },
+            { value: "50→500", label: "Travelers" },
             { value: "10x", label: "Growth" },
           ],
         }}
         side={[
           {
             quote:
-              "The platform\u2019s ability to track trip package inventory and offer payment plans has made it easier for me to manage my bookings.",
+              "The platform’s ability to track trip package inventory and offer payment plans has made it easier for me to manage my bookings.",
             author: "Andrew Bennett",
             company: "Passport Society",
             initials: "AB",

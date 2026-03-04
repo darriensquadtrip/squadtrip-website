@@ -64,7 +64,7 @@ export default function AboutUsPage() {
           <ScrollReveal stagger>
             <div className="who-uses-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
               <div className="who-uses-card hover-lift">
-                <div className="who-uses-icon">{"\uD83D\uDE80"}</div>
+                <div className="who-uses-icon">{"🚀"}</div>
                 <h3>Darrien Watson</h3>
                 <p style={{ fontWeight: 600, color: "var(--purple-primary)", marginBottom: "0.5rem" }}>
                   Co-Founder &amp; CEO
@@ -82,7 +82,7 @@ export default function AboutUsPage() {
                 </p>
               </div>
               <div className="who-uses-card hover-lift">
-                <div className="who-uses-icon">{"\uD83D\uDCBB"}</div>
+                <div className="who-uses-icon">{"💻"}</div>
                 <h3>Stevon Judd</h3>
                 <p style={{ fontWeight: 600, color: "var(--purple-primary)", marginBottom: "0.5rem" }}>
                   Co-Founder &amp; CTO
@@ -161,7 +161,7 @@ export default function AboutUsPage() {
           <ScrollReveal stagger>
             <div className="who-uses-grid">
               <div className="who-uses-card hover-lift">
-                <div className="who-uses-icon">{"\u2728"}</div>
+                <div className="who-uses-icon">{"✨"}</div>
                 <h3>Simplicity</h3>
                 <p>
                   We remove complexity so organizers can focus on what matters — the
@@ -171,7 +171,7 @@ export default function AboutUsPage() {
                 </p>
               </div>
               <div className="who-uses-card hover-lift">
-                <div className="who-uses-icon">{"\uD83D\uDCAA"}</div>
+                <div className="who-uses-icon">{"💪"}</div>
                 <h3>Empowerment</h3>
                 <p>
                   We give organizers superpowers. Whether you are a first-time planner
@@ -182,7 +182,7 @@ export default function AboutUsPage() {
                 </p>
               </div>
               <div className="who-uses-card hover-lift">
-                <div className="who-uses-icon">{"\uD83D\uDD12"}</div>
+                <div className="who-uses-icon">{"🔒"}</div>
                 <h3>Trust</h3>
                 <p>
                   Trust is the foundation of group travel. Travelers trust organizers
@@ -193,7 +193,7 @@ export default function AboutUsPage() {
                 </p>
               </div>
               <div className="who-uses-card hover-lift">
-                <div className="who-uses-icon">{"\uD83C\uDF0D"}</div>
+                <div className="who-uses-icon">{"🌍"}</div>
                 <h3>Community</h3>
                 <p>
                   We celebrate group travel culture. Travel is better together, and we
@@ -227,10 +227,10 @@ export default function AboutUsPage() {
             />
           }
           highlights={[
-            { icon: "\uD83D\uDCB3", text: "Automated payments" },
-            { icon: "\uD83D\uDCCA", text: "Real-time tracking" },
-            { icon: "\uD83D\uDCE7", text: "Email & SMS reminders" },
-            { icon: "\u26A1", text: "Fast Stripe payouts" },
+            { icon: "💳", text: "Automated payments" },
+            { icon: "📊", text: "Real-time tracking" },
+            { icon: "📧", text: "Email & SMS reminders" },
+            { icon: "⚡", text: "Fast Stripe payouts" },
           ]}
           linkText="See all features"
           linkHref="/features"

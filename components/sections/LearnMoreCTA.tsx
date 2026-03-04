@@ -18,18 +18,18 @@ interface LearnMoreCTAProps {
 
 const defaultCards: CTACard[] = [
   {
-    icon: "\u2728",
+    icon: "✨",
     title: "See All Features",
     description: "Everything you need to build, promote, sell, manage, and get paid.",
-    linkText: "Explore features \u2192",
+    linkText: "Explore features →",
     href: "/features",
     featured: true,
   },
   {
-    icon: "\uD83D\uDCB0",
+    icon: "💰",
     title: "View Pricing",
     description: "Simple, transparent pricing. Free to start, pay only when you get paid.",
-    linkText: "See pricing \u2192",
+    linkText: "See pricing →",
     href: "/pricing",
   },
 ];

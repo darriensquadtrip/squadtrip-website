@@ -79,10 +79,10 @@ export default function CollectMoneyForGroupTripsPage() {
         headline="Collecting Money for Group Trips Is the Worst Part"
         subtitle="You love planning trips. You hate being the person who has to chase everyone for money."
         stats={[
-          { icon: "\uD83D\uDCE8", value: 45, suffix: "+", label: "Payment reminder messages per trip" },
-          { icon: "\uD83D\uDCB8", value: 25, suffix: "%", label: "Of travelers pay late or not at all" },
-          { icon: "\u23F1\uFE0F", value: 10, suffix: " hrs", label: "Spent tracking who paid and who owes" },
-          { icon: "\uD83D\uDE13", value: 80, suffix: "%", label: "Of organizers say payments cause stress" },
+          { icon: "📨", value: 45, suffix: "+", label: "Payment reminder messages per trip" },
+          { icon: "💸", value: 25, suffix: "%", label: "Of travelers pay late or not at all" },
+          { icon: "⏱️", value: 10, suffix: " hrs", label: "Spent tracking who paid and who owes" },
+          { icon: "😓", value: 80, suffix: "%", label: "Of organizers say payments cause stress" },
         ]}
         caption="Based on surveys of group trip organizers"
         ctaText="Automate your collections"
@@ -96,10 +96,10 @@ export default function CollectMoneyForGroupTripsPage() {
           description="Configure your payment schedule once, and SquadTrip handles everything from there. Choose how many installments, set the due dates, and let automatic billing take over. Each traveler is charged on schedule, gets email reminders before their payment is due, and receives a receipt after each payment. If a payment fails, SquadTrip retries automatically and notifies the traveler to update their payment method."
           mockup={<PaymentPlanMockup />}
           highlights={[
-            { icon: "\uD83D\uDD04", text: "Fully automated billing cycle" },
-            { icon: "\u23F0", text: "Pre-payment reminders sent automatically" },
-            { icon: "\uD83D\uDD01", text: "Automatic retry on failed payments" },
-            { icon: "\uD83D\uDCE7", text: "Payment receipts for every transaction" },
+            { icon: "🔄", text: "Fully automated billing cycle" },
+            { icon: "⏰", text: "Pre-payment reminders sent automatically" },
+            { icon: "🔁", text: "Automatic retry on failed payments" },
+            { icon: "📧", text: "Payment receipts for every transaction" },
           ]}
           bonus="Organizers who use payment plans collect 95% of owed payments on time."
           testimonial={{
@@ -116,7 +116,7 @@ export default function CollectMoneyForGroupTripsPage() {
           mockup={
             <BookingPageMockup
               tripTitle="Jamaica Group Vacation"
-              tripMeta="Dec 15-22 \u2022 7 nights \u2022 All-inclusive resort"
+              tripMeta="Dec 15-22 • 7 nights • All-inclusive resort"
               packages={[
                 {
                   name: "Deluxe Room",
@@ -138,10 +138,10 @@ export default function CollectMoneyForGroupTripsPage() {
           }
           reverse
           highlights={[
-            { icon: "\uD83D\uDD12", text: "Secure Stripe-powered payments" },
-            { icon: "\uD83D\uDCB3", text: "Cards, Apple Pay, Google Pay" },
-            { icon: "\uD83D\uDED2", text: "Klarna and Afterpay available" },
-            { icon: "\uD83E\uDDFE", text: "Automatic receipts for travelers" },
+            { icon: "🔒", text: "Secure Stripe-powered payments" },
+            { icon: "💳", text: "Cards, Apple Pay, Google Pay" },
+            { icon: "🛒", text: "Klarna and Afterpay available" },
+            { icon: "🧾", text: "Automatic receipts for travelers" },
           ]}
           linkText="Create your booking page"
           linkHref={SIGNUP_URL}
@@ -165,10 +165,10 @@ export default function CollectMoneyForGroupTripsPage() {
             />
           }
           highlights={[
-            { icon: "\uD83D\uDCCA", text: "Real-time collection tracking" },
-            { icon: "\uD83D\uDC65", text: "Per-traveler payment status" },
-            { icon: "\uD83D\uDCB0", text: "Total revenue at a glance" },
-            { icon: "\uD83D\uDCE4", text: "Export to CSV" },
+            { icon: "📊", text: "Real-time collection tracking" },
+            { icon: "👥", text: "Per-traveler payment status" },
+            { icon: "💰", text: "Total revenue at a glance" },
+            { icon: "📤", text: "Export to CSV" },
           ]}
           linkText="See the payment dashboard"
           linkHref={SIGNUP_URL}

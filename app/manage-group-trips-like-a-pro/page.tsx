@@ -92,10 +92,10 @@ export default function ManageGroupTripsPage() {
         headline="Group Trip Management Is Harder Than It Should Be"
         subtitle="You want to create unforgettable travel experiences, but logistics keep getting in the way."
         stats={[
-          { icon: "\u23F1\uFE0F", value: 15, suffix: " hrs/wk", label: "Spent tracking payments manually" },
-          { icon: "\uD83D\uDCE8", value: 50, suffix: "+", label: "Messages sent chasing payments" },
-          { icon: "\uD83D\uDCC9", value: 35, suffix: "%", label: "Of travelers miss payment deadlines" },
-          { icon: "\uD83E\uDDE9", value: 5, suffix: " tools", label: "Used to manage a single trip" },
+          { icon: "⏱️", value: 15, suffix: " hrs/wk", label: "Spent tracking payments manually" },
+          { icon: "📨", value: 50, suffix: "+", label: "Messages sent chasing payments" },
+          { icon: "📉", value: 35, suffix: "%", label: "Of travelers miss payment deadlines" },
+          { icon: "🧩", value: 5, suffix: " tools", label: "Used to manage a single trip" },
         ]}
         caption="Based on surveys of group trip organizers using manual methods"
         ctaText="There's a better way"
@@ -122,10 +122,10 @@ export default function ManageGroupTripsPage() {
             />
           }
           highlights={[
-            { icon: "\uD83D\uDCCA", text: "Real-time payment tracking across all trips" },
-            { icon: "\uD83D\uDC65", text: "Traveler roster with payment status" },
-            { icon: "\uD83D\uDCE4", text: "Export reports to CSV" },
-            { icon: "\uD83D\uDD14", text: "Automated payment alerts" },
+            { icon: "📊", text: "Real-time payment tracking across all trips" },
+            { icon: "👥", text: "Traveler roster with payment status" },
+            { icon: "📤", text: "Export reports to CSV" },
+            { icon: "🔔", text: "Automated payment alerts" },
           ]}
           bonus="Your dashboard updates in real time so you always know exactly where every trip stands."
           testimonial={{
@@ -142,10 +142,10 @@ export default function ManageGroupTripsPage() {
           mockup={<PaymentPlanMockup />}
           reverse
           highlights={[
-            { icon: "\uD83D\uDD04", text: "Auto-billing on a schedule you set" },
-            { icon: "\u23F0", text: "Automated email reminders" },
-            { icon: "\uD83D\uDCB3", text: "Credit cards, Apple Pay, and more" },
-            { icon: "\uD83D\uDED2", text: "Buy-now-pay-later options available" },
+            { icon: "🔄", text: "Auto-billing on a schedule you set" },
+            { icon: "⏰", text: "Automated email reminders" },
+            { icon: "💳", text: "Credit cards, Apple Pay, and more" },
+            { icon: "🛒", text: "Buy-now-pay-later options available" },
           ]}
           testimonial={{
             quote: "The payment plans have made it so much easier for me to manage my bookings.",
@@ -161,7 +161,7 @@ export default function ManageGroupTripsPage() {
           mockup={
             <BookingPageMockup
               tripTitle="Cancun Squad Trip 2026"
-              tripMeta="Jun 12-18 \u2022 6 nights \u2022 All-inclusive resort"
+              tripMeta="Jun 12-18 • 6 nights • All-inclusive resort"
               packages={[
                 {
                   name: "Standard Room",
@@ -182,10 +182,10 @@ export default function ManageGroupTripsPage() {
             />
           }
           highlights={[
-            { icon: "\uD83C\uDF10", text: "Shareable booking link" },
-            { icon: "\uD83C\uDFA8", text: "Custom branding and photos" },
-            { icon: "\uD83D\uDCCB", text: "Detailed trip itinerary" },
-            { icon: "\uD83D\uDCF1", text: "Mobile-friendly design" },
+            { icon: "🌐", text: "Shareable booking link" },
+            { icon: "🎨", text: "Custom branding and photos" },
+            { icon: "📋", text: "Detailed trip itinerary" },
+            { icon: "📱", text: "Mobile-friendly design" },
           ]}
           linkText="Create your booking page"
           linkHref={SIGNUP_URL}

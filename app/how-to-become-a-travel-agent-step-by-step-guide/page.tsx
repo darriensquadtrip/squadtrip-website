@@ -92,10 +92,10 @@ export default function HowToBecomeATravelAgentPage() {
         headline="Starting a Travel Business Feels Overwhelming"
         subtitle="There is so much conflicting advice out there. You need a clear roadmap and the right tools."
         stats={[
-          { icon: "\uD83D\uDCDA", value: 100, suffix: "+", label: "Hours researching how to get started" },
-          { icon: "\uD83D\uDCB0", value: 5, suffix: "K+", label: "Spent on unnecessary courses and fees" },
-          { icon: "\uD83E\uDDE9", value: 8, suffix: " steps", label: "To launch but most guides skip half" },
-          { icon: "\uD83D\uDCC9", value: 60, suffix: "%", label: "Of new agents quit in the first year" },
+          { icon: "📚", value: 100, suffix: "+", label: "Hours researching how to get started" },
+          { icon: "💰", value: 5, suffix: "K+", label: "Spent on unnecessary courses and fees" },
+          { icon: "🧩", value: 8, suffix: " steps", label: "To launch but most guides skip half" },
+          { icon: "📉", value: 60, suffix: "%", label: "Of new agents quit in the first year" },
         ]}
         caption="Based on industry data from travel agent communities"
         ctaText="Follow the proven path"
@@ -110,7 +110,7 @@ export default function HowToBecomeATravelAgentPage() {
           mockup={
             <BookingPageMockup
               tripTitle="Tulum Girls Trip 2026"
-              tripMeta="May 1-7 \u2022 6 nights \u2022 Boutique resort"
+              tripMeta="May 1-7 • 6 nights • Boutique resort"
               packages={[
                 {
                   name: "Shared Room",
@@ -131,10 +131,10 @@ export default function HowToBecomeATravelAgentPage() {
             />
           }
           highlights={[
-            { icon: "\uD83C\uDFAF", text: "Pick a profitable niche" },
-            { icon: "\uD83D\uDCCB", text: "Create a detailed trip itinerary" },
-            { icon: "\uD83C\uDF81", text: "Set up packages and pricing" },
-            { icon: "\uD83C\uDF10", text: "Launch a booking page instantly" },
+            { icon: "🎯", text: "Pick a profitable niche" },
+            { icon: "📋", text: "Create a detailed trip itinerary" },
+            { icon: "🎁", text: "Set up packages and pricing" },
+            { icon: "🌐", text: "Launch a booking page instantly" },
           ]}
           bonus="You do not need a website to start selling trips. A SquadTrip booking page is all you need."
           testimonial={{
@@ -151,10 +151,10 @@ export default function HowToBecomeATravelAgentPage() {
           mockup={<PaymentPlanMockup />}
           reverse
           highlights={[
-            { icon: "\uD83D\uDCB3", text: "Accept credit cards and debit cards" },
-            { icon: "\uD83D\uDD04", text: "Automatic monthly installments" },
-            { icon: "\u23F0", text: "Automated payment reminders" },
-            { icon: "\uD83C\uDFE6", text: "Direct bank payouts via Stripe" },
+            { icon: "💳", text: "Accept credit cards and debit cards" },
+            { icon: "🔄", text: "Automatic monthly installments" },
+            { icon: "⏰", text: "Automated payment reminders" },
+            { icon: "🏦", text: "Direct bank payouts via Stripe" },
           ]}
           testimonial={{
             quote: "The payment plans have made it so much easier for me to manage my bookings.",
@@ -181,10 +181,10 @@ export default function HowToBecomeATravelAgentPage() {
             />
           }
           highlights={[
-            { icon: "\uD83D\uDCCA", text: "Track revenue across all trips" },
-            { icon: "\uD83D\uDC65", text: "Manage all travelers in one place" },
-            { icon: "\uD83D\uDD14", text: "Get notified when someone books" },
-            { icon: "\uD83D\uDCC8", text: "Scale from 1 trip to 50+" },
+            { icon: "📊", text: "Track revenue across all trips" },
+            { icon: "👥", text: "Manage all travelers in one place" },
+            { icon: "🔔", text: "Get notified when someone books" },
+            { icon: "📈", text: "Scale from 1 trip to 50+" },
           ]}
           linkText="Launch your travel business"
           linkHref={SIGNUP_URL}

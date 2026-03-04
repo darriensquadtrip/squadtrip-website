@@ -37,7 +37,7 @@ export function PaymentPlanMockup({
           {scheduleItems.map((item) => (
             <div key={item.date} className="schedule-item">
               <div className={`schedule-icon ${item.status}`}>
-                {item.status === "complete" ? "\u2713" : "\u25CB"}
+                {item.status === "complete" ? "✓" : "○"}
               </div>
               <div className="schedule-info">
                 <div className="schedule-date">{item.date}</div>
@@ -50,9 +50,9 @@ export function PaymentPlanMockup({
 
         {autoChargeEnabled && (
           <div className="auto-features">
-            <span className="auto-feature">\u2713 Auto-retry failed payments</span>
-            <span className="auto-feature">\u2713 Email reminders</span>
-            <span className="auto-feature">\u2713 Late fee optional</span>
+            <span className="auto-feature">✓ Auto-retry failed payments</span>
+            <span className="auto-feature">✓ Email reminders</span>
+            <span className="auto-feature">✓ Late fee optional</span>
           </div>
         )}
       </div>

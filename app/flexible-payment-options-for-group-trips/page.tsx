@@ -79,10 +79,10 @@ export default function FlexiblePaymentOptionsPage() {
         headline="Rigid Payment Terms Kill Group Trip Bookings"
         subtitle="Requiring full payment upfront or chasing Venmo requests is costing you travelers and revenue."
         stats={[
-          { icon: "\uD83D\uDCB8", value: 40, suffix: "%", label: "Of travelers cannot pay full price upfront" },
-          { icon: "\uD83D\uDCE8", value: 25, suffix: "+", label: "Payment reminder messages per trip" },
-          { icon: "\u23F1\uFE0F", value: 8, suffix: " hrs/mo", label: "Spent manually tracking payments" },
-          { icon: "\uD83D\uDCC9", value: 30, suffix: "%", label: "Of bookings lost to inflexible payments" },
+          { icon: "💸", value: 40, suffix: "%", label: "Of travelers cannot pay full price upfront" },
+          { icon: "📨", value: 25, suffix: "+", label: "Payment reminder messages per trip" },
+          { icon: "⏱️", value: 8, suffix: " hrs/mo", label: "Spent manually tracking payments" },
+          { icon: "📉", value: 30, suffix: "%", label: "Of bookings lost to inflexible payments" },
         ]}
         caption="Based on data from group trip organizers"
         ctaText="Offer flexible payments"
@@ -96,10 +96,10 @@ export default function FlexiblePaymentOptionsPage() {
           description="Set up a payment schedule and let SquadTrip handle the rest. Choose your installment dates, amounts, and deadlines. Travelers are billed automatically each month and receive email reminders before each payment is due. Failed payments are retried automatically. You spend zero time chasing money and more time building your trip."
           mockup={<PaymentPlanMockup />}
           highlights={[
-            { icon: "\uD83D\uDD04", text: "Auto-billing on your schedule" },
-            { icon: "\u23F0", text: "Pre-payment email reminders" },
-            { icon: "\uD83D\uDD01", text: "Automatic failed payment retry" },
-            { icon: "\uD83D\uDCCA", text: "Real-time payment tracking" },
+            { icon: "🔄", text: "Auto-billing on your schedule" },
+            { icon: "⏰", text: "Pre-payment email reminders" },
+            { icon: "🔁", text: "Automatic failed payment retry" },
+            { icon: "📊", text: "Real-time payment tracking" },
           ]}
           bonus="Offering payment plans can increase your trip sign-up rate by up to 40%."
           testimonial={{
@@ -116,7 +116,7 @@ export default function FlexiblePaymentOptionsPage() {
           mockup={
             <BookingPageMockup
               tripTitle="Dominican Republic Retreat"
-              tripMeta="Nov 5-12 \u2022 7 nights \u2022 Beachfront villa"
+              tripMeta="Nov 5-12 • 7 nights • Beachfront villa"
               packages={[
                 {
                   name: "Villa Suite",
@@ -138,10 +138,10 @@ export default function FlexiblePaymentOptionsPage() {
           }
           reverse
           highlights={[
-            { icon: "\uD83D\uDCB3", text: "Credit and debit cards" },
-            { icon: "\uD83D\uDCF1", text: "Apple Pay and Google Pay" },
-            { icon: "\uD83D\uDED2", text: "Klarna and Afterpay" },
-            { icon: "\uD83D\uDD12", text: "Stripe-powered security" },
+            { icon: "💳", text: "Credit and debit cards" },
+            { icon: "📱", text: "Apple Pay and Google Pay" },
+            { icon: "🛒", text: "Klarna and Afterpay" },
+            { icon: "🔒", text: "Stripe-powered security" },
           ]}
           linkText="See all payment options"
           linkHref={SIGNUP_URL}
@@ -165,10 +165,10 @@ export default function FlexiblePaymentOptionsPage() {
             />
           }
           highlights={[
-            { icon: "\uD83D\uDCCA", text: "Real-time payment dashboard" },
-            { icon: "\uD83D\uDC65", text: "Individual traveler tracking" },
-            { icon: "\uD83D\uDCE4", text: "Export payment reports" },
-            { icon: "\uD83D\uDCB0", text: "Revenue totals at a glance" },
+            { icon: "📊", text: "Real-time payment dashboard" },
+            { icon: "👥", text: "Individual traveler tracking" },
+            { icon: "📤", text: "Export payment reports" },
+            { icon: "💰", text: "Revenue totals at a glance" },
           ]}
           linkText="See the payment dashboard"
           linkHref={SIGNUP_URL}

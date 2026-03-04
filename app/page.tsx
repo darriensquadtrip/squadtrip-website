@@ -32,13 +32,13 @@ const homepageFAQ = [
   {
     question: "Is there an easier way to collect money for a group trip?",
     answer:
-      "Yes\u2014that\u2019s exactly why we built SquadTrip. Instead of chasing Venmo payments and tracking everything in a spreadsheet, you create one booking page, set up automatic payment plans, and let the platform handle reminders and tracking. Most organizers say it saves them 10+ hours per trip.",
+      "Yes—that’s exactly why we built SquadTrip. Instead of chasing Venmo payments and tracking everything in a spreadsheet, you create one booking page, set up automatic payment plans, and let the platform handle reminders and tracking. Most organizers say it saves them 10+ hours per trip.",
   },
   {
     question:
       "How is this different from just using Venmo or a spreadsheet?",
     answer:
-      "Venmo is great for splitting a dinner tab, but group trips involve thousands of dollars, multiple payments over months, and detailed traveler information. SquadTrip gives you automatic payment plans, a real-time dashboard showing who paid, professional booking pages, and automatic reminders\u2014so you\u2019re not chasing people or updating spreadsheets for months.",
+      "Venmo is great for splitting a dinner tab, but group trips involve thousands of dollars, multiple payments over months, and detailed traveler information. SquadTrip gives you automatic payment plans, a real-time dashboard showing who paid, professional booking pages, and automatic reminders—so you’re not chasing people or updating spreadsheets for months.",
   },
   {
     question:
@@ -49,7 +49,7 @@ const homepageFAQ = [
   {
     question: "What does it cost? Are there hidden fees?",
     answer:
-      "SquadTrip is free to start. We offer a free plan plus paid plans starting at $29/month with additional features. Booking fees are 6%, which includes the credit card processing fee (2.9% + 30\u00a2) that Stripe charges. So if your trip costs $1,000, your traveler pays $1,060\u2014you receive $1,000, and the $60 covers Stripe and our platform fee. No hidden fees, no surprises.",
+      "SquadTrip is free to start. We offer a free plan plus paid plans starting at $29/month with additional features. Booking fees are 6%, which includes the credit card processing fee (2.9% + 30¢) that Stripe charges. So if your trip costs $1,000, your traveler pays $1,060—you receive $1,000, and the $60 covers Stripe and our platform fee. No hidden fees, no surprises.",
   },
   {
     question: "Is it complicated for my travelers to pay?",
@@ -57,19 +57,19 @@ const homepageFAQ = [
       "Not at all. Your travelers see a clean booking page, select their package, enter their info, and pay with a credit card or Apple Pay. If they choose a payment plan, their card is charged automatically each month. They can also log into a traveler portal to update their payment method, view receipts, and see their balance. Most travelers find it easier than receiving Venmo requests.",
   },
   {
-    question: "What happens if someone\u2019s payment fails?",
+    question: "What happens if someone’s payment fails?",
     answer:
-      "SquadTrip automatically retries failed payments and sends the traveler a notification to update their card. You get an alert so you know what\u2019s happening, but you don\u2019t have to chase anyone down. The platform handles it.",
+      "SquadTrip automatically retries failed payments and sends the traveler a notification to update their card. You get an alert so you know what’s happening, but you don’t have to chase anyone down. The platform handles it.",
   },
   {
     question: "Can I try it before committing?",
     answer:
-      "Absolutely. You can create your first trip for free\u2014no credit card required. You\u2019ll only pay a payment processing fee, which can be passed on to your travelers.",
+      "Absolutely. You can create your first trip for free—no credit card required. You’ll only pay a payment processing fee, which can be passed on to your travelers.",
   },
   {
     question: "How do I get my money?",
     answer:
-      "When travelers pay, the money goes to your connected Stripe account and is deposited into your bank account. You can set up daily or weekly payouts. SquadTrip never holds your money\u2014it goes directly from your traveler\u2019s card to your bank through Stripe.",
+      "When travelers pay, the money goes to your connected Stripe account and is deposited into your bank account. You can set up daily or weekly payouts. SquadTrip never holds your money—it goes directly from your traveler’s card to your bank through Stripe.",
   },
 ];
 
@@ -83,45 +83,45 @@ export default function HomePage() {
       <Hero
         layout="split"
         headline="Stop Chasing Payments for Your Group Trip"
-        subheadline="Create a booking page, set up automatic payment plans, and track who paid\u2014all in one place. So you can focus on the trip, not the spreadsheet."
+        subheadline="Create a booking page, set up automatic payment plans, and track who paid—all in one place. So you can focus on the trip, not the spreadsheet."
         ctaText="Create your trip for free"
         ctaHref={SIGNUP_URL}
         secondaryCta={{ text: "See how it works", href: "/features" }}
-        trustLine="No credit card required \u2022 Free to use"
-        eyebrow="Trusted by 2,000+ trip organizers \u2014 50,000+ travelers booked"
+        trustLine="No credit card required • Free to use"
+        eyebrow="Trusted by 2,000+ trip organizers — 50,000+ travelers booked"
         mockup={<DashboardMockup />}
       />
 
       {/* Problem Validation */}
       <ProblemValidation
-        headline="Planning a group trip? Here\u2019s the part nobody warns you about."
+        headline="Planning a group trip? Here’s the part nobody warns you about."
         subtitle="The real cost of DIY group trip planning:"
         stats={[
           {
-            icon: "\u23F0",
+            icon: "⏰",
             value: 47,
             label: "hours spent chasing payments",
           },
           {
-            icon: "\uD83D\uDE2C",
+            icon: "😬",
             value: 23,
             label: 'awkward "did you pay?" texts',
           },
           {
-            icon: "\uD83D\uDCB3",
+            icon: "💳",
             value: 5,
             prefix: "$",
             suffix: "K",
             label: "fronted on your credit card",
           },
           {
-            icon: "\uD83D\uDCCA",
+            icon: "📊",
             value: 156,
             label: "spreadsheet updates (still wrong)",
           },
         ]}
         caption="* Based on average 15-person group trip over 4 months"
-        ctaText="There\u2019s a better way"
+        ctaText="There’s a better way"
         ctaHref="#features"
       />
 
@@ -141,7 +141,7 @@ export default function HomePage() {
             step: "2",
             title: "Share your link",
             description:
-              "Send one link to your group. Travelers book and pay online\u2014no back and forth.",
+              "Send one link to your group. Travelers book and pay online—no back and forth.",
           },
           {
             step: "3",
@@ -150,7 +150,7 @@ export default function HomePage() {
               "Watch payments come in, send updates, and export reports. All from one dashboard.",
           },
         ]}
-        ctaText="Create your first trip \u2192"
+        ctaText="Create your first trip →"
         ctaHref={SIGNUP_URL}
       />
 
@@ -161,11 +161,11 @@ export default function HomePage() {
       <section className="feature-blocks">
         <FeatureBlock
           title="Sick of chasing payments for 3 months?"
-          description={`"Hey, did you pay yet?" is the worst text to send\u2014and worse to send 12 times. Set up payment plans once, enable auto-charge, and you\u2019re done. Travelers\u2019 cards are charged automatically on schedule. They get reminders before each payment and receipts after. You get notified when money hits your account.`}
+          description={`"Hey, did you pay yet?" is the worst text to send—and worse to send 12 times. Set up payment plans once, enable auto-charge, and you’re done. Travelers’ cards are charged automatically on schedule. They get reminders before each payment and receipts after. You get notified when money hits your account.`}
           highlights={[
-            { icon: "\u26A1", text: "Auto-charge on schedule" },
-            { icon: "\uD83D\uDD14", text: "Automatic reminders" },
-            { icon: "\uD83E\uDDFE", text: "Receipts sent instantly" },
+            { icon: "⚡", text: "Auto-charge on schedule" },
+            { icon: "🔔", text: "Automatic reminders" },
+            { icon: "🧾", text: "Receipts sent instantly" },
           ]}
           testimonial={{
             quote:
@@ -179,17 +179,17 @@ export default function HomePage() {
 
         {/* Feature Block 2: Dashboard */}
         <FeatureBlock
-          title="Finally see who paid\u2014without checking a spreadsheet"
-          description={`Your group chat says "I paid!" but your spreadsheet says otherwise. Sound familiar? SquadTrip shows you exactly who paid, who\u2019s on track, and who needs a nudge\u2014updated in real-time. No more guessing, no more "let me check," no more 30 minutes updating cells.`}
+          title="Finally see who paid—without checking a spreadsheet"
+          description={`Your group chat says "I paid!" but your spreadsheet says otherwise. Sound familiar? SquadTrip shows you exactly who paid, who’s on track, and who needs a nudge—updated in real-time. No more guessing, no more "let me check," no more 30 minutes updating cells.`}
           reverse
           highlights={[
-            { icon: "\uD83D\uDCCA", text: "Real-time payment status" },
-            { icon: "\uD83D\uDC40", text: "See who\u2019s behind at a glance" },
-            { icon: "\uD83D\uDCE5", text: "Export reports in one click" },
+            { icon: "📊", text: "Real-time payment status" },
+            { icon: "👀", text: "See who’s behind at a glance" },
+            { icon: "📥", text: "Export reports in one click" },
           ]}
           testimonial={{
             quote:
-              "I used to spend 30 minutes a week updating my spreadsheet and still got it wrong. Now I just open my dashboard and it\u2019s all there\u2014who paid, who hasn\u2019t, how much I\u2019ve collected.",
+              "I used to spend 30 minutes a week updating my spreadsheet and still got it wrong. Now I just open my dashboard and it’s all there—who paid, who hasn’t, how much I’ve collected.",
             attribution: "Repeat organizer",
           }}
           linkText="See the dashboard"
@@ -200,8 +200,8 @@ export default function HomePage() {
         {/* Feature Block 3: Booking Pages */}
         <FeatureBlock
           title="Give travelers a page that sells the trip for you"
-          description="Stop sending group chat messages with trip details that get buried. Create a professional booking page with your itinerary, packages, photos, and pricing. Travelers can browse, choose their room, and pay\u2014all in one place."
-          bonus="Plus, collect traveler details (passport info, dietary restrictions, roommate preferences) right at checkout\u2014no more copying from screenshots."
+          description="Stop sending group chat messages with trip details that get buried. Create a professional booking page with your itinerary, packages, photos, and pricing. Travelers can browse, choose their room, and pay—all in one place."
+          bonus="Plus, collect traveler details (passport info, dietary restrictions, roommate preferences) right at checkout—no more copying from screenshots."
           testimonial={{
             quote:
               "My booking page looks so professional that travelers think I hired a web designer. It literally sells the trip for me.",
@@ -214,17 +214,17 @@ export default function HomePage() {
 
         {/* Feature Block 4: Emails & Reminders */}
         <FeatureBlock
-          title="Never send another \u201Cjust checking in\u201D text"
-          description="SquadTrip handles all the follow-up so you don\u2019t have to. Payment reminders go out before each installment. Receipts are sent automatically. Failed payment? We retry and notify the traveler. You get updates without lifting a finger."
+          title="Never send another “just checking in” text"
+          description="SquadTrip handles all the follow-up so you don’t have to. Payment reminders go out before each installment. Receipts are sent automatically. Failed payment? We retry and notify the traveler. You get updates without lifting a finger."
           reverse
           highlights={[
-            { icon: "\u2709\uFE0F", text: "Email reminders & receipts" },
-            { icon: "\uD83D\uDCF1", text: "SMS payment alerts" },
-            { icon: "\uD83D\uDD04", text: "Auto-retry failed payments" },
+            { icon: "✉️", text: "Email reminders & receipts" },
+            { icon: "📱", text: "SMS payment alerts" },
+            { icon: "🔄", text: "Auto-retry failed payments" },
           ]}
           testimonial={{
             quote:
-              "I used to dread the \u2018Hey, your payment is late\u2019 conversation. Now I don\u2019t even have to think about it\u2014SquadTrip handles all the reminders.",
+              "I used to dread the ‘Hey, your payment is late’ conversation. Now I don’t even have to think about it—SquadTrip handles all the reminders.",
             attribution: "Retreat organizer",
           }}
           linkText="Get started"
@@ -236,23 +236,23 @@ export default function HomePage() {
       {/* Testimonials */}
       <TestimonialsSection
         headline="Trusted by over 2,000 group trip creators"
-        subtitle="Used for trips to: Cancun \u2022 Jamaica \u2022 Costa Rica \u2022 Bali \u2022 Greece \u2022 500+ destinations"
+        subtitle="Used for trips to: Cancun • Jamaica • Costa Rica • Bali • Greece • 500+ destinations"
         featured={{
           quote:
-            "If it wasn\u2019t for SquadTrip, I wouldn\u2019t have been able to grow my group trips from 50 guests to 500. Before, I was using spreadsheets, collecting money individually across a number of platforms. I was struggling to identify an efficient solution for traveler receipts, reminders, and invoices. SquadTrip changed the game completely.",
+            "If it wasn’t for SquadTrip, I wouldn’t have been able to grow my group trips from 50 guests to 500. Before, I was using spreadsheets, collecting money individually across a number of platforms. I was struggling to identify an efficient solution for traveler receipts, reminders, and invoices. SquadTrip changed the game completely.",
           author: "Collin D. Williams Jr.",
           company: "CDE Antigua",
           initials: "CW",
           badge: "Tour Operator",
           metrics: [
-            { value: "50\u2192500", label: "Travelers" },
+            { value: "50→500", label: "Travelers" },
             { value: "10x", label: "Growth" },
           ],
         }}
         side={[
           {
             quote:
-              "Switching to SquadTrip was one of the best decisions I\u2019ve made for my business. The platform\u2019s ability to track trip package inventory and offer payment plans has made it easier for me to manage my bookings.",
+              "Switching to SquadTrip was one of the best decisions I’ve made for my business. The platform’s ability to track trip package inventory and offer payment plans has made it easier for me to manage my bookings.",
             author: "Andrew Bennett",
             company: "Passport Society",
             initials: "AB",
@@ -260,7 +260,7 @@ export default function HomePage() {
           },
           {
             quote:
-              "I\u2019m not a travel agent\u2014I\u2019m just trying to get 60 people to my wedding. SquadTrip let me set up room blocks, collect deposits, and track everything without losing my mind.",
+              "I’m not a travel agent—I’m just trying to get 60 people to my wedding. SquadTrip let me set up room blocks, collect deposits, and track everything without losing my mind.",
             author: "Danielle W.",
             company: "Destination Wedding",
             initials: "DW",
@@ -270,7 +270,7 @@ export default function HomePage() {
         bottom={[
           {
             quote:
-              "I was nervous about planning my first group trip, but SquadTrip made it so easy. I thought software like this was only for travel professionals, but it\u2019s actually perfect for someone like me.",
+              "I was nervous about planning my first group trip, but SquadTrip made it so easy. I thought software like this was only for travel professionals, but it’s actually perfect for someone like me.",
             author: "Michelle L.",
             company: "First Group Trip",
             initials: "ML",

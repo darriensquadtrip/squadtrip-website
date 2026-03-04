@@ -46,7 +46,7 @@ const defaultSummary: OrderSummaryRow[] = [
 
 export function BookingPageMockup({
   tripTitle = "Cancun Summer 2026",
-  tripMeta = "Jun 15-20 \u2022 5 nights \u2022 All-inclusive",
+  tripMeta = "Jun 15-20 • 5 nights • All-inclusive",
   packages = defaultPackages,
   itinerary = defaultItinerary,
   orderSummary = defaultSummary,

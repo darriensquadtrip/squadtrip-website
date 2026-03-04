@@ -366,7 +366,7 @@ export function PricingCards() {
                   }}
                 >
                   {isYearly
-                    ? "That\u2019s just $24.92/month"
+                    ? "That’s just $24.92/month"
                     : "or $299/year (save 14%)"}
                 </p>
               </div>

@@ -127,10 +127,10 @@ export default function TravelAgentsPage() {
         headline="Running a Travel Agency Shouldn't Feel Like This"
         subtitle="You started an agency to create amazing experiences, not to chase payments."
         stats={[
-          { icon: "\u23F1\uFE0F", value: 12, suffix: " hrs/wk", label: "Spent billing and invoicing clients" },
-          { icon: "\uD83D\uDCE8", value: 40, suffix: "+", label: "Payment reminder emails sent monthly" },
-          { icon: "\uD83D\uDCC9", value: 30, suffix: "%", label: "Of travelers miss a payment deadline" },
-          { icon: "\uD83D\uDCCB", value: 8, suffix: " trips", label: "Managed in spreadsheets at once" },
+          { icon: "⏱️", value: 12, suffix: " hrs/wk", label: "Spent billing and invoicing clients" },
+          { icon: "📨", value: 40, suffix: "+", label: "Payment reminder emails sent monthly" },
+          { icon: "📉", value: 30, suffix: "%", label: "Of travelers miss a payment deadline" },
+          { icon: "📋", value: 8, suffix: " trips", label: "Managed in spreadsheets at once" },
         ]}
         caption="Based on surveys of travel agency owners using manual billing"
         ctaText="There's a better way"
@@ -144,10 +144,10 @@ export default function TravelAgentsPage() {
           description="Set up monthly auto-billing for every trip and let SquadTrip handle collections. Failed payments are retried automatically, and your travelers get reminders without you making a single phone call."
           mockup={<PaymentPlanMockup />}
           highlights={[
-            { icon: "\uD83D\uDD04", text: "Auto-retry failed payments" },
-            { icon: "\u23F0", text: "Scheduled email reminders" },
-            { icon: "\uD83D\uDCB3", text: "Apple Pay & cards accepted" },
-            { icon: "\uD83D\uDED2", text: "Klarna & Afterpay available" },
+            { icon: "🔄", text: "Auto-retry failed payments" },
+            { icon: "⏰", text: "Scheduled email reminders" },
+            { icon: "💳", text: "Apple Pay & cards accepted" },
+            { icon: "🛒", text: "Klarna & Afterpay available" },
           ]}
           bonus="Travelers can also pay in full upfront or use buy-now-pay-later options."
           testimonial={{
@@ -164,7 +164,7 @@ export default function TravelAgentsPage() {
           mockup={
             <BookingPageMockup
               tripTitle="Greek Islands Cruise"
-              tripMeta="Sep 8-15 \u2022 7 nights \u2022 All-inclusive"
+              tripMeta="Sep 8-15 • 7 nights • All-inclusive"
               packages={[
                 {
                   name: "Interior Cabin",
@@ -186,10 +186,10 @@ export default function TravelAgentsPage() {
           }
           reverse
           highlights={[
-            { icon: "\uD83C\uDFA8", text: "Custom agency branding" },
-            { icon: "\uD83D\uDCCB", text: "Detailed itineraries" },
-            { icon: "\uD83C\uDF81", text: "Packages & add-ons" },
-            { icon: "\uD83D\uDCF1", text: "Mobile-friendly checkout" },
+            { icon: "🎨", text: "Custom agency branding" },
+            { icon: "📋", text: "Detailed itineraries" },
+            { icon: "🎁", text: "Packages & add-ons" },
+            { icon: "📱", text: "Mobile-friendly checkout" },
           ]}
           linkText="Create your first trip"
           linkHref={SIGNUP_URL}
@@ -213,10 +213,10 @@ export default function TravelAgentsPage() {
             />
           }
           highlights={[
-            { icon: "\uD83D\uDCCA", text: "Real-time payment tracking" },
-            { icon: "\uD83D\uDCE4", text: "Export to CSV" },
-            { icon: "\uD83D\uDD14", text: "Payment alerts" },
-            { icon: "\uD83D\uDCB0", text: "Revenue reports" },
+            { icon: "📊", text: "Real-time payment tracking" },
+            { icon: "📤", text: "Export to CSV" },
+            { icon: "🔔", text: "Payment alerts" },
+            { icon: "💰", text: "Revenue reports" },
           ]}
           linkText="See the dashboard"
           linkHref={SIGNUP_URL}

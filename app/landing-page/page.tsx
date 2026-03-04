@@ -92,10 +92,10 @@ export default function LandingPage() {
         headline="Organizing Group Trips Is Harder Than It Needs to Be"
         subtitle="Between collecting money, tracking bookings, and coordinating details, group trips can feel like a second job."
         stats={[
-          { icon: "\u23F1\uFE0F", value: 15, suffix: " hrs", label: "Average time spent organizing one trip" },
-          { icon: "\uD83D\uDCE8", value: 50, suffix: "+", label: "Messages sent chasing payments" },
-          { icon: "\uD83D\uDCC9", value: 30, suffix: "%", label: "Of travelers miss a payment deadline" },
-          { icon: "\uD83E\uDDE9", value: 5, suffix: " apps", label: "Used to manage a single group trip" },
+          { icon: "⏱️", value: 15, suffix: " hrs", label: "Average time spent organizing one trip" },
+          { icon: "📨", value: 50, suffix: "+", label: "Messages sent chasing payments" },
+          { icon: "📉", value: 30, suffix: "%", label: "Of travelers miss a payment deadline" },
+          { icon: "🧩", value: 5, suffix: " apps", label: "Used to manage a single group trip" },
         ]}
         caption="Based on surveys of group trip organizers"
         ctaText="There's a better way"
@@ -110,7 +110,7 @@ export default function LandingPage() {
           mockup={
             <BookingPageMockup
               tripTitle="Bali Crew Trip 2026"
-              tripMeta="Oct 5-14 \u2022 9 nights \u2022 Luxury villa"
+              tripMeta="Oct 5-14 • 9 nights • Luxury villa"
               packages={[
                 {
                   name: "Villa Room",
@@ -131,10 +131,10 @@ export default function LandingPage() {
             />
           }
           highlights={[
-            { icon: "\uD83C\uDF10", text: "Shareable booking link" },
-            { icon: "\uD83C\uDFA8", text: "Professional design" },
-            { icon: "\uD83D\uDCCB", text: "Itinerary and package display" },
-            { icon: "\uD83D\uDCF1", text: "Mobile-optimized" },
+            { icon: "🌐", text: "Shareable booking link" },
+            { icon: "🎨", text: "Professional design" },
+            { icon: "📋", text: "Itinerary and package display" },
+            { icon: "📱", text: "Mobile-optimized" },
           ]}
           bonus="Most organizers set up their first booking page in under 15 minutes."
           testimonial={{
@@ -151,10 +151,10 @@ export default function LandingPage() {
           mockup={<PaymentPlanMockup />}
           reverse
           highlights={[
-            { icon: "\uD83D\uDD04", text: "Automatic monthly billing" },
-            { icon: "\u23F0", text: "Smart payment reminders" },
-            { icon: "\uD83D\uDCB3", text: "All major payment methods" },
-            { icon: "\uD83D\uDED2", text: "Buy-now-pay-later options" },
+            { icon: "🔄", text: "Automatic monthly billing" },
+            { icon: "⏰", text: "Smart payment reminders" },
+            { icon: "💳", text: "All major payment methods" },
+            { icon: "🛒", text: "Buy-now-pay-later options" },
           ]}
           testimonial={{
             quote: "The payment plans have made it so much easier for me to manage my bookings.",
@@ -182,10 +182,10 @@ export default function LandingPage() {
             />
           }
           highlights={[
-            { icon: "\uD83D\uDCCA", text: "Real-time analytics" },
-            { icon: "\uD83D\uDC65", text: "Traveler management" },
-            { icon: "\uD83D\uDD14", text: "Booking notifications" },
-            { icon: "\uD83D\uDCE4", text: "CSV data export" },
+            { icon: "📊", text: "Real-time analytics" },
+            { icon: "👥", text: "Traveler management" },
+            { icon: "🔔", text: "Booking notifications" },
+            { icon: "📤", text: "CSV data export" },
           ]}
           testimonial={{
             quote: "If it wasn't for SquadTrip, I wouldn't have been able to grow my group trips from 50 guests to 500.",

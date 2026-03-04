@@ -92,10 +92,10 @@ export default function TripPlanningSoftwarePage() {
         headline="Cobbling Together Tools Is Costing You"
         subtitle="Using spreadsheets, Venmo, Google Forms, and group chats to run a trip wastes time and loses money."
         stats={[
-          { icon: "\uD83E\uDDE9", value: 6, suffix: " tools", label: "Average tools used for one group trip" },
-          { icon: "\u23F1\uFE0F", value: 10, suffix: " hrs/wk", label: "Lost to manual coordination" },
-          { icon: "\uD83D\uDCB8", value: 20, suffix: "%", label: "Of payments collected late or never" },
-          { icon: "\uD83D\uDCC9", value: 15, suffix: "%", label: "Of sign-ups lost to confusing process" },
+          { icon: "🧩", value: 6, suffix: " tools", label: "Average tools used for one group trip" },
+          { icon: "⏱️", value: 10, suffix: " hrs/wk", label: "Lost to manual coordination" },
+          { icon: "💸", value: 20, suffix: "%", label: "Of payments collected late or never" },
+          { icon: "📉", value: 15, suffix: "%", label: "Of sign-ups lost to confusing process" },
         ]}
         caption="Based on surveys of group trip organizers"
         ctaText="See the solution"
@@ -122,10 +122,10 @@ export default function TripPlanningSoftwarePage() {
             />
           }
           highlights={[
-            { icon: "\uD83D\uDCCA", text: "Real-time analytics and reporting" },
-            { icon: "\uD83D\uDC65", text: "Complete traveler management" },
-            { icon: "\uD83D\uDD14", text: "Automated alerts and notifications" },
-            { icon: "\uD83D\uDCE4", text: "Data export to CSV" },
+            { icon: "📊", text: "Real-time analytics and reporting" },
+            { icon: "👥", text: "Complete traveler management" },
+            { icon: "🔔", text: "Automated alerts and notifications" },
+            { icon: "📤", text: "Data export to CSV" },
           ]}
           bonus="Manage unlimited trips from a single dashboard with no per-trip limits."
           testimonial={{
@@ -142,10 +142,10 @@ export default function TripPlanningSoftwarePage() {
           mockup={<PaymentPlanMockup />}
           reverse
           highlights={[
-            { icon: "\uD83D\uDD04", text: "Automatic recurring billing" },
-            { icon: "\uD83D\uDCB3", text: "All major payment methods" },
-            { icon: "\uD83D\uDED2", text: "Buy-now-pay-later support" },
-            { icon: "\u23F0", text: "Smart payment reminders" },
+            { icon: "🔄", text: "Automatic recurring billing" },
+            { icon: "💳", text: "All major payment methods" },
+            { icon: "🛒", text: "Buy-now-pay-later support" },
+            { icon: "⏰", text: "Smart payment reminders" },
           ]}
           testimonial={{
             quote: "The payment plans have made it so much easier for me to manage my bookings.",
@@ -161,7 +161,7 @@ export default function TripPlanningSoftwarePage() {
           mockup={
             <BookingPageMockup
               tripTitle="Summer Europe Tour 2026"
-              tripMeta="Jul 10-24 \u2022 14 nights \u2022 Multi-city"
+              tripMeta="Jul 10-24 • 14 nights • Multi-city"
               packages={[
                 {
                   name: "Explorer Package",
@@ -182,10 +182,10 @@ export default function TripPlanningSoftwarePage() {
             />
           }
           highlights={[
-            { icon: "\uD83C\uDF10", text: "No-code page builder" },
-            { icon: "\uD83C\uDFA8", text: "Custom branding and design" },
-            { icon: "\uD83D\uDCCB", text: "Itinerary and package display" },
-            { icon: "\uD83D\uDCF1", text: "Mobile-first responsive design" },
+            { icon: "🌐", text: "No-code page builder" },
+            { icon: "🎨", text: "Custom branding and design" },
+            { icon: "📋", text: "Itinerary and package display" },
+            { icon: "📱", text: "Mobile-first responsive design" },
           ]}
           linkText="Build your booking page"
           linkHref={SIGNUP_URL}

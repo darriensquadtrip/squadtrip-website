@@ -84,10 +84,10 @@ export function TripPagesMockup() {
 
 export function ItinerariesMockup() {
   const days = [
-    { day: "Day 1", label: "Arrival & Welcome Dinner", icon: "\u2708\uFE0F" },
-    { day: "Day 2", label: "Beach & Snorkeling", icon: "\uD83C\uDFD6\uFE0F" },
-    { day: "Day 3", label: "Ruins Tour & Cenote", icon: "\uD83C\uDFDB\uFE0F" },
-    { day: "Day 4", label: "Free Day & Farewell", icon: "\uD83C\uDF1E" },
+    { day: "Day 1", label: "Arrival & Welcome Dinner", icon: "✈️" },
+    { day: "Day 2", label: "Beach & Snorkeling", icon: "🏖️" },
+    { day: "Day 3", label: "Ruins Tour & Cenote", icon: "🏛️" },
+    { day: "Day 4", label: "Free Day & Farewell", icon: "🌞" },
   ];
   return (
     <div style={mockupBase}>
@@ -122,7 +122,7 @@ export function AddOnsMockup() {
           <div key={item.name} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "7px 0", borderBottom: "1px solid #f3f4f6" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <div style={{ width: "16px", height: "16px", borderRadius: "4px", border: item.checked ? "none" : "2px solid #d1d5db", background: item.checked ? "#6B46C1" : "white", display: "flex", alignItems: "center", justifyContent: "center", color: "white", fontSize: "0.55rem" }}>
-                {item.checked && "\u2713"}
+                {item.checked && "✓"}
               </div>
               <span style={{ fontSize: "0.72rem", color: "#374151" }}>{item.name}</span>
             </div>

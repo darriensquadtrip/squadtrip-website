@@ -22,18 +22,18 @@ interface ProblemValidationProps {
 }
 
 const defaultStats: Stat[] = [
-  { icon: "\u23F1\uFE0F", value: 47, suffix: " hrs", label: "Average time spent planning a group trip" },
-  { icon: "\uD83D\uDCF1", value: 23, suffix: " texts", label: "Sent chasing one late payment" },
-  { icon: "\uD83D\uDCB8", value: 5, suffix: "K+", label: "Lost when a traveler ghosts" },
-  { icon: "\uD83D\uDCCB", value: 156, suffix: "+", label: "Spreadsheet updates per trip" },
+  { icon: "⏱️", value: 47, suffix: " hrs", label: "Average time spent planning a group trip" },
+  { icon: "📱", value: 23, suffix: " texts", label: "Sent chasing one late payment" },
+  { icon: "💸", value: 5, suffix: "K+", label: "Lost when a traveler ghosts" },
+  { icon: "📋", value: 156, suffix: "+", label: "Spreadsheet updates per trip" },
 ];
 
 export function ProblemValidation({
   headline = "Sound Familiar?",
-  subtitle = "Group travel planning shouldn\u2019t feel like a second job.",
+  subtitle = "Group travel planning shouldn’t feel like a second job.",
   stats = defaultStats,
   caption = "Based on surveys of 500+ group trip organizers",
-  ctaText = "There\u2019s a better way \u2193",
+  ctaText = "There’s a better way ↓",
   ctaHref = SIGNUP_URL,
 }: ProblemValidationProps) {
   return (

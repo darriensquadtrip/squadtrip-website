@@ -53,10 +53,10 @@ const weddingFAQ = [
 ];
 
 const weddingStats = [
-  { icon: "\uD83D\uDC65", value: 85, suffix: "+", label: "Guests to coordinate for the average destination wedding" },
-  { icon: "\uD83D\uDCC5", value: 12, suffix: " months", label: "Of planning before the big day" },
-  { icon: "\uD83D\uDCB0", value: 50, suffix: "K+", label: "At stake when payments fall through" },
-  { icon: "\uD83D\uDCE7", value: 200, suffix: "+", label: "Emails chasing RSVPs and payments" },
+  { icon: "👥", value: 85, suffix: "+", label: "Guests to coordinate for the average destination wedding" },
+  { icon: "📅", value: 12, suffix: " months", label: "Of planning before the big day" },
+  { icon: "💰", value: 50, suffix: "K+", label: "At stake when payments fall through" },
+  { icon: "📧", value: 200, suffix: "+", label: "Emails chasing RSVPs and payments" },
 ];
 
 export default function DestinationWeddingPlannersPage() {
@@ -85,7 +85,7 @@ export default function DestinationWeddingPlannersPage() {
         mockup={
           <BookingPageMockup
             tripTitle="Jamaica Destination Wedding"
-            tripMeta="Mar 15-22 \u2022 7 nights \u2022 Beachfront Resort"
+            tripMeta="Mar 15-22 • 7 nights • Beachfront Resort"
             packages={[
               {
                 name: "Guest Package",
@@ -113,7 +113,7 @@ export default function DestinationWeddingPlannersPage() {
         subtitle="Between guest lists, room blocks, and payment tracking, it can feel like a full-time job."
         stats={weddingStats}
         caption="Based on surveys of 500+ destination wedding planners"
-        ctaText="There\u2019s a better way \u2193"
+        ctaText="There’s a better way ↓"
       />
 
       {/* Feature Blocks */}
@@ -125,7 +125,7 @@ export default function DestinationWeddingPlannersPage() {
           mockup={
             <BookingPageMockup
               tripTitle="Jamaica Destination Wedding"
-              tripMeta="Mar 15-22 \u2022 7 nights \u2022 Beachfront Resort"
+              tripMeta="Mar 15-22 • 7 nights • Beachfront Resort"
               packages={[
                 {
                   name: "Guest Package",
@@ -146,10 +146,10 @@ export default function DestinationWeddingPlannersPage() {
             />
           }
           highlights={[
-            { icon: "\uD83D\uDC8D", text: "Wedding-ready design" },
-            { icon: "\uD83C\uDFE8", text: "Room block packages" },
-            { icon: "\uD83D\uDCCB", text: "Full itinerary" },
-            { icon: "\uD83D\uDCF1", text: "Mobile-friendly" },
+            { icon: "💍", text: "Wedding-ready design" },
+            { icon: "🏨", text: "Room block packages" },
+            { icon: "📋", text: "Full itinerary" },
+            { icon: "📱", text: "Mobile-friendly" },
           ]}
           testimonial={{
             quote: "Our guests loved how easy it was to book and pay. No confusion at all.",
@@ -174,10 +174,10 @@ export default function DestinationWeddingPlannersPage() {
           }
           reverse
           highlights={[
-            { icon: "\uD83D\uDD04", text: "Auto-retry failed payments" },
-            { icon: "\u23F0", text: "Scheduled reminders" },
-            { icon: "\uD83D\uDCB3", text: "Apple Pay & cards" },
-            { icon: "\uD83D\uDED2", text: "Klarna & Afterpay" },
+            { icon: "🔄", text: "Auto-retry failed payments" },
+            { icon: "⏰", text: "Scheduled reminders" },
+            { icon: "💳", text: "Apple Pay & cards" },
+            { icon: "🛒", text: "Klarna & Afterpay" },
           ]}
           bonus="Guests can also pay in full upfront or use buy-now-pay-later options."
           linkText="Set up payment plans"
@@ -201,10 +201,10 @@ export default function DestinationWeddingPlannersPage() {
             />
           }
           highlights={[
-            { icon: "\uD83D\uDCE7", text: "Email reminders" },
-            { icon: "\uD83D\uDCF2", text: "SMS notifications" },
-            { icon: "\uD83D\uDCC6", text: "Travel updates" },
-            { icon: "\uD83D\uDD14", text: "Auto payment alerts" },
+            { icon: "📧", text: "Email reminders" },
+            { icon: "📲", text: "SMS notifications" },
+            { icon: "📆", text: "Travel updates" },
+            { icon: "🔔", text: "Auto payment alerts" },
           ]}
           testimonial={{
             quote: "I used to spend hours sending individual emails. Now SquadTrip handles all of it.",

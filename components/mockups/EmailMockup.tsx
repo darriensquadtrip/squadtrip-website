@@ -44,7 +44,7 @@ export function EmailMockup({
             </div>
             <a href="#" className="email-cta-mini">{ctaText}</a>
             <div className="email-auto-badge">
-              \u2713 Auto-charge enabled — no action needed
+              ✓ Auto-charge enabled — no action needed
             </div>
           </div>
         </div>

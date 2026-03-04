@@ -88,7 +88,7 @@ export function FeatureBentoGrid() {
               <div className="reminders-visual">
                 <div className="reminder-card">
                   <div className="reminder-card-header">
-                    <div className="reminder-icon email">&nbsp;\u2709\uFE0F</div>
+                    <div className="reminder-icon email">&nbsp;✉️</div>
                     <span>Payment Reminder</span>
                   </div>
                   <div className="reminder-preview">
@@ -97,7 +97,7 @@ export function FeatureBentoGrid() {
                 </div>
                 <div className="reminder-card">
                   <div className="reminder-card-header">
-                    <div className="reminder-icon sms">&nbsp;\uD83D\uDCF1</div>
+                    <div className="reminder-icon sms">&nbsp;📱</div>
                     <span>SMS Alert</span>
                   </div>
                   <div className="reminder-preview">
@@ -106,7 +106,7 @@ export function FeatureBentoGrid() {
                 </div>
                 <div className="reminder-card">
                   <div className="reminder-card-header">
-                    <div className="reminder-icon receipt">&nbsp;\uD83E\uDDFE</div>
+                    <div className="reminder-icon receipt">&nbsp;🧾</div>
                     <span>Receipt</span>
                   </div>
                   <div className="reminder-preview">

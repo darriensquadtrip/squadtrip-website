@@ -74,7 +74,7 @@ export default function BecomeATravelAgentFreePage() {
         mockup={
           <BookingPageMockup
             tripTitle="Punta Cana Getaway"
-            tripMeta="Aug 3-9 \u2022 6 nights \u2022 All-inclusive"
+            tripMeta="Aug 3-9 • 6 nights • All-inclusive"
             packages={[
               {
                 name: "Resort Package",
@@ -101,10 +101,10 @@ export default function BecomeATravelAgentFreePage() {
         headline="Most 'Become a Travel Agent' Advice Costs Too Much"
         subtitle="Expensive courses, certification programs, and software subscriptions add up before you even earn your first dollar."
         stats={[
-          { icon: "\uD83D\uDCB0", value: 3, suffix: "K+", label: "Average cost of travel agent courses" },
-          { icon: "\uD83D\uDCB3", value: 200, suffix: "/mo", label: "Typical software subscription costs" },
-          { icon: "\u23F1\uFE0F", value: 6, suffix: " months", label: "Before most new agents earn income" },
-          { icon: "\uD83D\uDCC9", value: 60, suffix: "%", label: "Of new agents quit due to upfront costs" },
+          { icon: "💰", value: 3, suffix: "K+", label: "Average cost of travel agent courses" },
+          { icon: "💳", value: 200, suffix: "/mo", label: "Typical software subscription costs" },
+          { icon: "⏱️", value: 6, suffix: " months", label: "Before most new agents earn income" },
+          { icon: "📉", value: 60, suffix: "%", label: "Of new agents quit due to upfront costs" },
         ]}
         caption="Based on industry surveys of aspiring travel agents"
         ctaText="Skip the overhead"
@@ -119,7 +119,7 @@ export default function BecomeATravelAgentFreePage() {
           mockup={
             <BookingPageMockup
               tripTitle="Cabo Birthday Bash"
-              tripMeta="Oct 10-15 \u2022 5 nights \u2022 Luxury resort"
+              tripMeta="Oct 10-15 • 5 nights • Luxury resort"
               packages={[
                 {
                   name: "VIP Suite",
@@ -140,10 +140,10 @@ export default function BecomeATravelAgentFreePage() {
             />
           }
           highlights={[
-            { icon: "\uD83C\uDD93", text: "Free to create and publish" },
-            { icon: "\uD83C\uDF10", text: "Shareable link for promotion" },
-            { icon: "\uD83C\uDFA8", text: "Professional design out of the box" },
-            { icon: "\uD83D\uDCF1", text: "Works perfectly on mobile" },
+            { icon: "🆓", text: "Free to create and publish" },
+            { icon: "🌐", text: "Shareable link for promotion" },
+            { icon: "🎨", text: "Professional design out of the box" },
+            { icon: "📱", text: "Works perfectly on mobile" },
           ]}
           bonus="No website needed. Your booking page is your storefront."
           testimonial={{
@@ -160,10 +160,10 @@ export default function BecomeATravelAgentFreePage() {
           mockup={<PaymentPlanMockup />}
           reverse
           highlights={[
-            { icon: "\uD83D\uDD04", text: "Automatic monthly billing included free" },
-            { icon: "\u23F0", text: "Email reminders at no extra cost" },
-            { icon: "\uD83D\uDCB3", text: "Cards, Apple Pay, and Google Pay" },
-            { icon: "\uD83C\uDFE6", text: "Direct payouts to your bank" },
+            { icon: "🔄", text: "Automatic monthly billing included free" },
+            { icon: "⏰", text: "Email reminders at no extra cost" },
+            { icon: "💳", text: "Cards, Apple Pay, and Google Pay" },
+            { icon: "🏦", text: "Direct payouts to your bank" },
           ]}
           testimonial={{
             quote: "The payment plans have made it so much easier for me to manage my bookings.",
@@ -189,10 +189,10 @@ export default function BecomeATravelAgentFreePage() {
             />
           }
           highlights={[
-            { icon: "\uD83D\uDCCA", text: "Real-time revenue tracking" },
-            { icon: "\uD83D\uDC65", text: "Traveler management" },
-            { icon: "\uD83D\uDD14", text: "Booking notifications" },
-            { icon: "\uD83D\uDCC8", text: "Grow at your own pace" },
+            { icon: "📊", text: "Real-time revenue tracking" },
+            { icon: "👥", text: "Traveler management" },
+            { icon: "🔔", text: "Booking notifications" },
+            { icon: "📈", text: "Grow at your own pace" },
           ]}
           linkText="Start free today"
           linkHref={SIGNUP_URL}
