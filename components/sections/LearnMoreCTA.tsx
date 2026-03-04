@@ -18,17 +18,17 @@ interface LearnMoreCTAProps {
 
 const defaultCards: CTACard[] = [
   {
-    icon: "✨",
-    title: "See All Features",
-    description: "Everything you need to build, promote, sell, manage, and get paid.",
+    icon: "🎯",
+    title: "All Features",
+    description: "Payment plans, booking pages, traveler portal, and more.",
     linkText: "Explore features →",
     href: "/features",
     featured: true,
   },
   {
     icon: "💰",
-    title: "View Pricing",
-    description: "Simple, transparent pricing. Free to start, pay only when you get paid.",
+    title: "Pricing",
+    description: "Free plan available. Paid plans start at $29/mo.",
     linkText: "See pricing →",
     href: "/pricing",
   },

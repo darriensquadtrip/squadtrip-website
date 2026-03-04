@@ -10,6 +10,7 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { TrustSignals } from "@/components/sections/TrustSignals";
 import { LearnMoreCTA } from "@/components/sections/LearnMoreCTA";
 import { FAQ } from "@/components/ui/FAQ";
+import { ComparisonTable } from "@/components/sections/ComparisonTable";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import { SoftwareAppSchema } from "@/components/seo/SoftwareAppSchema";
@@ -199,13 +200,13 @@ export default function HomePage() {
 
         {/* Feature Block 3: Booking Pages */}
         <FeatureBlock
-          title="Give travelers a page that sells the trip for you"
-          description="Stop sending group chat messages with trip details that get buried. Create a professional booking page with your itinerary, packages, photos, and pricing. Travelers can browse, choose their room, and pay—all in one place."
+          title="Tired of explaining 'what's included?' in 47 DMs?"
+          description="When trip details live in your head (or scattered across texts), you become a full-time FAQ machine. Create a beautiful booking page with packages, rooms, pricing, and itinerary—shareable with one link."
           bonus="Plus, collect traveler details (passport info, dietary restrictions, roommate preferences) right at checkout—no more copying from screenshots."
           testimonial={{
             quote:
-              "My booking page looks so professional that travelers think I hired a web designer. It literally sells the trip for me.",
-            attribution: "Travel agent",
+              "I used to spend hours answering the same questions. Now I send my SquadTrip link and they have everything—and I get all their info automatically.",
+            attribution: "Group trip organizer",
           }}
           linkText="See example booking page"
           linkHref="/product/build-a-professional-checkout-experience-for-your-group-trips"
@@ -214,8 +215,8 @@ export default function HomePage() {
 
         {/* Feature Block 4: Emails & Reminders */}
         <FeatureBlock
-          title="Never send another “just checking in” text"
-          description="SquadTrip handles all the follow-up so you don’t have to. Payment reminders go out before each installment. Receipts are sent automatically. Failed payment? We retry and notify the traveler. You get updates without lifting a finger."
+          title={`Send reminders without being “that person”`}
+          description={`Nobody wants to be the friend who’s always asking about money. But someone has to. Let SquadTrip be the bad guy. Automatic payment reminders go out before each due date—professional, friendly, and not from your personal number.`}
           reverse
           highlights={[
             { icon: "✉️", text: "Email reminders & receipts" },
@@ -224,14 +225,31 @@ export default function HomePage() {
           ]}
           testimonial={{
             quote:
-              "I used to dread the ‘Hey, your payment is late’ conversation. Now I don’t even have to think about it—SquadTrip handles all the reminders.",
-            attribution: "Retreat organizer",
+              "The automatic reminders are a lifesaver. I don’t have to nag anyone, and everyone still pays on time. When a card fails, SquadTrip handles it—I just get an alert.",
+            attribution: "Community trip leader",
           }}
           linkText="Get started"
           linkHref={SIGNUP_URL}
           mockup={<EmailMockup />}
         />
       </section>
+
+      {/* Comparison Table */}
+      <ComparisonTable
+        headline="Can't I just use Venmo and a spreadsheet?"
+        intro="You could. Here's what that looks like:"
+        columnHeaders={["Task", "DIY Approach", "With SquadTrip"]}
+        rows={[
+          { task: "Collecting payments", diy: "Chase people for months", squadtrip: "Automatic payment plans" },
+          { task: "Tracking who paid", diy: "Spreadsheet (always outdated)", squadtrip: "Real-time dashboard" },
+          { task: "Sending reminders", diy: 'Awkward texts ("hey, did you...?")', squadtrip: "Automatic emails they expect" },
+          { task: "Payment failures", diy: "You find out when they tell you", squadtrip: "Auto-retry + instant alerts" },
+          { task: "Professional look", diy: "Venmo request screenshots", squadtrip: "Branded booking page" },
+          { task: "Your time", diy: "10+ hours of admin per trip", squadtrip: "Set it up once, done" },
+        ]}
+        ctaText="Start your free trip →"
+        ctaHref={SIGNUP_URL}
+      />
 
       {/* Testimonials */}
       <TestimonialsSection
@@ -261,8 +279,8 @@ export default function HomePage() {
           {
             quote:
               "I’m not a travel agent—I’m just trying to get 60 people to my wedding. SquadTrip let me set up room blocks, collect deposits, and track everything without losing my mind.",
-            author: "Danielle W.",
-            company: "Destination Wedding",
+            author: "Diana Wilson",
+            company: "Riviera Maya Wedding",
             initials: "DW",
             badge: "Wedding Coordinator",
           },
@@ -272,16 +290,16 @@ export default function HomePage() {
             quote:
               "I was nervous about planning my first group trip, but SquadTrip made it so easy. I thought software like this was only for travel professionals, but it’s actually perfect for someone like me.",
             author: "Michelle L.",
-            company: "First Group Trip",
+            company: "Friends Trip to Cancun",
             initials: "ML",
             badge: "First-Time Organizer",
           },
           {
             quote:
               "Managing payments for my yoga retreats used to be a nightmare. Now I set up payment plans, and everything runs on autopilot. My guests appreciate the professional experience.",
-            author: "Sarah K.",
-            company: "Wellness Retreats",
-            initials: "SK",
+            author: "Michelle L.",
+            company: "Serenity Retreats",
+            initials: "ML",
             badge: "Retreat Leader",
           },
         ]}
@@ -293,7 +311,7 @@ export default function HomePage() {
       {/* Learn More CTA */}
       <LearnMoreCTA
         headline="Want to see everything SquadTrip can do?"
-        subtitle="Discover how SquadTrip can simplify your group travel business."
+        subtitle="Explore our full feature set and transparent pricing."
       />
 
       {/* FAQ */}
