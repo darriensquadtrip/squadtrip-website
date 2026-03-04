@@ -5,7 +5,7 @@ import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { GuideCard } from "@/components/guides/GuideCard";
 import { Hero } from "@/components/sections/Hero";
 import { LearnMoreCTA } from "@/components/sections/LearnMoreCTA";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
+
 
 export const metadata: Metadata = generatePageMetadata({
   title: "Group Travel Guides & Resources",
@@ -77,7 +77,6 @@ export default function GuidesIndexPage() {
       <section className="feature-overview">
         <div className="feature-overview-container">
           {guides.length > 0 ? (
-            <ScrollReveal stagger>
               <div
                 style={{
                   display: "grid",
@@ -91,7 +90,6 @@ export default function GuidesIndexPage() {
                   </div>
                 ))}
               </div>
-            </ScrollReveal>
           ) : (
             <p style={{ textAlign: "center", color: "var(--text-muted)", padding: "3rem 0" }}>
               Guides are being migrated. Check back soon!
