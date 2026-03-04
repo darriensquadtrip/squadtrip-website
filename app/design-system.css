@@ -2319,14 +2319,11 @@
 
     .who-uses-grid { grid-template-columns: 1fr; }
 
-    .comparison-table { overflow-x: visible; }
-    .comparison-table table { table-layout: fixed; width: 100%; }
-    .comparison-table th, .comparison-table td { padding: 12px 8px; font-size: 0.75rem; word-wrap: break-word; }
-    .comparison-table th { font-size: 0.65rem; }
-    .comparison-table th:first-child, .comparison-table td:first-child { width: 28%; }
-    .comparison-table th:nth-child(2), .comparison-table td:nth-child(2),
-    .comparison-table th:nth-child(3), .comparison-table td:nth-child(3) { width: 36%; }
-    .compare-x, .compare-check { width: 16px; height: 16px; font-size: 0.6rem; margin-right: 4px; }
+    .comparison-table { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .comparison-table table { min-width: 500px; }
+    .comparison-table th, .comparison-table td { padding: 12px 10px; font-size: 0.85rem; }
+    .comparison-table th { font-size: 0.8rem; }
+    .compare-x, .compare-check { width: 18px; height: 18px; font-size: 0.7rem; margin-right: 4px; }
 
     .testimonial-card-featured { padding: 24px; }
     .testimonial-card-side, .testimonial-card-bottom { padding: 20px; }
