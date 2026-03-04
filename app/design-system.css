@@ -2261,6 +2261,13 @@
 @media (min-width: 769px) and (max-width: 1024px) {
     .testimonials-bottom { grid-template-columns: repeat(2, 1fr); }
     .footer-grid { grid-template-columns: repeat(3, 1fr); }
+    .feature-blocks { padding: 60px 0; }
+    .feature-block { gap: 32px; margin-bottom: 60px; }
+    .feature-block-content h3 { font-size: 1.75rem; }
+    .feature-block-image { padding: 16px; }
+    .trust-container { gap: 32px; }
+    .comparison-section h2 { font-size: 1.75rem; }
+    .final-cta h2 { font-size: 2rem; }
 }
 
 /* ==================== RESPONSIVE: 768px ==================== */
@@ -2334,10 +2341,49 @@
     .footer-social { justify-content: center; }
     .footer-bottom > div:last-child { display: none; }
 
+    .feature-blocks { padding: 48px 0; }
+    .feature-block { gap: 24px; margin-bottom: 48px; padding: 0 16px; }
+    .feature-block-content h3 { font-size: 1.5rem; }
+    .feature-block-content p { font-size: 1rem; }
+    .feature-block-image { padding: 12px; box-shadow: 0 8px 24px rgba(107, 70, 193, 0.08); }
+    .feature-testimonial { padding: 16px 20px; }
+    .feature-highlight { padding: 16px; gap: 12px; }
+
+    .trust-container { gap: 24px; }
+    .trust-item { font-size: 0.9rem; gap: 8px; }
+
+    .comparison-section h2 { font-size: 1.5rem; }
+    .comparison-intro { font-size: 1rem; }
+
+    .final-cta h2 { font-size: 1.75rem; }
+    .final-cta p { font-size: 1rem; }
+    .final-cta-buttons { gap: 12px; }
+
+    .faq-section h2 { font-size: 1.75rem; }
+
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+
     .learn-more-section { padding: 60px 0; }
     .learn-more-container h2 { font-size: 1.5rem; }
     .learn-more-card { flex-direction: column; text-align: center; padding: 24px 20px; gap: 12px; }
     .learn-more-icon { font-size: 2.5rem; }
+}
+
+/* ==================== RESPONSIVE: 480px ==================== */
+@media (max-width: 480px) {
+    .feature-overview-container,
+    .problem-container,
+    .comparison-container,
+    .faq-container,
+    .learn-more-container,
+    .final-cta-container { padding: 0 16px; }
+
+    .stats-grid { grid-template-columns: 1fr; }
+    .bento-card { padding: 20px; }
+    .payment-bar { height: 48px; }
+    .payment-bar-label { font-size: 0.75rem; }
+
+    .comparison-table table { min-width: 420px; }
 }
 
 /* ==================== RESPONSIVE: 375px ==================== */
@@ -2345,6 +2391,13 @@
     .hero { padding: 32px 0 48px; }
     .hero-container { gap: 12px; }
     .hero-headline { font-size: 1.5rem; }
+    .hero-subtitle { font-size: 0.9rem; }
+
+    .feature-block { gap: 16px; padding: 0 12px; }
+    .feature-block-content h3 { font-size: 1.35rem; }
+    .feature-block-image { padding: 8px; }
+
+    .trust-container { gap: 16px; flex-direction: column; }
 }
 
 /* ==================== MOBILE MIN FONT SIZE (16px / 1rem) ==================== */

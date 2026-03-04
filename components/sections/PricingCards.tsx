@@ -167,7 +167,7 @@ export function PricingCards() {
               style={{
                 borderRadius: "20px",
                 border: "1px solid var(--border-light)",
-                padding: "40px 32px",
+                padding: "clamp(24px, 5vw, 40px) clamp(20px, 4vw, 32px)",
                 background: "var(--bg-white)",
                 display: "flex",
                 flexDirection: "column",
@@ -274,7 +274,7 @@ export function PricingCards() {
               style={{
                 borderRadius: "20px",
                 border: "2px solid var(--purple-primary)",
-                padding: "40px 32px",
+                padding: "clamp(24px, 5vw, 40px) clamp(20px, 4vw, 32px)",
                 background: "var(--bg-white)",
                 position: "relative",
                 display: "flex",

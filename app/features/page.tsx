@@ -279,7 +279,7 @@ export default function FeaturesPage() {
                 style={{
                   display: "grid",
                   gridTemplateColumns:
-                    "repeat(auto-fill, minmax(280px, 1fr))",
+                    "repeat(auto-fill, minmax(min(280px, 100%), 1fr))",
                   gap: "24px",
                   marginTop: "2rem",
                 }}

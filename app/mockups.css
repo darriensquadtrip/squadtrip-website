@@ -593,8 +593,21 @@
     .booking-hero-mini p { font-size: 0.7rem; }
 }
 
+/* ==================== MOCKUP RESPONSIVE: 480px ==================== */
+@media (max-width: 480px) {
+    .mockup-frame { padding: 12px; border-radius: 12px; }
+    .mockup-content { padding: 10px; }
+    .mini-stats-row { grid-template-columns: repeat(2, 1fr); }
+    .mini-stat { padding: 8px 6px; }
+    .mini-stat-value { font-size: 1rem; }
+    .mini-stat-label { font-size: 0.7rem; }
+    .schedule-item { padding: 8px 10px; gap: 8px; }
+    .schedule-amount { font-size: 0.85rem; }
+}
+
 /* ==================== MOCKUP RESPONSIVE: 375px ==================== */
 @media (max-width: 375px) {
     .mini-stat-value { font-size: 1rem; }
     .mini-table { display: none; }
+    .mini-stats-row { grid-template-columns: 1fr 1fr; gap: 4px; }
 }
