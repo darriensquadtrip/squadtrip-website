@@ -38,6 +38,7 @@ function CheckIcon() {
       strokeWidth={2.5}
       stroke="var(--success-green)"
       style={{ flexShrink: 0, marginTop: "2px" }}
+      aria-hidden="true"
     >
       <path
         strokeLinecap="round"
@@ -154,7 +155,7 @@ export function PricingCards() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(340px, 100%), 1fr))",
               gap: "32px",
               maxWidth: "900px",
               margin: "0 auto",

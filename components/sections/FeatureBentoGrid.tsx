@@ -68,7 +68,7 @@ export function FeatureBentoGrid() {
               <p>Share a single booking link with all your travelers.</p>
               <div className="link-visual link-preview">
                 <div className="link-url-bar">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                     <path d="M6.5 11.5L3 8l3.5-3.5M9.5 4.5L13 8l-3.5 3.5" />
                   </svg>
                   <span>sqtrp.co/cancun2026</span>

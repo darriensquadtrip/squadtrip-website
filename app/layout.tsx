@@ -32,6 +32,15 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@squadtrip",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+    shortcut: "/favicon.ico",
   },
   robots: {
     index: true,
@@ -52,10 +61,11 @@ export default function RootLayout({
         <OrganizationSchema />
       </head>
       <body className="font-sans antialiased">
+        <a className="skip-to-content" href="#main-content">Skip to main content</a>
         <PostHogProvider>
           <UTMTracker />
           <Header />
-          <main>{children}</main>
+          <main id="main-content">{children}</main>
           <Footer />
           <AnimationProvider />
           <IntercomWidget />

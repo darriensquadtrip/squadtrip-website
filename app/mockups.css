@@ -570,18 +570,18 @@
 @media (max-width: 640px) {
     .mockup-browser-bar { padding: 8px 12px; }
     .mockup-dot { width: 8px; height: 8px; }
-    .mockup-url { font-size: 0.65rem; padding: 4px 8px; }
+    .mockup-url { font-size: 0.75rem; padding: 4px 8px; }
     .mockup-content { padding: 12px; }
 
     .mini-stats-row { gap: 8px; margin-bottom: 12px; }
     .mini-stat { padding: 10px 8px; }
     .mini-stat-value { font-size: 1.1rem; }
-    .mini-stat-label { font-size: 0.6rem; }
+    .mini-stat-label { font-size: 0.75rem; }
     .mini-progress { margin-bottom: 12px; }
-    .mini-progress-header { font-size: 0.7rem; }
-    .mini-table-header, .mini-table-row { font-size: 0.65rem; padding: 6px 0; }
-    .mini-avatar { width: 20px; height: 20px; font-size: 0.5rem; }
-    .mini-badge { font-size: 0.55rem; padding: 2px 6px; }
+    .mini-progress-header { font-size: 0.8rem; }
+    .mini-table-header, .mini-table-row { font-size: 0.75rem; padding: 6px 0; }
+    .mini-avatar { width: 22px; height: 22px; font-size: 0.6rem; }
+    .mini-badge { font-size: 0.65rem; padding: 2px 6px; }
 
     .booking-two-col { grid-template-columns: 1fr; gap: 12px; }
     .booking-right-col { order: -1; }

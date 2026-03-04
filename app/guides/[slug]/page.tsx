@@ -29,6 +29,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: guide.frontmatter.description,
     path: `/guides/${slug}`,
     ogImage: guide.frontmatter.featuredImage || undefined,
+    articleDates: {
+      published: guide.frontmatter.date,
+      modified: guide.frontmatter.lastModified,
+    },
   });
 }
 

@@ -1,28 +1,25 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Page Not Found | SquadTrip",
+  robots: { index: false, follow: false },
+};
 
 export default function NotFound() {
   return (
-    <section className="py-24 sm:py-32">
-      <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center">
-        <p className="text-6xl font-bold text-purple-700 mb-4">404</p>
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-          Page Not Found
-        </h1>
-        <p className="text-lg text-gray-600 mb-10">
+    <section className="hero" style={{ minHeight: "60vh", display: "flex", alignItems: "center" }}>
+      <div className="hero-container" style={{ textAlign: "center" }}>
+        <h1 className="hero-headline" style={{ fontSize: "3rem" }}>404</h1>
+        <p className="hero-subtitle" style={{ marginBottom: "32px" }}>
           The page you&apos;re looking for doesn&apos;t exist or has been moved.
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href="/"
-            className="inline-block rounded-lg bg-purple px-8 py-3 text-lg font-semibold text-white hover:bg-purple-dark transition-colors"
-          >
-            Go to homepage
+        <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
+          <Link href="/" className="btn-primary" style={{ textDecoration: "none" }}>
+            Go Home
           </Link>
-          <Link
-            href="/guides"
-            className="inline-block rounded-lg border border-gray-300 bg-white px-8 py-3 text-lg font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
-          >
-            Browse guides
+          <Link href="/guides" className="btn-secondary" style={{ textDecoration: "none" }}>
+            Browse Guides
           </Link>
         </div>
       </div>

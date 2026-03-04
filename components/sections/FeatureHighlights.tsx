@@ -13,6 +13,7 @@ const highlights = [
         fill="none"
         stroke="var(--purple-primary)"
         strokeWidth={1.5}
+        aria-hidden="true"
       >
         <path
           strokeLinecap="round"
@@ -34,6 +35,7 @@ const highlights = [
         fill="none"
         stroke="var(--purple-primary)"
         strokeWidth={1.5}
+        aria-hidden="true"
       >
         <path
           strokeLinecap="round"
@@ -55,6 +57,7 @@ const highlights = [
         fill="none"
         stroke="var(--purple-primary)"
         strokeWidth={1.5}
+        aria-hidden="true"
       >
         <path
           strokeLinecap="round"
@@ -76,6 +79,7 @@ const highlights = [
         fill="none"
         stroke="var(--purple-primary)"
         strokeWidth={1.5}
+        aria-hidden="true"
       >
         <path
           strokeLinecap="round"

@@ -60,9 +60,8 @@ export function ProblemValidation({
 
         {caption && <p className="stats-caption">{caption}</p>}
 
-        <p className="problem-familiar">{ctaText.split(" \u2193")[0]}</p>
         <a href={ctaHref} className="problem-cta">
-          {ctaText} &darr;
+          {ctaText}
         </a>
       </div>
     </section>

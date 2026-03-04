@@ -43,7 +43,7 @@ export function TestimonialsSection({
               {featured.badge && (
                 <div className="featured-badge">{featured.badge}</div>
               )}
-              <div className="featured-stars">&starf;&starf;&starf;&starf;&starf;</div>
+              <div className="featured-stars">★★★★★</div>
               <p className="testimonial-quote">&ldquo;{featured.quote}&rdquo;</p>
               <div className="testimonial-author">
                 <div className="testimonial-avatar">{featured.initials}</div>

@@ -779,12 +779,12 @@
 
 .stat-label {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.75);
     line-height: 1.4;
 }
 
 .stats-caption {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.75);
     font-size: 0.8rem;
     margin-bottom: 40px;
     font-style: italic;
@@ -2203,7 +2203,7 @@
 
 .footer-copyright {
     font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.75);
     text-align: center;
     flex: 1;
 }
@@ -2255,6 +2255,12 @@
     .learn-more-icon { font-size: 2rem; flex-shrink: 0; }
     .learn-more-card h3 { margin-bottom: 4px; }
     .learn-more-card p { margin-bottom: 8px; }
+}
+
+/* ==================== RESPONSIVE: iPad (768px–1024px) ==================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .testimonials-bottom { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* ==================== RESPONSIVE: 768px ==================== */
@@ -2342,6 +2348,76 @@
     .hero { padding: 32px 0 48px; }
     .hero-container { gap: 12px; }
     .hero-headline { font-size: 1.5rem; }
-    .hero-subtitle { font-size: 0.875rem; }
-    .btn-primary { padding: 14px 24px; font-size: 0.95rem; }
+}
+
+/* ==================== MOBILE MIN FONT SIZE (16px / 1rem) ==================== */
+@media (max-width: 768px) {
+    /* Navigation & header */
+    .nav-link,
+    .dropdown-item,
+    .btn-login,
+    .btn-signup,
+    .btn-signup-mobile,
+    .mobile-nav-title { font-size: 1rem; }
+
+    /* Hero */
+    .hero-trust,
+    .hero-subtitle { font-size: 1rem; }
+    .btn-primary { font-size: 1rem; }
+
+    /* Problem / Stats section */
+    .stat-label,
+    .stat-description,
+    .stats-caption,
+    .stat-number-label,
+    .problem-cta { font-size: 1rem; }
+
+    /* Bento grid (content, not decorative) */
+    .payment-bar-label,
+    .dashboard-avatar,
+    .dashboard-status,
+    .dashboard-name,
+    .reminder-badge-text,
+    .reminder-badge-icon { font-size: 1rem; }
+
+    /* Comparison table */
+    .comparison-table th,
+    .comparison-table td { font-size: 1rem; }
+    .compare-x, .compare-check { font-size: 0.85rem; }
+
+    /* Steps / highlights */
+    .step-highlight { font-size: 1rem; }
+
+    /* Testimonials */
+    .testimonial-card-bottom .testimonial-meta,
+    .featured-stars { font-size: 1rem; }
+
+    /* Footer */
+    .footer-link,
+    .footer-column a,
+    .footer-copyright,
+    .footer-brand p { font-size: 1rem; }
+
+    /* Learn more */
+    .learn-more-card { font-size: 1rem; }
+
+    /* Who uses / feature sections */
+    .feature-overview-subtitle,
+    .who-uses-description { font-size: 1rem; }
+}
+
+/* ==================== REDUCED MOTION ==================== */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .animate-on-scroll, .stagger-children > * {
+        opacity: 1;
+        transform: none;
+    }
+    .hover-lift:hover { transform: none; }
+    .hero-floating-card { opacity: 1; animation: none !important; }
 }

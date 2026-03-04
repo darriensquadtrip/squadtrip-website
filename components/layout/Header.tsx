@@ -1,11 +1,14 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { NAV_ITEMS, SIGNUP_URL, LOGIN_URL } from "@/lib/constants";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const mobileNavRef = useRef<HTMLDivElement>(null);
+  const toggleBtnRef = useRef<HTMLButtonElement>(null);
 
   const closeMobile = useCallback(() => {
     setMobileOpen(false);
@@ -20,11 +23,43 @@ export function Header() {
     });
   }, []);
 
-  // Close on Escape
+  // Close on Escape + focus trapping
   useEffect(() => {
+    if (!mobileOpen) return;
+
+    // Focus first link on open
+    const nav = mobileNavRef.current;
+    if (nav) {
+      const firstFocusable = nav.querySelector<HTMLElement>("a, button");
+      firstFocusable?.focus();
+    }
+
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && mobileOpen) closeMobile();
+      if (e.key === "Escape") {
+        closeMobile();
+        toggleBtnRef.current?.focus();
+        return;
+      }
+
+      if (e.key === "Tab" && nav) {
+        const focusable = nav.querySelectorAll<HTMLElement>(
+          'a[href], button, [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusable.length === 0) return;
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     };
+
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, [mobileOpen, closeMobile]);
@@ -34,11 +69,12 @@ export function Header() {
       <header className="header" role="banner">
         <div className="header-container">
           <Link href="/" className="logo">
-            <img
-              src="https://squadtrip.com/wp-content/uploads/2022/09/squad-trip-Blog-Logo-300x73.png"
+            <Image
+              src="/images/logos/header-logo.svg"
               alt="SquadTrip"
               width={150}
               height={37}
+              priority
             />
           </Link>
 
@@ -75,6 +111,7 @@ export function Header() {
           </div>
 
           <button
+            ref={toggleBtnRef}
             className={`mobile-menu-toggle${mobileOpen ? " active" : ""}`}
             onClick={toggleMobile}
             aria-label="Toggle mobile menu"
@@ -90,8 +127,12 @@ export function Header() {
 
       {/* Mobile Nav Overlay */}
       <div
+        ref={mobileNavRef}
         className={`mobile-nav-overlay${mobileOpen ? " active" : ""}`}
         id="mobileNav"
+        role="dialog"
+        aria-modal={mobileOpen}
+        aria-label="Mobile navigation"
       >
         <div className="mobile-nav-section">
           {NAV_ITEMS.map((item) =>
