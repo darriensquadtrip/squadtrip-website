@@ -15,10 +15,10 @@ export function Footer() {
           <div className="footer-brand">
             <Link href="/" className="footer-logo">
               <Image
-                src="/images/logos/header-logo.svg"
+                src="/images/logos/squad-trip-logo-02.png"
                 alt="SquadTrip"
                 width={150}
-                height={37}
+                height={53}
               />
             </Link>
             <p>

@@ -9,7 +9,7 @@ export function OrganizationSchema() {
         "@type": "Organization",
         name: SITE_NAME,
         url: SITE_URL,
-        logo: `${SITE_URL}/images/logos/squadtrip-logo.png`,
+        logo: `${SITE_URL}/images/logos/squad-trip-logo-05.png`,
         description:
           "Group travel booking platform for trip organizers, travel agents, and tour operators.",
         sameAs: [LINKEDIN_URL, INSTAGRAM_URL],

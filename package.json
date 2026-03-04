@@ -16,7 +16,10 @@
     "validate-links": "npx tsx scripts/validate-links.ts",
     "seo-audit": "npx tsx scripts/seo-audit.ts",
     "verify-analytics": "npx tsx scripts/verify-analytics.ts",
-    "post-launch": "npx tsx scripts/post-launch-monitor.ts"
+    "post-launch": "npx tsx scripts/post-launch-monitor.ts",
+    "generate-review-manifest": "npx tsx scripts/generate-review-manifest.ts",
+    "fix-broken-links": "npx tsx scripts/fix-broken-links.ts",
+    "fix-missing-images": "npx tsx scripts/fix-missing-images.ts"
   },
   "dependencies": {
     "@next/third-parties": "^16.1.6",

@@ -39,7 +39,7 @@ export function ArticleSchema({
           name: SITE_NAME,
           logo: {
             "@type": "ImageObject",
-            url: `${SITE_URL}/images/logos/squadtrip-logo.png`,
+            url: `${SITE_URL}/images/logos/squad-trip-logo-05.png`,
           },
         },
         ...(featuredImage && {

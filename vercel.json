@@ -23,6 +23,7 @@
     { "source": "/product/affiliate-tracking", "destination": "/product/track-affiliate-sales-for-your-group-trip-with-squadtrip", "permanent": true },
 
     { "source": "/how-it-works", "destination": "/features", "permanent": true },
+    { "source": "/how-it-works/", "destination": "/features", "permanent": true },
     { "source": "/trips/:path*", "destination": "/guides", "permanent": true },
 
     { "source": "/guides/how-to-build-retreat-itineraries", "destination": "/guides/retreat-itinerary-planning-for-group-trips", "permanent": true },
