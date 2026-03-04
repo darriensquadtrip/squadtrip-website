@@ -47,11 +47,11 @@ export function ComparisonTable({
                   <tr key={row.task}>
                     <td>{row.task}</td>
                     <td>
-                      <span className="compare-x">&times;</span>
+                      <span className="compare-x">×</span>
                       {row.diy}
                     </td>
                     <td>
-                      <span className="compare-check">&check;</span>
+                      <span className="compare-check">✓</span>
                       {row.squadtrip}
                     </td>
                   </tr>

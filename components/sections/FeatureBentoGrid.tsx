@@ -20,12 +20,12 @@ export function FeatureBentoGrid() {
               <div className="autocharge-visual">
                 <div className="payment-bar bar-1">
                   <div className="payment-bar-fill" style={{ width: "100%" }}>Paid</div>
-                  <span className="check-badge">&check;</span>
+                  <span className="check-badge">✓</span>
                   <span className="payment-bar-label">Jan</span>
                 </div>
                 <div className="payment-bar bar-2">
                   <div className="payment-bar-fill" style={{ width: "100%" }}>Paid</div>
-                  <span className="check-badge">&check;</span>
+                  <span className="check-badge">✓</span>
                   <span className="payment-bar-label">Feb</span>
                 </div>
                 <div className="payment-bar bar-3">
