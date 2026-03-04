@@ -1,0 +1,54 @@
+# SquadTrip
+
+## What is SquadTrip?
+SquadTrip is the all-in-one booking, payment collection, and group management platform for group travel organizers. It replaces spreadsheets, Venmo requests, and manual follow-ups with automated payment plans, professional booking pages, and a real-time dashboard.
+
+## Core Product
+- **Booking Pages**: Create professional trip landing pages with packages, add-ons, pricing, and itinerary details. Share one link with all travelers.
+- **Automatic Payment Plans**: Set up monthly auto-billing so travelers are charged on schedule. No more chasing payments.
+- **Real-Time Dashboard**: Track who paid, who hasn't, total revenue, and payment statuses at a glance.
+- **Automated Reminders**: Payment reminders, receipts, and confirmations sent automatically via email and SMS.
+- **Traveler Portal**: Travelers can view their balance, update payment methods, download receipts, and manage their bookings.
+- **Buy Now Pay Later**: Offer Klarna, Affirm, and Afterpay as payment options for travelers.
+- **Promo Codes & Referrals**: Create custom promo codes and track traveler referrals.
+- **Affiliate Tracking**: Track affiliate sales with unique tracking links.
+- **E-Sign Documents**: Embed e-signature processes into traveler checkout forms.
+- **Registration Info Collection**: Collect passport info, dietary restrictions, roommate preferences at checkout.
+
+## Who Uses SquadTrip
+- **Tour Operators & Travel Agencies**: Manage group bookings at scale, automate payments, track inventory across multiple trips.
+- **Group Trip Organizers**: Plan bachelor/bachelorette parties, family reunions, friend trips without spreadsheet headaches.
+- **Destination Wedding Planners**: Collect payments, gather RSVPs, manage guest communications for destination weddings.
+- **Retreat Organizers**: Sell wellness retreats, yoga trips, and group experiences with flexible payment plans.
+
+## Pricing
+- **Starter Plan**: Free forever. Unlimited trips, booking pages, payment plans, reporting dashboard, email reminders, chat & email support. 6% processing fee (includes Stripe's 2.9% + 30¢).
+- **Launch Plan**: $29/month or $299/year (save 14%). Everything in Starter plus: custom branding, scheduled emails, unlimited SMS, social media links, team members, BNPL options, promo codes, referral tracking, affiliate program, priority support.
+
+## Key Stats
+- 2,000+ organizers
+- 50,000+ travelers booked
+- 500+ destinations
+- 4.8/5 rating
+
+## Key Pages
+- Homepage: https://www.squadtrip.com
+- Features: https://www.squadtrip.com/features
+- Pricing: https://www.squadtrip.com/pricing
+- Guides: https://www.squadtrip.com/guides
+- For Travel Agents: https://www.squadtrip.com/travel-agents
+- For Group Organizers: https://www.squadtrip.com/travel-groups
+- For Destination Weddings: https://www.squadtrip.com/destination-wedding-planners
+- Help Center: https://help.squadtrip.com
+- Sign Up: https://dashboard.squadtrip.com/organizer-info/0
+
+## How It Works
+1. **Create Your Trip**: Add packages, rooms, pricing, and trip details. Takes about 10 minutes.
+2. **Share Your Link**: Send one link to your group. Travelers book and pay online.
+3. **Track Everything**: Watch payments come in, send updates, and export reports from one dashboard.
+
+## Contact
+- Website: https://www.squadtrip.com
+- Help Center: https://help.squadtrip.com
+- LinkedIn: https://www.linkedin.com/company/squadtrip
+- Instagram: https://www.instagram.com/squadtrip

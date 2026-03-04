@@ -40,4 +40,11 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-.vercel
+# auto-generated
+public/sitemap-0.xml
+public/sitemap.xml
+
+# temporary / one-time files
+wp_guide_temp.json
+audit/
+DNS-CUTOVER.md

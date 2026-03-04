@@ -3,6 +3,54 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
+# ChatGPT-User
+User-agent: ChatGPT-User
+Allow: /
+
+# GPTBot
+User-agent: GPTBot
+Allow: /
+
+# ClaudeBot
+User-agent: ClaudeBot
+Allow: /
+
+# PerplexityBot
+User-agent: PerplexityBot
+Allow: /
+
+# Google-Extended
+User-agent: Google-Extended
+Allow: /
+
+# bingbot
+User-agent: bingbot
+Allow: /
+
+# CCBot
+User-agent: CCBot
+Allow: /
+
+# NeevaBot
+User-agent: NeevaBot
+Allow: /
+
+# Twitterbot
+User-agent: Twitterbot
+Allow: /
+
+# facebookexternalhit
+User-agent: facebookexternalhit
+Allow: /
+
+# ia_archiver
+User-agent: ia_archiver
+Allow: /
+
+# Pinterestbot
+User-agent: Pinterestbot
+Allow: /
+
 # Host
 Host: https://www.squadtrip.com
 

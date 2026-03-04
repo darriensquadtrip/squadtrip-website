@@ -10,7 +10,13 @@
     "lint": "eslint",
     "extract": "npx tsx scripts/extract-wp-content.ts",
     "download-images": "npx tsx scripts/download-wp-images.ts",
-    "generate-redirects": "npx tsx scripts/generate-redirects.ts"
+    "generate-redirects": "npx tsx scripts/generate-redirects.ts",
+    "crawl-wp": "npx tsx scripts/crawl-wp-urls.ts",
+    "content-parity": "npx tsx scripts/content-parity.ts",
+    "validate-links": "npx tsx scripts/validate-links.ts",
+    "seo-audit": "npx tsx scripts/seo-audit.ts",
+    "verify-analytics": "npx tsx scripts/verify-analytics.ts",
+    "post-launch": "npx tsx scripts/post-launch-monitor.ts"
   },
   "dependencies": {
     "@next/third-parties": "^16.1.6",

@@ -20,20 +20,6 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // Rewrite homepage to static HTML file (beforeFiles ensures it runs before App Router)
-  async rewrites() {
-    return {
-      beforeFiles: [
-        {
-          source: "/",
-          destination: "/get_squadtrip.html",
-        },
-      ],
-      afterFiles: [],
-      fallback: [],
-    };
-  },
-
   // Redirects for old WordPress URLs not covered by vercel.json
   async redirects() {
     return [
