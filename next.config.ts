@@ -4,6 +4,12 @@ const nextConfig: NextConfig = {
   // Trailing slash handling to match WordPress URLs
   trailingSlash: false,
 
+  // Remove X-Powered-By header for security and slightly smaller response
+  poweredByHeader: false,
+
+  // Enable gzip compression
+  compress: true,
+
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [

@@ -276,7 +276,7 @@ export default function AboutUsPage() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                gap: "3rem",
+                gap: "clamp(1.5rem, 3vw, 3rem)",
                 flexWrap: "wrap",
                 padding: "1rem 0 2rem",
               }}

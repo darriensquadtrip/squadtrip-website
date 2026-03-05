@@ -8,7 +8,6 @@ import { PostHogProvider } from "@/components/analytics/PostHogProvider";
 import { IntercomWidget } from "@/components/analytics/IntercomWidget";
 import { UTMTracker } from "@/components/analytics/UTMTracker";
 import { OrganizationSchema } from "@/components/seo/OrganizationSchema";
-import { AnimationProvider } from "@/components/ui/AnimationProvider";
 import { SITE_NAME, SITE_URL, SITE_DESCRIPTION } from "@/lib/constants";
 import "./globals.css";
 
@@ -56,8 +55,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
-        <GoogleAnalytics />
-        <FacebookPixel />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
+        <link rel="dns-prefetch" href="https://widget.intercom.io" />
         <OrganizationSchema />
       </head>
       <body className="font-sans antialiased">
@@ -67,7 +67,8 @@ export default function RootLayout({
           <Header />
           <main id="main-content">{children}</main>
           <Footer />
-          <AnimationProvider />
+          <GoogleAnalytics />
+          <FacebookPixel />
           <IntercomWidget />
         </PostHogProvider>
       </body>
