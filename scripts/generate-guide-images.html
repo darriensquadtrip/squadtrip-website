@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #000; }
+
+  .card {
+    width: 1200px;
+    height: 675px;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* === THEMES === */
+  .theme-tours {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 40%, #334155 100%);
+  }
+  .theme-tours .accent-shape { background: linear-gradient(135deg, #6C5CE7, #a78bfa); }
+  .theme-tours .tag { background: rgba(108, 92, 231, 0.2); color: #c4b5fd; border: 1px solid rgba(108, 92, 231, 0.3); }
+  .theme-tours .deco-line { border-color: rgba(108, 92, 231, 0.15); }
+  .theme-tours .deco-svg { fill: rgba(108, 92, 231, 0.07); }
+
+  .theme-retreats {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%);
+  }
+  .theme-retreats .accent-shape { background: linear-gradient(135deg, #e17055, #fdcb6e); }
+  .theme-retreats .tag { background: rgba(253, 203, 110, 0.15); color: #fdcb6e; border: 1px solid rgba(253, 203, 110, 0.3); }
+  .theme-retreats .deco-line { border-color: rgba(253, 203, 110, 0.1); }
+  .theme-retreats .deco-svg { fill: rgba(253, 203, 110, 0.06); }
+
+  .theme-tools {
+    background: linear-gradient(135deg, #0a0a23 0%, #1b1b3a 40%, #2d2d5e 100%);
+  }
+  .theme-tools .accent-shape { background: linear-gradient(135deg, #00b894, #55efc4); }
+  .theme-tools .tag { background: rgba(0, 184, 148, 0.15); color: #55efc4; border: 1px solid rgba(0, 184, 148, 0.3); }
+  .theme-tools .deco-line { border-color: rgba(0, 184, 148, 0.1); }
+  .theme-tools .deco-svg { fill: rgba(0, 184, 148, 0.06); }
+
+  .theme-travel-planning {
+    background: linear-gradient(135deg, #1a0a2e 0%, #2d1b69 40%, #4a1d96 100%);
+  }
+  .theme-travel-planning .accent-shape { background: linear-gradient(135deg, #fd79a8, #e84393); }
+  .theme-travel-planning .tag { background: rgba(253, 121, 168, 0.15); color: #fd79a8; border: 1px solid rgba(253, 121, 168, 0.3); }
+  .theme-travel-planning .deco-line { border-color: rgba(253, 121, 168, 0.1); }
+  .theme-travel-planning .deco-svg { fill: rgba(253, 121, 168, 0.06); }
+
+  /* Decorative elements */
+  .bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .accent-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+  }
+  .accent-shape.s1 { width: 500px; height: 500px; top: -150px; right: -100px; }
+  .accent-shape.s2 { width: 300px; height: 300px; bottom: -100px; left: -50px; opacity: 0.2; }
+  .accent-shape.s3 { width: 200px; height: 200px; top: 50%; left: 60%; opacity: 0.1; }
+
+  .corner-line {
+    position: absolute;
+    top: 32px; left: 32px; right: 32px; bottom: 32px;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 12px;
+  }
+
+  /* Decorative SVG icons */
+  .deco-svg-wrap {
+    position: absolute;
+    z-index: 1;
+  }
+  .deco-svg-wrap.top-right { top: 50px; right: 60px; }
+  .deco-svg-wrap.bottom-left { bottom: 50px; left: 60px; }
+  .deco-svg-wrap svg { width: 140px; height: 140px; }
+
+  /* Decorative geometric shapes */
+  .deco-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid;
+    z-index: 1;
+  }
+  .deco-ring.r1 { width: 300px; height: 300px; top: -80px; right: -60px; }
+  .deco-ring.r2 { width: 180px; height: 180px; bottom: -40px; left: -30px; }
+  .deco-ring.r3 { width: 100px; height: 100px; top: 60%; right: 15%; }
+
+  .deco-dots {
+    position: absolute;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(5, 8px);
+    gap: 12px;
+  }
+  .deco-dots span {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+  }
+  .deco-dots.pos1 { top: 70px; left: 70px; }
+  .deco-dots.pos2 { bottom: 70px; right: 70px; }
+
+  /* Content */
+  .content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 880px;
+    padding: 0 60px;
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 6px 20px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin-bottom: 24px;
+  }
+
+  .title {
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 30px rgba(0,0,0,0.4);
+  }
+  .title-sm { font-size: 44px; }
+
+  .subtitle {
+    color: rgba(255,255,255,0.55);
+    font-size: 19px;
+    line-height: 1.5;
+    max-width: 680px;
+    margin: 0 auto 28px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.35);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  .brand .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #6C5CE7;
+  }
+</style>
+</head>
+<body>
+
+<!-- 1: how-to-start-a-tour-business -->
+<div class="card theme-tours" id="how-to-start-a-tour-business">
+  <div class="bg-grid"></div>
+  <div class="accent-shape s1"></div>
+  <div class="accent-shape s2"></div>
+  <div class="corner-line"></div>
+  <div class="deco-ring r1 deco-line"></div>
+  <div class="deco-ring r2 deco-line"></div>
+  <div class="deco-dots pos1"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="deco-svg-wrap top-right">
+    <svg viewBox="0 0 100 100" class="deco-svg"><path d="M50 5 L61 35 L95 35 L68 55 L79 90 L50 70 L21 90 L32 55 L5 35 L39 35 Z"/></svg>
+  </div>
+  <div class="content">
+    <span class="tag">Tours</span>
+    <h1 class="title">How to Start a Tour<br>Business in 2026</h1>
+    <p class="subtitle">Licensing, pricing, marketing, and the tools every new tour operator needs to launch profitably.</p>
+    <span class="brand"><span class="dot"></span> squadtrip.com</span>
+  </div>
+</div>
+
+<!-- 2: tour-itinerary-template -->
+<div class="card theme-tours" id="tour-itinerary-template">
+  <div class="bg-grid"></div>
+  <div class="accent-shape s1" style="top:-100px;right:-200px;"></div>
+  <div class="accent-shape s2" style="bottom:-150px;left:100px;"></div>
+  <div class="corner-line"></div>
+  <div class="deco-ring r1 deco-line" style="top:auto;bottom:-60px;right:auto;left:50%;"></div>
+  <div class="deco-ring r3 deco-line" style="top:80px;right:auto;left:80px;"></div>
+  <div class="deco-dots pos2"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="deco-svg-wrap bottom-left">
+    <svg viewBox="0 0 100 100" class="deco-svg"><rect x="15" y="10" width="70" height="80" rx="5" fill="none" stroke-width="2" style="stroke:rgba(108,92,231,0.07)"/><line x1="30" y1="30" x2="70" y2="30" style="stroke:rgba(108,92,231,0.07);stroke-width:2"/><line x1="30" y1="45" x2="70" y2="45" style="stroke:rgba(108,92,231,0.07);stroke-width:2"/><line x1="30" y1="60" x2="55" y2="60" style="stroke:rgba(108,92,231,0.07);stroke-width:2"/></svg>
+  </div>
+  <div class="content">
+    <span class="tag">Tours</span>
+    <h1 class="title">Tour Itinerary Template<br>That Sells</h1>
+    <p class="subtitle">Build day-by-day tour schedules that boost bookings and keep guests informed.</p>
+    <span class="brand"><span class="dot"></span> squadtrip.com</span>
+  </div>
+</div>
+
+<!-- 3: tour-operator-mistakes -->
+<div class="card theme-tours" id="tour-operator-mistakes">
+  <div class="bg-grid"></div>
+  <div class="accent-shape s1" style="background:linear-gradient(135deg,#e74c3c,#6C5CE7);top:-100px;right:100px;"></div>
+  <div class="accent-shape s2" style="background:linear-gradient(135deg,#6C5CE7,#e74c3c);"></div>
+  <div class="corner-line"></div>
+  <div class="deco-ring r1 deco-line" style="width:250px;height:250px;top:-50px;right:auto;left:-40px;"></div>
+  <div class="deco-ring r2 deco-line" style="bottom:auto;top:50px;left:auto;right:120px;width:120px;height:120px;"></div>
+  <div class="deco-dots pos1" style="top:auto;bottom:80px;left:auto;right:100px;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="deco-svg-wrap top-right" style="top:auto;bottom:60px;right:auto;left:70px;">
+    <svg viewBox="0 0 100 100" class="deco-svg" style="width:100px;height:100px;"><circle cx="50" cy="50" r="40" fill="none" style="stroke:rgba(108,92,231,0.07);stroke-width:3"/><line x1="35" y1="35" x2="65" y2="65" style="stroke:rgba(231,76,60,0.08);stroke-width:3"/><line x1="65" y1="35" x2="35" y2="65" style="stroke:rgba(231,76,60,0.08);stroke-width:3"/></svg>
+  </div>
+  <div class="content">
+    <span class="tag">Tours</span>
+    <h1 class="title">7 Tour Operator Mistakes<br>That Cost Bookings</h1>
+    <p class="subtitle">Fix the pricing, tech, and marketing errors that silently kill your tour revenue.</p>
+    <span class="brand"><span class="dot"></span> squadtrip.com</span>
+  </div>
+</div>
+
+<!-- 4: tour-operator-software-guide -->
+<div class="card theme-tours" id="tour-operator-software-guide">
+  <div class="bg-grid"></div>
+  <div class="accent-shape s1" style="top:auto;bottom:-100px;right:auto;left:50%;"></div>
+  <div class="accent-shape s2" style="bottom:auto;top:-80px;left:auto;right:30%;"></div>
+  <div class="accent-shape s3"></div>
+  <div class="corner-line"></div>
+  <div class="deco-ring r1 deco-line" style="width:200px;height:200px;top:auto;bottom:40px;right:80px;"></div>
+  <div class="deco-dots pos1"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="deco-svg-wrap top-right">
+    <svg viewBox="0 0 100 100" class="deco-svg"><rect x="10" y="20" width="80" height="55" rx="4" fill="none" style="stroke:rgba(108,92,231,0.07);stroke-width:2"/><rect x="25" y="75" width="50" height="5" rx="2"/><circle cx="50" cy="47" r="12" fill="none" style="stroke:rgba(108,92,231,0.07);stroke-width:2"/></svg>
+  </div>
+  <div class="content">
+    <span class="tag">Tours</span>
+    <h1 class="title">Best Tour Operator<br>Software &amp; Tools</h1>
+    <p class="subtitle">Compare the top platforms for bookings, payments, and itineraries to scale your tour business.</p>
+    <span class="brand"><span class="dot"></span> squadtrip.com</span>
+  </div>
+</div>
+
+<!-- 5: scottsdale-retreat-planning-guide -->
+<div class="card theme-retreats" id="scottsdale-retreat-planning-guide">
+  <div class="bg-grid"></div>
+  <div class="accent-shape s1" style="background:linear-gradient(135deg,#e17055,#f39c12);"></div>
+  <div class="accent-shape s2" style="background:linear-gradient(135deg,#fdcb6e,#e17055);"></div>
+  <div class="corner-line"></div>
+  <div class="deco-ring r1 deco-line"></div>
+  <div class="deco-ring r3 deco-line"></div>
+  <div class="deco-dots pos2"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="deco-svg-wrap bottom-left">
+    <svg viewBox="0 0 100 100" class="deco-svg"><path d="M50 15 L55 40 L45 40 Z" style="fill:rgba(253,203,110,0.06)"/><path d="M35 40 L65 40 L70 85 L30 85 Z" style="fill:rgba(253,203,110,0.05)"/><circle cx="50" cy="25" r="8" style="fill:rgba(253,203,110,0.04)"/></svg>
+  </div>
+  <div class="content">
+    <span class="tag">Retreats</span>
+    <h1 class="title">Scottsdale Retreat<br>Planning Guide</h1>
+    <p class="subtitle">Top venues, wellness activities, budgets, and logistics for your Scottsdale group retreat.</p>
+    <span class="brand"><span class="dot"></span> squadtrip.com</span>
+  </div>
+</div>
+
+<!-- 6: host-a-memorable-wellness-retreat -->
+<div class="card theme-retreats" id="host-a-memorable-wellness-retreat">
+  <div class="bg-grid"></div>
+  <div class="accent-shape s1" style="background:linear-gradient(135deg,#fdcb6e,#e17055);right:-50px;"></div>
+  <div class="accent-shape s2" style="background:linear-gradient(135deg,#e17055,#6c5ce7);left:100px;"></div>
+  <div class="corner-line"></div>
+  <div class="deco-ring r1 deco-line" style="width:350px;height:350px;top:-120px;"></div>
+  <div class="deco-ring r2 deco-line" style="width:160px;height:160px;bottom:-20px;left:auto;right:100px;"></div>
+  <div class="deco-dots pos1"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="deco-svg-wrap top-right" style="top:60px;right:70px;">
+    <svg viewBox="0 0 100 100" class="deco-svg" style="width:120px;height:120px;"><path d="M50 20 C55 30 70 35 70 50 C70 65 60 75 50 80 C40 75 30 65 30 50 C30 35 45 30 50 20Z" style="fill:rgba(253,203,110,0.06)"/></svg>
+  </div>
+  <div class="content">
+    <span class="tag">Retreats</span>
+    <h1 class="title">How to Host a Wellness<br>Retreat Guests Love</h1>
+    <p class="subtitle">Step-by-step planning for menus, schedules, and guest experiences that build loyalty.</p>
+    <span class="brand"><span class="dot"></span> squadtrip.com</span>
+  </div>
+</div>
+
+<!-- 7: types-of-retreats-for-hosts -->
+<div class="card theme-retreats" id="types-of-retreats-for-hosts">
+  <div class="bg-grid"></div>
+  <div class="accent-shape s1" style="background:linear-gradient(135deg,#a29bfe,#fdcb6e);"></div>
+  <div class="accent-shape s2" style="background:linear-gradient(135deg,#e17055,#a29bfe);"></div>
+  <div class="accent-shape s3" style="background:linear-gradient(135deg,#fdcb6e,#e17055);left:20%;top:20%;"></div>
+  <div class="corner-line"></div>
+  <div class="deco-ring r1 deco-line" style="width:220px;height:220px;"></div>
+  <div class="deco-ring r2 deco-line"></div>
+  <div class="deco-ring r3 deco-line" style="top:30%;right:auto;left:10%;width:80px;height:80px;"></div>
+  <div class="deco-dots pos1"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="deco-dots pos2"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="content">
+    <span class="tag">Retreats</span>
+    <h1 class="title">10 Types of Retreats<br>to Host in 2026</h1>
+    <p class="subtitle">Profitable retreat types for hosts, from wellness and yoga to adventure and creative experiences.</p>
+    <span class="brand"><span class="dot"></span> squadtrip.com</span>
+  </div>
+</div>
+
+<!-- 8: wellness-retreat-planning-checklist -->
+<div class="card theme-retreats" id="wellness-retreat-planning-checklist">
+  <div class="bg-grid"></div>
+  <div class="accent-shape s1" style="background:linear-gradient(135deg,#fdcb6e,#00b894);top:-100px;right:-150px;"></div>
+  <div class="accent-shape s2" style="background:linear-gradient(135deg,#e17055,#fdcb6e);"></div>
+  <div class="corner-line"></div>
+  <div class="deco-ring r2 deco-line" style="bottom:-50px;left:auto;right:-30px;width:250px;height:250px;"></div>
+  <div class="deco-dots pos1"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="deco-svg-wrap bottom-left" style="bottom:55px;left:65px;">
+    <svg viewBox="0 0 100 100" class="deco-svg" style="width:110px;height:110px;"><rect x="20" y="10" width="60" height="80" rx="4" fill="none" style="stroke:rgba(253,203,110,0.07);stroke-width:2"/><line x1="32" y1="30" x2="42" y2="40" style="stroke:rgba(253,203,110,0.08);stroke-width:2.5"/><line x1="42" y1="40" x2="55" y2="25" style="stroke:rgba(253,203,110,0.08);stroke-width:2.5"/><line x1="32" y1="52" x2="42" y2="62" style="stroke:rgba(253,203,110,0.08);stroke-width:2.5"/><line x1="42" y1="62" x2="55" y2="47" style="stroke:rgba(253,203,110,0.08);stroke-width:2.5"/></svg>
+  </div>
+  <div class="content">
+    <span class="tag">Retreats</span>
+    <h1 class="title">Wellness Retreat<br>Planning Checklist</h1>
+    <p class="subtitle">Step-by-step checklist to organize venues, vendors, schedules, and payments for your retreat.</p>
+    <span class="brand"><span class="dot"></span> squadtrip.com</span>
+  </div>
+</div>
+
+<!-- 9: spiritual-retreat-ideas -->
+<div class="card theme-retreats" id="spiritual-retreat-ideas">
+  <div class="bg-grid"></div>
+  <div class="accent-shape s1" style="background:linear-gradient(135deg,#a29bfe,#fdcb6e);top:-80px;right:-80px;"></div>
+  <div class="accent-shape s2" style="background:linear-gradient(135deg,#fdcb6e,#a29bfe);bottom:-80px;left:80px;"></div>
+  <div class="corner-line"></div>
+  <div class="deco-ring r1 deco-line" style="width:280px;height:280px;top:-100px;right:auto;left:50%;transform:translateX(-50%);"></div>
+  <div class="deco-ring r3 deco-line" style="top:auto;bottom:100px;right:100px;width:60px;height:60px;"></div>
+  <div class="deco-ring r3 deco-line" style="top:120px;right:auto;left:100px;width:40px;height:40px;"></div>
+  <div class="deco-dots pos2"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="deco-svg-wrap top-right" style="top:55px;right:65px;">
+    <svg viewBox="0 0 100 100" class="deco-svg" style="width:130px;height:130px;"><circle cx="50" cy="50" r="35" fill="none" style="stroke:rgba(253,203,110,0.06);stroke-width:1.5"/><circle cx="50" cy="50" r="22" fill="none" style="stroke:rgba(253,203,110,0.05);stroke-width:1.5"/><circle cx="50" cy="50" r="10" style="fill:rgba(253,203,110,0.04)"/></svg>
+  </div>
+  <div class="content">
+    <span class="tag">Retreats</span>
+    <h1 class="title">10 Spiritual Retreat Ideas<br>for Every Budget</h1>
+    <p class="subtitle">From silent meditation weekends to nature pilgrimages. Plan a retreat that transforms.</p>
+    <span class="brand"><span class="dot"></span> squadtrip.com</span>
+  </div>
+</div>
+
+<!-- 10: group-trip-insurance-101 -->
+<div class="card theme-travel-planning" id="group-trip-insurance-101">
+  <div class="bg-grid"></div>
+  <div class="accent-shape s1" style="background:linear-gradient(135deg,#fd79a8,#a29bfe);"></div>
+  <div class="accent-shape s2" style="background:linear-gradient(135deg,#e84393,#fd79a8);"></div>
+  <div class="corner-line"></div>
+  <div class="deco-ring r1 deco-line"></div>
+  <div class="deco-ring r2 deco-line"></div>
+  <div class="deco-dots pos1"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="deco-svg-wrap bottom-left" style="bottom:55px;left:65px;">
+    <svg viewBox="0 0 100 100" class="deco-svg" style="width:120px;height:120px;fill:rgba(253,121,168,0.06)"><path d="M50 15 L65 35 L85 35 L70 52 L76 75 L50 62 L24 75 L30 52 L15 35 L35 35 Z" fill="none" style="stroke:rgba(253,121,168,0.07);stroke-width:2"/><path d="M35 45 L48 58 L70 35" fill="none" style="stroke:rgba(253,121,168,0.08);stroke-width:3;stroke-linecap:round"/></svg>
+  </div>
+  <div class="content">
+    <span class="tag">Travel Planning</span>
+    <h1 class="title">Group Trip Insurance 101:<br>What Travelers Need</h1>
+    <p class="subtitle">Coverage types, provider comparisons, and common mistakes to avoid for your next group trip.</p>
+    <span class="brand"><span class="dot"></span> squadtrip.com</span>
+  </div>
+</div>
+
+<!-- 11: event-planning-toolkit-for-coaches-and-creators -->
+<div class="card theme-tools" id="event-planning-toolkit-for-coaches-and-creators">
+  <div class="bg-grid"></div>
+  <div class="accent-shape s1" style="background:linear-gradient(135deg,#00b894,#6c5ce7);"></div>
+  <div class="accent-shape s2" style="background:linear-gradient(135deg,#55efc4,#00b894);"></div>
+  <div class="accent-shape s3" style="background:linear-gradient(135deg,#6c5ce7,#55efc4);"></div>
+  <div class="corner-line"></div>
+  <div class="deco-ring r1 deco-line" style="width:280px;height:280px;"></div>
+  <div class="deco-ring r2 deco-line" style="width:150px;height:150px;"></div>
+  <div class="deco-dots pos1"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="deco-dots pos2"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="deco-svg-wrap top-right" style="top:55px;right:65px;">
+    <svg viewBox="0 0 100 100" class="deco-svg" style="width:120px;height:120px;fill:rgba(0,184,148,0.06)"><rect x="15" y="25" width="30" height="30" rx="3"/><rect x="55" y="25" width="30" height="30" rx="3"/><rect x="15" y="65" width="30" height="15" rx="3"/><rect x="55" y="65" width="30" height="15" rx="3"/></svg>
+  </div>
+  <div class="content">
+    <span class="tag">Tools</span>
+    <h1 class="title title-sm">Event Planning Toolkit<br>for Coaches &amp; Creators</h1>
+    <p class="subtitle">Templates, checklists, and tools to build events that convert and grow your business.</p>
+    <span class="brand"><span class="dot"></span> squadtrip.com</span>
+  </div>
+</div>
+
+<!-- 12: squadtrip-vs-travefy -->
+<div class="card theme-tools" id="squadtrip-vs-travefy">
+  <div class="bg-grid"></div>
+  <div class="accent-shape s1" style="background:linear-gradient(135deg,#6c5ce7,#55efc4);top:-100px;right:auto;left:30%;"></div>
+  <div class="accent-shape s2" style="background:linear-gradient(135deg,#00b894,#6c5ce7);bottom:-80px;left:auto;right:20%;"></div>
+  <div class="corner-line"></div>
+  <div class="deco-ring r1 deco-line" style="width:200px;height:200px;top:-40px;right:auto;left:-40px;"></div>
+  <div class="deco-ring r2 deco-line" style="bottom:-30px;left:auto;right:-30px;width:200px;height:200px;"></div>
+  <div class="deco-dots pos1"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="deco-svg-wrap top-right" style="top:50px;right:60px;">
+    <svg viewBox="0 0 100 100" style="width:130px;height:130px;"><text x="20" y="55" style="font-family:system-ui;font-size:32px;font-weight:800;fill:rgba(85,239,196,0.07)">VS</text></svg>
+  </div>
+  <div class="content">
+    <span class="tag">Tools</span>
+    <h1 class="title">SquadTrip vs Travefy:<br>Honest Comparison</h1>
+    <p class="subtitle">Pricing, features, and which group travel management tool fits your business in 2026.</p>
+    <span class="brand"><span class="dot"></span> squadtrip.com</span>
+  </div>
+</div>
+
+</body>
+</html>
