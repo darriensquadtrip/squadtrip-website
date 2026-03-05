@@ -17,11 +17,13 @@ export function TableOfContents() {
     if (!article) return;
 
     const elements = article.querySelectorAll("h2");
-    const items: TOCItem[] = Array.from(elements).map((el) => ({
-      id: el.id,
-      text: el.textContent || "",
-      level: 2,
-    }));
+    const items: TOCItem[] = Array.from(elements)
+      .filter((el) => el.id)
+      .map((el) => ({
+        id: el.id,
+        text: el.textContent || "",
+        level: 2,
+      }));
     setHeadings(items);
 
     const observer = new IntersectionObserver(
