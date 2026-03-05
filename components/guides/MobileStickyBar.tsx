@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getSignupUrl } from "@/lib/constants";
+import { getHomepageUrl } from "@/lib/constants";
 
 export function MobileStickyBar({ slug }: { slug: string }) {
   const [visible, setVisible] = useState(false);
@@ -15,7 +15,7 @@ export function MobileStickyBar({ slug }: { slug: string }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const signupUrl = getSignupUrl("guides", "mobile-sticky", slug);
+  const signupUrl = getHomepageUrl("guides", "mobile-sticky", slug);
 
   if (!visible) return null;
 

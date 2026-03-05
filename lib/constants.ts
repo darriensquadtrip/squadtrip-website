@@ -15,6 +15,15 @@ export function getSignupUrl(source: string, medium: string, campaign: string): 
   });
   return `${SIGNUP_URL}?${params.toString()}`;
 }
+
+export function getHomepageUrl(source: string, medium: string, campaign: string): string {
+  const params = new URLSearchParams({
+    utm_source: source,
+    utm_medium: medium,
+    utm_campaign: campaign,
+  });
+  return `${SITE_URL}?${params.toString()}`;
+}
 export const LOGIN_URL = `${APP_URL}/organizer-login`;
 
 // Analytics IDs

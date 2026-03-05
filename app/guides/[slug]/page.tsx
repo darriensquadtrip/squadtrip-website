@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
 import {
   getAllGuideSlugs,
   getGuideBySlug,
@@ -74,7 +75,7 @@ export default async function GuidePage({ params }: PageProps) {
       )}
 
       <GuideLayout frontmatter={guide.frontmatter} relatedGuides={related}>
-        <MDXRemote source={guide.content} options={{ mdxOptions: { rehypePlugins: [rehypeSlug] } }} />
+        <MDXRemote source={guide.content} options={{ mdxOptions: { remarkPlugins: [remarkGfm], rehypePlugins: [rehypeSlug] } }} />
       </GuideLayout>
     </>
   );
