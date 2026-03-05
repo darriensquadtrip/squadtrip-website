@@ -30,6 +30,7 @@ export function ArticleSchema({
         headline: title,
         description,
         url: `${SITE_URL}/guides/${slug}`,
+        mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/guides/${slug}` },
         datePublished,
         dateModified,
         author: {

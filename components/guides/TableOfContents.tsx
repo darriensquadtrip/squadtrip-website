@@ -16,11 +16,11 @@ export function TableOfContents() {
     const article = document.querySelector("article");
     if (!article) return;
 
-    const elements = article.querySelectorAll("h2, h3");
+    const elements = article.querySelectorAll("h2");
     const items: TOCItem[] = Array.from(elements).map((el) => ({
       id: el.id,
       text: el.textContent || "",
-      level: el.tagName === "H2" ? 2 : 3,
+      level: 2,
     }));
     setHeadings(items);
 
@@ -42,13 +42,13 @@ export function TableOfContents() {
   if (headings.length === 0) return null;
 
   return (
-    <nav className="hidden xl:block sticky top-24" aria-label="Table of contents">
+    <nav className="max-h-[calc(100vh-16rem)] overflow-y-auto toc-scroll" aria-label="Table of contents">
       <h2 className="text-sm font-semibold text-gray-900 mb-3">
         On this page
       </h2>
       <ul className="space-y-2 text-sm">
         {headings.map((heading) => (
-          <li key={heading.id} className={heading.level === 3 ? "pl-4" : ""}>
+          <li key={heading.id}>
             <a
               href={`#${heading.id}`}
               className={`block py-0.5 transition-colors ${

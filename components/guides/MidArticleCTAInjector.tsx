@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useState } from "react";
+import { getSignupUrl } from "@/lib/constants";
 
 export function MidArticleCTAInjector({ slug }: { slug: string }) {
   const [targetEl, setTargetEl] = useState<HTMLElement | null>(null);
@@ -33,7 +34,7 @@ export function MidArticleCTAInjector({ slug }: { slug: string }) {
 
   if (!targetEl) return null;
 
-  const signupUrl = `https://dashboard.squadtrip.com/organizer-info/0?utm_source=guides&utm_medium=inline&utm_campaign=${encodeURIComponent(slug)}`;
+  const signupUrl = getSignupUrl("guides", "inline", slug);
 
   return createPortal(
     <div ref={ctaRef} className="not-prose my-10 rounded-xl border border-purple/20 bg-purple/5 p-6 sm:p-8">
