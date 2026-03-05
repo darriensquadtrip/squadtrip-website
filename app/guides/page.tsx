@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/metadata";
-import { getAllGuides, getCategories } from "@/lib/guides";
+import { getAllGuides, getCategories, type GuideSummary } from "@/lib/guides";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { GuideCard } from "@/components/guides/GuideCard";
 import { Hero } from "@/components/sections/Hero";
@@ -14,9 +14,21 @@ export const metadata: Metadata = generatePageMetadata({
   path: "/guides",
 });
 
+const POPULAR_GUIDE_SLUGS = [
+  "how-much-does-it-cost-to-become-a-travel-agent",
+  "being-a-travel-agent-pros-and-cons",
+  "best-tools-for-group-trip-planning",
+  "top-splitwise-alternatives-for-group-travel-expenses",
+  "are-wellness-retreats-profitable",
+];
+
 export default function GuidesIndexPage() {
   const guides = getAllGuides();
   const categories = getCategories();
+
+  const popularGuides = POPULAR_GUIDE_SLUGS
+    .map((slug) => guides.find((g) => g.slug === slug))
+    .filter((g): g is GuideSummary => g !== undefined);
 
   return (
     <>
@@ -32,6 +44,30 @@ export default function GuidesIndexPage() {
         headline="Group Travel Guides"
         subheadline="Expert advice on planning group trips, collecting payments, and growing your travel business."
       />
+
+      {/* Popular Guides */}
+      {popularGuides.length > 0 && (
+        <section className="feature-overview" style={{ paddingBottom: 0 }}>
+          <div className="feature-overview-container">
+            <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-dark)", marginBottom: "1.25rem" }}>
+              Most Popular
+            </h2>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fill, minmax(min(280px, 100%), 1fr))",
+                gap: "1.25rem",
+              }}
+            >
+              {popularGuides.map((guide) => (
+                <div key={guide.slug} className="hover-lift">
+                  <GuideCard guide={guide} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Category filter */}
       {categories.length > 0 && (

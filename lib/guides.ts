@@ -5,6 +5,11 @@ import readingTime from "reading-time";
 
 const GUIDES_DIR = path.join(process.cwd(), "content", "guides");
 
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
 export interface GuideFrontmatter {
   title: string;
   slug: string;
@@ -15,6 +20,7 @@ export interface GuideFrontmatter {
   category: string;
   author: string;
   readingTime: number;
+  faq?: FAQItem[];
 }
 
 export interface Guide {
@@ -61,6 +67,7 @@ export function getGuideBySlug(slug: string): Guide | null {
       category: data.category || "uncategorized",
       author: data.author || "SquadTrip",
       readingTime: data.readingTime || Math.ceil(stats.minutes),
+      faq: Array.isArray(data.faq) ? data.faq : undefined,
     },
     content,
     slug,
@@ -95,11 +102,30 @@ export function getGuidesByCategory(category: string): GuideSummary[] {
 export function getRelatedGuides(
   currentSlug: string,
   category: string,
-  limit = 3
+  limit = 5
 ): GuideSummary[] {
-  return getAllGuides()
-    .filter((g) => g.slug !== currentSlug && g.category === category)
-    .slice(0, limit);
+  const allGuides = getAllGuides().filter((g) => g.slug !== currentSlug);
+
+  // Extract keywords from current slug for cross-category matching
+  const currentKeywords = new Set(
+    currentSlug.split("-").filter((w) => w.length > 3)
+  );
+
+  // Score each guide: same category = 10 points, +1 per keyword overlap
+  const scored = allGuides.map((guide) => {
+    let score = guide.category === category ? 10 : 0;
+    const slugWords = guide.slug.split("-").filter((w) => w.length > 3);
+    for (const word of slugWords) {
+      if (currentKeywords.has(word)) score += 1;
+    }
+    return { guide, score };
+  });
+
+  return scored
+    .filter((s) => s.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map((s) => s.guide);
 }
 
 export function getCategories(): string[] {

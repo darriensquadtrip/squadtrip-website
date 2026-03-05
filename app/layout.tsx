@@ -8,6 +8,7 @@ import { PostHogProvider } from "@/components/analytics/PostHogProvider";
 import { IntercomWidget } from "@/components/analytics/IntercomWidget";
 import { UTMTracker } from "@/components/analytics/UTMTracker";
 import { OrganizationSchema } from "@/components/seo/OrganizationSchema";
+import { WebSiteSchema } from "@/components/seo/WebSiteSchema";
 import { SITE_NAME, SITE_URL, SITE_DESCRIPTION } from "@/lib/constants";
 import "./globals.css";
 
@@ -59,6 +60,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
         <link rel="dns-prefetch" href="https://widget.intercom.io" />
         <OrganizationSchema />
+        <WebSiteSchema />
       </head>
       <body className="font-sans antialiased">
         <a className="skip-to-content" href="#main-content">Skip to main content</a>

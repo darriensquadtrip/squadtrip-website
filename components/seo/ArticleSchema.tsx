@@ -9,6 +9,7 @@ interface ArticleSchemaProps {
   dateModified: string;
   featuredImage?: string;
   author?: string;
+  wordCount?: number;
 }
 
 export function ArticleSchema({
@@ -19,6 +20,7 @@ export function ArticleSchema({
   dateModified,
   featuredImage,
   author = SITE_NAME,
+  wordCount,
 }: ArticleSchemaProps) {
   return (
     <JsonLd
@@ -42,6 +44,7 @@ export function ArticleSchema({
             url: `${SITE_URL}/images/logos/squad-trip-logo-05.png`,
           },
         },
+        ...(wordCount && { wordCount }),
         ...(featuredImage && {
           image: featuredImage.startsWith("http")
             ? featuredImage

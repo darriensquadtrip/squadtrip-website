@@ -6,6 +6,15 @@ export const SITE_DESCRIPTION =
 export const APP_URL = "https://dashboard.squadtrip.com";
 export const HELP_URL = "https://help.squadtrip.com";
 export const SIGNUP_URL = `${APP_URL}/organizer-info/0`;
+
+export function getSignupUrl(source: string, medium: string, campaign: string): string {
+  const params = new URLSearchParams({
+    utm_source: source,
+    utm_medium: medium,
+    utm_campaign: campaign,
+  });
+  return `${SIGNUP_URL}?${params.toString()}`;
+}
 export const LOGIN_URL = `${APP_URL}/organizer-login`;
 
 // Analytics IDs

@@ -10,6 +10,7 @@ import { generatePageMetadata } from "@/lib/metadata";
 import { GuideLayout } from "@/components/guides/GuideLayout";
 import { ArticleSchema } from "@/components/seo/ArticleSchema";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import { FAQSchema } from "@/components/seo/FAQSchema";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -46,6 +47,8 @@ export default async function GuidePage({ params }: PageProps) {
     guide.frontmatter.category
   );
 
+  const wordCount = guide.content.split(/\s+/).filter(Boolean).length;
+
   return (
     <>
       <ArticleSchema
@@ -55,6 +58,7 @@ export default async function GuidePage({ params }: PageProps) {
         datePublished={guide.frontmatter.date}
         dateModified={guide.frontmatter.lastModified}
         featuredImage={guide.frontmatter.featuredImage}
+        wordCount={wordCount}
       />
       <BreadcrumbSchema
         items={[
@@ -63,6 +67,10 @@ export default async function GuidePage({ params }: PageProps) {
           { name: guide.frontmatter.title, href: `/guides/${slug}` },
         ]}
       />
+
+      {guide.frontmatter.faq && guide.frontmatter.faq.length > 0 && (
+        <FAQSchema items={guide.frontmatter.faq} />
+      )}
 
       <GuideLayout frontmatter={guide.frontmatter} relatedGuides={related}>
         <MDXRemote source={guide.content} />

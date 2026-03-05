@@ -1,13 +1,15 @@
 import Image from "next/image";
 import type { GuideFrontmatter, GuideSummary } from "@/lib/guides";
-import { SIGNUP_URL } from "@/lib/constants";
+import { getSignupUrl } from "@/lib/constants";
 import { TableOfContents } from "./TableOfContents";
 import { RelatedGuides } from "./RelatedGuides";
+import { MidArticleCTAInjector } from "./MidArticleCTAInjector";
 
 interface GuideLayoutProps {
   frontmatter: GuideFrontmatter;
   children: React.ReactNode;
   relatedGuides: GuideSummary[];
+  wordCount?: number;
 }
 
 export function GuideLayout({
@@ -15,6 +17,13 @@ export function GuideLayout({
   children,
   relatedGuides,
 }: GuideLayoutProps) {
+  const sidebarSignupUrl = getSignupUrl("guides", "sidebar", frontmatter.slug);
+  const bottomSignupUrl = getSignupUrl("guides", "bottom", frontmatter.slug);
+
+  const showLastUpdated =
+    frontmatter.lastModified &&
+    frontmatter.lastModified !== frontmatter.date;
+
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
       <div className="lg:grid lg:grid-cols-[1fr_250px] lg:gap-12 xl:grid-cols-[1fr_280px]">
@@ -28,7 +37,7 @@ export function GuideLayout({
             <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
               {frontmatter.title}
             </h1>
-            <div className="flex items-center gap-4 mt-4 text-sm text-gray-500">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-4 text-sm text-gray-500">
               <span>{frontmatter.author}</span>
               <span>&middot;</span>
               <time dateTime={frontmatter.date}>
@@ -38,6 +47,19 @@ export function GuideLayout({
                   day: "numeric",
                 })}
               </time>
+              {showLastUpdated && (
+                <>
+                  <span>&middot;</span>
+                  <span className="text-emerald-600 font-medium">
+                    Updated{" "}
+                    {new Date(frontmatter.lastModified).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </span>
+                </>
+              )}
               <span>&middot;</span>
               <span>{frontmatter.readingTime} min read</span>
             </div>
@@ -57,12 +79,13 @@ export function GuideLayout({
             </div>
           )}
 
-          {/* Article body */}
+          {/* Article body with mid-article CTA injected */}
           <article className="prose prose-lg max-w-none prose-headings:scroll-mt-24 prose-headings:font-bold prose-a:text-purple prose-a:no-underline hover:prose-a:underline">
             {children}
+            <MidArticleCTAInjector slug={frontmatter.slug} />
           </article>
 
-          {/* CTA */}
+          {/* Bottom CTA */}
           <div
             style={{
               marginTop: "3rem",
@@ -78,7 +101,7 @@ export function GuideLayout({
             <p style={{ color: "var(--text-muted)", marginBottom: "1.5rem" }}>
               Create a booking page, collect payments, and manage travelers — all in one place.
             </p>
-            <a href={SIGNUP_URL} className="btn-primary">
+            <a href={bottomSignupUrl} className="btn-primary">
               Create your trip for free
             </a>
           </div>
@@ -89,6 +112,22 @@ export function GuideLayout({
         {/* Sidebar */}
         <aside className="hidden lg:block">
           <TableOfContents />
+
+          {/* Sidebar CTA */}
+          <div className="sticky top-[28rem] mt-8 rounded-xl border border-purple/20 bg-purple/5 p-5">
+            <p className="text-sm font-semibold text-gray-900 mb-2">
+              Plan your group trip
+            </p>
+            <p className="text-xs text-gray-600 mb-4">
+              Booking pages, payments, and guest tracking — all in one place.
+            </p>
+            <a
+              href={sidebarSignupUrl}
+              className="btn-primary block text-center text-sm"
+            >
+              Get started free
+            </a>
+          </div>
         </aside>
       </div>
     </div>
