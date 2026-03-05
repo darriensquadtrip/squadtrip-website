@@ -37,6 +37,17 @@
     { "source": "/guides/retreat-marketing-tips-for-hosts-who-want-real-results", "destination": "/guides/marketing-a-retreat-in-2025-tips-for-hosts-who-want-real-results", "permanent": true },
     { "source": "/guides/best-tour-booking-sites-what-they-get-right-and-how-to-cop", "destination": "/guides/best-tour-booking-sites-what-they-get-right-and-how-to-copy-them", "permanent": true },
 
+    { "source": "/product/send-via-email-and-text-message-for-your-group-trip", "destination": "/product/message-your-group-trip-guests-with-squadtrip", "permanent": true },
+
+    { "source": "/category/:path*", "destination": "/guides", "permanent": true },
+    { "source": "/tag/:path*", "destination": "/guides", "permanent": true },
+    { "source": "/author/:path*", "destination": "/about-us", "permanent": true },
+
+    { "source": "/feed", "destination": "/", "permanent": true },
+    { "source": "/feed/:path*", "destination": "/", "permanent": true },
+    { "source": "/comments/feed/:path*", "destination": "/", "permanent": true },
+    { "source": "/wp-json/:path*", "destination": "/", "permanent": true },
+
     { "source": "/images/guides/:year(\\d{4})/:month(\\d{2})/:file*", "destination": "/images/guides/:file", "permanent": true }
   ],
   "headers": [

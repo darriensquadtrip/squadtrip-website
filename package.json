@@ -19,7 +19,9 @@
     "post-launch": "npx tsx scripts/post-launch-monitor.ts",
     "generate-review-manifest": "npx tsx scripts/generate-review-manifest.ts",
     "fix-broken-links": "npx tsx scripts/fix-broken-links.ts",
-    "fix-missing-images": "npx tsx scripts/fix-missing-images.ts"
+    "fix-missing-images": "npx tsx scripts/fix-missing-images.ts",
+    "test-redirects": "npx tsx scripts/test-redirects.ts",
+    "build-guide-rankings": "npx tsx scripts/build-guide-rankings.ts"
   },
   "dependencies": {
     "@next/third-parties": "^16.1.6",

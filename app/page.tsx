@@ -300,7 +300,7 @@ export default function HomePage() {
           {
             quote:
               "Managing payments for my yoga retreats used to be a nightmare. Now I set up payment plans, and everything runs on autopilot. My guests appreciate the professional experience.",
-            author: "Michelle L.",
+            author: "Monica L.",
             company: "Serenity Retreats",
             initials: "ML",
             badge: "Retreat Leader",

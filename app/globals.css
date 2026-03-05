@@ -33,9 +33,9 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Prevent horizontal scroll on mobile */
-html, body {
-  overflow-x: hidden;
+/* Prevent horizontal scroll on mobile — clip instead of hidden to preserve sticky */
+html {
+  overflow-x: clip;
 }
 
 /* Make tables scrollable inside prose */

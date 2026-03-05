@@ -134,6 +134,13 @@ export function Header() {
         aria-modal={mobileOpen}
         aria-label="Mobile navigation"
       >
+        <button
+          className="mobile-nav-close"
+          onClick={closeMobile}
+          aria-label="Close menu"
+        >
+          &times;
+        </button>
         <div className="mobile-nav-section">
           {NAV_ITEMS.map((item) =>
             "external" in item && item.external ? (

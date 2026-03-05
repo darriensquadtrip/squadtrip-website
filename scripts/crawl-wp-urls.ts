@@ -41,6 +41,15 @@ const STATIC_ROUTES = new Set([
   "/product-updates",
   "/best-wetravel-alternative",
   "/grouptrip",
+  "/manage-group-trips-like-a-pro",
+  "/group-trip-planning",
+  "/trip-planning-software",
+  "/how-to-become-a-travel-agent-step-by-step-guide",
+  "/become-a-travel-agent-for-free",
+  "/flexible-payment-options-for-group-trips",
+  "/plan-amazing-group-trips",
+  "/squadtrip-collect-money-for-group-trips-english",
+  "/landing-page",
   "/product/checkout-experience",
   "/product/payment-collection",
   "/product/messaging",
@@ -319,6 +328,7 @@ function matchRoute(
   // 11. Known landing / one-off pages that WP might have
   const landingPageMap: Record<string, string> = {
     "/elementor-26525": "/",
+    "/elementor-landing-page-1201": "/",
     "/home-jan-24": "/",
     "/home2025": "/",
     "/lp-100k-group-travel-playbook": "/",

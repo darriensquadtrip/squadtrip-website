@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/metadata";
-import { getAllGuides, getCategories, type GuideSummary } from "@/lib/guides";
+import { getAllGuides } from "@/lib/guides";
+import { GUIDE_CLICKS } from "@/lib/guide-rankings";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { GuideCard } from "@/components/guides/GuideCard";
 import { Hero } from "@/components/sections/Hero";
@@ -14,21 +15,24 @@ export const metadata: Metadata = generatePageMetadata({
   path: "/guides",
 });
 
-const POPULAR_GUIDE_SLUGS = [
-  "how-much-does-it-cost-to-become-a-travel-agent",
-  "being-a-travel-agent-pros-and-cons",
-  "best-tools-for-group-trip-planning",
-  "top-splitwise-alternatives-for-group-travel-expenses",
-  "are-wellness-retreats-profitable",
-];
+const HIDDEN_SLUGS = new Set([
+  "top-black-travel-groups",
+  "black-music-festivals-2025",
+  "affordable-all-inclusive-wellness-retreats",
+]);
 
 export default function GuidesIndexPage() {
   const guides = getAllGuides();
-  const categories = getCategories();
 
-  const popularGuides = POPULAR_GUIDE_SLUGS
-    .map((slug) => guides.find((g) => g.slug === slug))
-    .filter((g): g is GuideSummary => g !== undefined);
+  // Filter out hidden guides, sort by Search Console clicks then by date
+  const sortedGuides = guides
+    .filter((g) => !HIDDEN_SLUGS.has(g.slug))
+    .sort((a, b) => {
+      const aClicks = GUIDE_CLICKS[a.slug] ?? 0;
+      const bClicks = GUIDE_CLICKS[b.slug] ?? 0;
+      if (aClicks !== bClicks) return bClicks - aClicks;
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
 
   return (
     <>
@@ -45,74 +49,10 @@ export default function GuidesIndexPage() {
         subheadline="Expert advice on planning group trips, collecting payments, and growing your travel business."
       />
 
-      {/* Popular Guides */}
-      {popularGuides.length > 0 && (
-        <section className="feature-overview" style={{ paddingBottom: 0 }}>
-          <div className="feature-overview-container">
-            <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-dark)", marginBottom: "1.25rem" }}>
-              Most Popular
-            </h2>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(min(280px, 100%), 1fr))",
-                gap: "1.25rem",
-              }}
-            >
-              {popularGuides.map((guide) => (
-                <div key={guide.slug} className="hover-lift">
-                  <GuideCard guide={guide} />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Category filter */}
-      {categories.length > 0 && (
-        <section style={{ borderBottom: "1px solid #e5e7eb" }}>
-          <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 2rem" }}>
-            <div
-              style={{
-                display: "flex",
-                gap: "0.75rem",
-                overflowX: "auto",
-                padding: "1rem 0",
-              }}
-            >
-              <span className="btn-primary" style={{ fontSize: "0.875rem", padding: "0.5rem 1.25rem" }}>
-                All
-              </span>
-              {categories.map((cat) => (
-                <span
-                  key={cat}
-                  style={{
-                    flexShrink: 0,
-                    padding: "0.5rem 1.25rem",
-                    borderRadius: "9999px",
-                    background: "var(--bg-light)",
-                    color: "var(--text-muted)",
-                    fontSize: "0.875rem",
-                    fontWeight: 500,
-                    cursor: "pointer",
-                    textTransform: "capitalize",
-                    transition: "background 0.2s",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  {cat.replace(/-/g, " ")}
-                </span>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* Guide grid */}
       <section className="feature-overview">
         <div className="feature-overview-container">
-          {guides.length > 0 ? (
+          {sortedGuides.length > 0 ? (
               <div
                 style={{
                   display: "grid",
@@ -120,7 +60,7 @@ export default function GuidesIndexPage() {
                   gap: "1.5rem",
                 }}
               >
-                {guides.map((guide) => (
+                {sortedGuides.map((guide) => (
                   <div key={guide.slug} className="hover-lift">
                     <GuideCard guide={guide} />
                   </div>
