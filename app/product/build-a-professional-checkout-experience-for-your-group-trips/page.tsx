@@ -1,11 +1,12 @@
 import { generatePageMetadata } from "@/lib/metadata";
+import dynamic from "next/dynamic";
 import { SIGNUP_URL } from "@/lib/constants";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import { Hero } from "@/components/sections/Hero";
 import { ProblemValidation } from "@/components/sections/ProblemValidation";
 import { FeatureBlock } from "@/components/sections/FeatureBlock";
-import { FAQ } from "@/components/ui/FAQ";
+const FAQ = dynamic(() => import("@/components/ui/FAQ").then((mod) => mod.FAQ));
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { BookingPageMockup } from "@/components/mockups/BookingPageMockup";
 import { PaymentPlanMockup } from "@/components/mockups/PaymentPlanMockup";

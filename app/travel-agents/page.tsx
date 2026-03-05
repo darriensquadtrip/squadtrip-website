@@ -1,4 +1,5 @@
 import { generatePageMetadata } from "@/lib/metadata";
+import dynamic from "next/dynamic";
 import { SIGNUP_URL } from "@/lib/constants";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { FAQSchema } from "@/components/seo/FAQSchema";
@@ -7,7 +8,7 @@ import { ProblemValidation } from "@/components/sections/ProblemValidation";
 import { FeatureBlock } from "@/components/sections/FeatureBlock";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { ComparisonTable } from "@/components/sections/ComparisonTable";
-import { FAQ } from "@/components/ui/FAQ";
+const FAQ = dynamic(() => import("@/components/ui/FAQ").then((mod) => mod.FAQ));
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { DashboardMockup } from "@/components/mockups/DashboardMockup";
 import { PaymentPlanMockup } from "@/components/mockups/PaymentPlanMockup";

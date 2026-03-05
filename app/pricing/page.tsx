@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { generatePageMetadata } from "@/lib/metadata";
 import { Hero } from "@/components/sections/Hero";
 import { PricingCards } from "@/components/sections/PricingCards";
@@ -7,7 +8,7 @@ import { FullFeatureList } from "@/components/sections/FullFeatureList";
 import { ComparisonTable } from "@/components/sections/ComparisonTable";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { TrustSignals } from "@/components/sections/TrustSignals";
-import { FAQ } from "@/components/ui/FAQ";
+const FAQ = dynamic(() => import("@/components/ui/FAQ").then((mod) => mod.FAQ));
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";

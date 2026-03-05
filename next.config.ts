@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
   // Enable gzip compression
   compress: true,
 
+  // Tree-shake large packages for smaller client bundles
+  experimental: {
+    optimizePackageImports: ["posthog-js"],
+  },
+
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [

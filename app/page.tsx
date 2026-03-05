@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { generatePageMetadata } from "@/lib/metadata";
 import { Hero } from "@/components/sections/Hero";
 import { ProblemValidation } from "@/components/sections/ProblemValidation";
@@ -9,7 +10,6 @@ import { FeatureBlock } from "@/components/sections/FeatureBlock";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { TrustSignals } from "@/components/sections/TrustSignals";
 import { LearnMoreCTA } from "@/components/sections/LearnMoreCTA";
-import { FAQ } from "@/components/ui/FAQ";
 import { ComparisonTable } from "@/components/sections/ComparisonTable";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { FAQSchema } from "@/components/seo/FAQSchema";
@@ -21,6 +21,9 @@ import {
   EmailMockup,
 } from "@/components/mockups";
 import { SIGNUP_URL } from "@/lib/constants";
+
+// Lazy-load client components below the fold
+const FAQ = dynamic(() => import("@/components/ui/FAQ").then((mod) => mod.FAQ));
 
 export const metadata: Metadata = generatePageMetadata({
   title: "Stop Chasing Payments for Group Trips | SquadTrip",

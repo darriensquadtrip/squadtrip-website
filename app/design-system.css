@@ -149,45 +149,6 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes slideInNotification {
-    from {
-        opacity: 0;
-        transform: translateX(-30px) translateY(0);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0) translateY(0);
-    }
-}
-
-.hero-loaded .mini-progress-fill {
-    animation: fillProgress 1.5s ease-out forwards;
-}
-
-.hero-loaded .mini-stat-value {
-    animation: countUp 0.6s ease-out forwards;
-}
-
-.hero-loaded .mini-stat:nth-child(1) .mini-stat-value { animation-delay: 0.2s; }
-.hero-loaded .mini-stat:nth-child(2) .mini-stat-value { animation-delay: 0.4s; }
-.hero-loaded .mini-stat:nth-child(3) .mini-stat-value { animation-delay: 0.6s; }
-
-.hero-loaded .hero-floating-card {
-    animation: slideInNotification 0.5s ease-out forwards;
-    animation-delay: 2s;
-    opacity: 0;
-}
-
-/* ==================== PARALLAX ==================== */
-
-.parallax-container {
-    perspective: 1000px;
-}
-
-.parallax-slow {
-    transition: transform 0.1s ease-out;
-}
-
 /* ==================== BENTO GRID INTERACTIONS ==================== */
 
 .bento-card {
@@ -672,46 +633,6 @@
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
-}
-
-/* ==================== SOCIAL PROOF BAR ==================== */
-.social-proof-bar {
-    background: white;
-    border-top: 1px solid var(--border-light);
-    border-bottom: 1px solid var(--border-light);
-    padding: 24px 0;
-}
-
-.social-proof-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 48px;
-    flex-wrap: wrap;
-}
-
-.social-proof-stat {
-    text-align: center;
-}
-
-.social-proof-stat .number {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--purple-primary);
-}
-
-.social-proof-stat .label {
-    font-size: 0.875rem;
-    color: var(--text-gray);
-}
-
-.social-proof-divider {
-    width: 1px;
-    height: 40px;
-    background: var(--border-light);
 }
 
 /* ==================== PROBLEM VALIDATION ==================== */
@@ -1305,22 +1226,6 @@
     color: white;
     font-size: 1.25rem;
     font-weight: 600;
-}
-
-/* Payment Methods Logos */
-.payment-methods {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
-    margin-top: 20px;
-    padding: 16px 0;
-}
-
-.payment-methods-label {
-    font-size: 0.75rem;
-    color: var(--text-gray);
-    margin-right: 8px;
 }
 
 /* ==================== LEARN MORE CTA ==================== */

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import type { ReactNode } from "react";
 import { generatePageMetadata } from "@/lib/metadata";
 import { Hero } from "@/components/sections/Hero";
-import { FAQ } from "@/components/ui/FAQ";
+const FAQ = dynamic(() => import("@/components/ui/FAQ").then((mod) => mod.FAQ));
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { FinalCTA } from "@/components/sections/FinalCTA";

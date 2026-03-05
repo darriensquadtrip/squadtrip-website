@@ -13,7 +13,7 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
           api_host: POSTHOG_HOST,
           capture_pageview: true,
           capture_pageleave: true,
-          autocapture: false,
+          autocapture: true,
         });
       });
     };
