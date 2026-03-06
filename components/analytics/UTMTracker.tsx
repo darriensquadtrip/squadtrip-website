@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const UTM_PARAMS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
 const COOKIE_DOMAIN = ".squadtrip.com";
@@ -18,9 +19,11 @@ function getCookie(name: string): string | null {
 }
 
 export function UTMTracker() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const pagePath = window.location.pathname;
+    const pagePath = pathname;
 
     // First touch — set once, never overwrite
     if (!getCookie("sq_first_touch")) {
@@ -80,7 +83,7 @@ export function UTMTracker() {
         setCookie("sq_utm_first", json);
       }
     }
-  }, []);
+  }, [pathname]);
 
   return null;
 }
