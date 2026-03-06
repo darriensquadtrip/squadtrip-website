@@ -5,7 +5,6 @@ import { Footer } from "@/components/layout/Footer";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { FacebookPixel } from "@/components/analytics/FacebookPixel";
 import { PostHogProvider } from "@/components/analytics/PostHogProvider";
-import { IntercomWidget } from "@/components/analytics/IntercomWidget";
 import { UTMTracker } from "@/components/analytics/UTMTracker";
 import { OrganizationSchema } from "@/components/seo/OrganizationSchema";
 import { WebSiteSchema } from "@/components/seo/WebSiteSchema";
@@ -58,7 +57,6 @@ export default function RootLayout({
       <head>
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
-        <link rel="dns-prefetch" href="https://widget.intercom.io" />
         <OrganizationSchema />
         <WebSiteSchema />
       </head>
@@ -71,7 +69,6 @@ export default function RootLayout({
           <Footer />
           <GoogleAnalytics />
           <FacebookPixel />
-          <IntercomWidget />
         </PostHogProvider>
       </body>
     </html>
