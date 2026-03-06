@@ -6,7 +6,7 @@ Slug: create-stunning-trip-landing-pages-in-5-minutes-with-squadtrip
 
 ## Design a visually appealing and informative trip landing page quickly with SquadTrip. Our platform ensures everything your travelers need to decide is right at their fingertips, making joining your trip easier than ever.
 
-[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0?utm_source=homePage&utm_medium=button&utm_id=signUp&utm_content=1-create-your-trip-for-free) ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-1321316601.png)
+[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0) ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-1321316601.png)
 
 ### Showcase Your Trip with Style
 
@@ -16,13 +16,13 @@ Our trip landing pages allow you to showcase your trip with a professional, slee
 
 ## No problem! SquadTrip lets you add your logo and brand colors, ensuring your landing page feels unique and customized to you.
 
-[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0?utm_source=homePage&utm_medium=button&utm_id=signUp&utm_content=1-create-your-trip-for-free) ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-427319388.png)
+[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0) ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-427319388.png)
 
 ## Already have a website?
 
 ## We make it even easier with embed options that allow you to integrate our checkout directly into your existing website, giving your travelers a seamless booking experience.
 
-[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0?utm_source=homePage&utm_medium=button&utm_id=signUp&utm_content=1-create-your-trip-for-free) ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-427319388-1.png)
+[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0) ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-427319388-1.png)
 
 ### Refine your trip details and  
 customize your experience with ease
@@ -39,7 +39,7 @@ Explore various scheduling options, select your ideal adventure package, and<br/
 
 ## Gone are the days of awkward payment chases, endless reminders, and manual tracking. With SquadTrip, everything is automated, easy, and efficient.
 
-[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0?utm_source=homePage&utm_medium=button&utm_id=signUp&utm_content=1-create-your-trip-for-free) ![Create a trip for free](https://squadtrip.com/wp-content/uploads/2024/09/Group-1-6.png)
+[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0) ![Create a trip for free](https://squadtrip.com/wp-content/uploads/2024/09/Group-1-6.png)
 
 ## Your all-in one solution for group trips
 

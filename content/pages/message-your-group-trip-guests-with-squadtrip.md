@@ -7,7 +7,7 @@ with SquadTrip
 
 ## Keep your guests informed every step of the way with automatic email notifications built into SquadTrip. Whether it’s about payments, trip updates, or essential information, you can design and schedule emails for automatic outreach.
 
-[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0?utm_source=homePage&utm_medium=button&utm_id=signUp&utm_content=1-create-your-trip-for-free) ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-1321316601-1.png)
+[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0) ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-1321316601-1.png)
 
 ### Enhance Traveler Engagement with  
 Automated Notifications

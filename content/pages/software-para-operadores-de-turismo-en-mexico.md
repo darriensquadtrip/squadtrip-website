@@ -9,7 +9,7 @@ Without the Stress
 
 ## Cree páginas de viajes, acepte pagos en MXN, gestione reservas y llene sus tours más rápido, todo en un sencillo panel de control.
 
-[Reservar una demostración](https://dashboard.squadtrip.com/organizer-info/0?utm_source=homePage&utm_medium=button&utm_id=signUp&utm_content=1-create-your-trip-for-free) [Create your trip for free](https://dashboard.squadtrip.com/organizer-info/0) [![Squadtrip product image](https://squadtrip.com/wp-content/uploads/2024/08/Frame-427319370-1.png)](https://squadtrip.com/wp-content/uploads/2025/07/1536.mp4)
+[Reservar una demostración](https://dashboard.squadtrip.com/organizer-info/0) [Create your trip for free](https://dashboard.squadtrip.com/organizer-info/0) [![Squadtrip product image](https://squadtrip.com/wp-content/uploads/2024/08/Frame-427319370-1.png)](https://squadtrip.com/wp-content/uploads/2025/07/1536.mp4)
 
 [Ver demostración](https://preview--squadtrip-interactive-demo.lovable.app/demo/)
 

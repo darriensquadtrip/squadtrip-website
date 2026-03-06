@@ -16,7 +16,7 @@ Process into your Traveler Checkout Forms
 -   **Mandatory Electronic Signatures:** Travelers sign waivers and agreements at the time of booking.
 -   **Fully Digital Process:** Eliminates the need for paper waivers and manual follow-ups.
 
-[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0?utm_source=homePage&utm_medium=button&utm_id=signUp&utm_content=1-create-your-trip-for-free) ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-1321316643-1.png)
+[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0) ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-1321316643-1.png)
 
 ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-1321316735.png)
 
@@ -27,7 +27,7 @@ Templates
 
 ## No more paper waivers or manual follow-ups—everything is digital and effortless.
 
-[Learn More](https://dashboard.squadtrip.com/organizer-info/0?utm_source=homePage&utm_medium=button&utm_id=signUp&utm_content=1-create-your-trip-for-free)
+[Learn More](https://dashboard.squadtrip.com/organizer-info/0)
 
 ## Your all-in one solution for group trips
 

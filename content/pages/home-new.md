@@ -10,7 +10,7 @@ Without the Stress
 
 ## Build a trip website, collect payments, managing reservations, and fill trips faster - all in one platform.
 
-[Create your trip for free](https://dashboard.squadtrip.com/organizer-info/0?utm_source=homePage&utm_medium=button&utm_id=signUp&utm_content=1-create-your-trip-for-free) [Create your trip for free](https://dashboard.squadtrip.com/organizer-info/0) [![Squadtrip product image](https://squadtrip.com/wp-content/uploads/2024/08/Frame-427319370-1.png)](https://squadtrip.com/wp-content/uploads/2025/07/1536.mp4)
+[Create your trip for free](https://dashboard.squadtrip.com/organizer-info/0) [Create your trip for free](https://dashboard.squadtrip.com/organizer-info/0) [![Squadtrip product image](https://squadtrip.com/wp-content/uploads/2024/08/Frame-427319370-1.png)](https://squadtrip.com/wp-content/uploads/2025/07/1536.mp4)
 
 [See Demo](https://squadtrip-interactive-demo.lovable.app/demo)
 

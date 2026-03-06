@@ -12,13 +12,13 @@ your Group Trips
 
 ## At SquadTrip, we're dedicated to providing your travelers with an unforgettable and seamless experience from start to finish. Our platform is designed to make the booking process easy, enjoyable, and stress-free, allowing travelers to focus on the excitement of their upcoming trip.
 
-[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0?utm_source=homePage&utm_medium=button&utm_id=signUp&utm_content=1-create-your-trip-for-free) ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-1321316740.png) ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-1321316601.png)
+[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0) ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-1321316740.png) ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-1321316601.png)
 
 ## Engaging and Informative Interface
 
 ## When travelers land on your customized SquadTrip page, they're greeted with a visually captivating and informative layout that immerses them in the details of the trip. From vibrant images that showcase the destination to key trip details like dates, itinerary highlights, and what’s included, every element is tailored to provide clarity and inspiration.
 
-[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0?utm_source=homePage&utm_medium=button&utm_id=signUp&utm_content=1-create-your-trip-for-free)
+[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0)
 
 ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-1321316644-1.png)
 
@@ -26,7 +26,7 @@ your Group Trips
 
 ## A dedicated FAQs section ensures all common questions—such as payment options, what to pack, or cancellation policies—are addressed upfront. This transparency helps travelers feel confident and reduces any booking hesitations.
 
-[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0?utm_source=homePage&utm_medium=button&utm_id=signUp&utm_content=1-create-your-trip-for-free)
+[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0)
 
 ### Seamless Booking and Payment  
 Experience
@@ -37,7 +37,7 @@ When it’s time to book, SquadTrip ensures that travelers enjoy a smooth and co
 
 ## On the backend, travelers have access to a user-friendly dashboard where they can view their payment schedule, due dates, and receipts all in one place. Automated reminders help them stay on track with upcoming payments, while built-in messaging allows for easy communication if they have any questions without ever leaving the platform.
 
-[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0?utm_source=homePage&utm_medium=button&utm_id=signUp&utm_content=1-create-your-trip-for-free) ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-1321316644-2.png)
+[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0) ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-1321316644-2.png)
 
 ## Your all-in one solution for group trips
 

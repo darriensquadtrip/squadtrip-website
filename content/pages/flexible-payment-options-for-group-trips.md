@@ -8,7 +8,7 @@ Slug: flexible-payment-options-for-group-trips
 
 ## Streamline trip operations so you can focus on creating unforgettable travel experiences.
 
-[Create your trip for free](https://dashboard.squadtrip.com/organizer-info/0?utm_source=homePage&utm_medium=button&utm_id=signUp&utm_content=1-create-your-trip-for-free) [Create your trip for free](https://dashboard.squadtrip.com/organizer-info/0) ![create flexible payment plans for group trips](https://squadtrip.com/wp-content/uploads/2024/09/create-flexible-payment-plans-for-group-trips.png)
+[Create your trip for free](https://dashboard.squadtrip.com/organizer-info/0) [Create your trip for free](https://dashboard.squadtrip.com/organizer-info/0) ![create flexible payment plans for group trips](https://squadtrip.com/wp-content/uploads/2024/09/create-flexible-payment-plans-for-group-trips.png)
 
 ## Brands we worked with
 

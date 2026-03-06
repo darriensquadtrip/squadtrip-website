@@ -14,7 +14,7 @@ Group Trip
 
 ## Make gathering crucial traveler details seamless during your booking process with SquadTrip. Now, you can forget juggling multiple forms or separate tools—all necessary information collection is integrated directly into your trip setup.
 
-[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0?utm_source=homePage&utm_medium=button&utm_id=signUp&utm_content=1-create-your-trip-for-free) ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-1321316643.png)
+[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0) ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-1321316643.png)
 
 ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-1321316644.png)
 
@@ -29,7 +29,7 @@ Group Trip
 
 ## No more back-and-forth emails or extra Google Forms—everything is streamlined and collected when travelers book.
 
-[Learn More](https://dashboard.squadtrip.com/organizer-info/0?utm_source=homePage&utm_medium=button&utm_id=signUp&utm_content=1-create-your-trip-for-free)
+[Learn More](https://dashboard.squadtrip.com/organizer-info/0)
 
 ## Your all-in one solution for group trips
 

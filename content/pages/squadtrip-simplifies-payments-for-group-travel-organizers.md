@@ -12,7 +12,7 @@ Slug: squadtrip-simplifies-payments-for-group-travel-organizers
 
 ## We manage all payment details, allowing you to concentrate on the fun of your group adventures, client trips, or guided tours.
 
-[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0?utm_source=homePage&utm_medium=button&utm_id=signUp&utm_content=1-create-your-trip-for-free) ![Get started today for free.](https://squadtrip.com/wp-content/uploads/2024/09/Group-1-5.png)
+[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0) ![Get started today for free.](https://squadtrip.com/wp-content/uploads/2024/09/Group-1-5.png)
 
 ![](https://squadtrip.com/wp-content/uploads/2024/09/Group-427319053-1.png)
 
@@ -20,7 +20,7 @@ Slug: squadtrip-simplifies-payments-for-group-travel-organizers
 
 Organizing trips often involves the hassle of chasing payments and managing financial details, which can be time-consuming and stressful. SquadTrip automates all these processes, allowing you to focus solely on the travel experience. Whether payments are made upfront or in installments, SquadTrip ensures everything runs smoothly.
 
-[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0?utm_source=homePage&utm_medium=button&utm_id=signUp&utm_content=1-create-your-trip-for-free)
+[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0)
 
 ### What You Need to Know About  
 SquadTrip's Payment Engine
@@ -36,7 +36,7 @@ solution for trip organizers: ![](https://squadtrip.com/wp-content/uploads/2024/
 
 ## Gone are the days of awkward payment chases, endless reminders, and manual tracking. With SquadTrip, everything is automated, easy, and efficient.
 
-[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0?utm_source=homePage&utm_medium=button&utm_id=signUp&utm_content=1-create-your-trip-for-free) ![Create a trip for free](https://squadtrip.com/wp-content/uploads/2024/09/Group-1-6.png)
+[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0) ![Create a trip for free](https://squadtrip.com/wp-content/uploads/2024/09/Group-1-6.png)
 
 ## Your all-in one solution for group trips
 

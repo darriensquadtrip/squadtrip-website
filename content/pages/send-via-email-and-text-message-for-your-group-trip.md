@@ -7,7 +7,7 @@ for your Group Trip
 
 ## SquadTrip makes it easy to send promotional marketing emails to your audience with just a few clicks. Whether you're launching a new trip, offering early-bird discounts, or running a special promotion, you can send targeted emails to your guests directly from our platform. Invite guests to your next trip or upsell additional experiences—all from the same dashboard where you manage everything else.
 
-[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0?utm_source=homePage&utm_medium=button&utm_id=signUp&utm_content=1-create-your-trip-for-free) ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-1321316601-2.png)
+[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0) ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-1321316601-2.png)
 
 ## Your all-in one solution for group trips
 

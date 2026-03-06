@@ -8,14 +8,14 @@ Group Trip with SquadTrip
 ## SquadTrip lets you create unique tracking links for partners and  
 affiliates who want to promote your trips.
 
-[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0?utm_source=homePage&utm_medium=button&utm_id=signUp&utm_content=1-create-your-trip-for-free) ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-1321316602.png)
+[Create a trip for free](https://dashboard.squadtrip.com/organizer-info/0) ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-1321316602.png)
 
 ### Efficient Affiliate Management
 
 Maximize your marketing efforts by leveraging the power of affiliates. Our system allows  
 you to track referrals, calculate commissions, and gain complete control over your  
 affiliate program, turning satisfied customers into active promoters. ![](https://squadtrip.com/wp-content/uploads/2024/10/Frame-427319358-2.png) ![](https://squadtrip.com/wp-content/uploads/2024/10/Button-17.png) ![](https://squadtrip.com/wp-content/uploads/2024/10/Button-18.png) ![](https://squadtrip.com/wp-content/uploads/2024/10/Button-19.png) Turn your happy travelers into promoters and scale your trips  
-effortlessly with affiliate tracking. [Learn More](https://dashboard.squadtrip.com/organizer-info/0?utm_source=homePage&utm_medium=button&utm_id=signUp&utm_content=1-create-your-trip-for-free)
+effortlessly with affiliate tracking. [Learn More](https://dashboard.squadtrip.com/organizer-info/0)
 
 ## Your all-in one solution for group trips
 

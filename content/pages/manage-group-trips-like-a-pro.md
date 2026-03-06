@@ -8,7 +8,7 @@ TRUSTED BY THOUSANDS OF TRAVEL ORGANIZERS
 
 Grow your group travel business with the all-in-one **marketing, booking, and auto-billing** platform.
 
-[Build A Trip Today!](https://dashboard.squadtrip.com/organizer-info/0?utm_source=landing%20page&utm_medium=build%20a%20trip%20today-button&utm_campaign=long%20tail%20digital%20funnel%20) ![](https://squadtrip.com/wp-content/uploads/2023/08/Hero-Collage-V2-1_row2.png)
+[Build A Trip Today!](https://dashboard.squadtrip.com/organizer-info/0) ![](https://squadtrip.com/wp-content/uploads/2023/08/Hero-Collage-V2-1_row2.png)
 
 #### [Featured in...](/press)
 
@@ -112,4 +112,4 @@ Join the growing community of Travelpreneurs who have transformed their passion 
 
 Sign up for a free SquadTrip account and take the first step toward simplifying your group travel planning journey.
 
-[Create an Account](https://dashboard.squadtrip.com/organizer-info/0?utm_source=landing%20page&utm_medium=create%20an%20account&utm_campaign=long%20tail%20digital%20funnel%20)
+[Create an Account](https://dashboard.squadtrip.com/organizer-info/0)
