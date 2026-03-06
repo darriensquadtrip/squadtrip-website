@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useState } from "react";
-import { getHomepageUrl } from "@/lib/constants";
+import { SignupLink } from "@/components/common/SignupLink";
 
 export function MidArticleCTAInjector({ slug }: { slug: string }) {
   const [targetEl, setTargetEl] = useState<HTMLElement | null>(null);
@@ -34,8 +34,6 @@ export function MidArticleCTAInjector({ slug }: { slug: string }) {
 
   if (!targetEl) return null;
 
-  const signupUrl = getHomepageUrl("guides", "inline", slug);
-
   return createPortal(
     <div ref={ctaRef} className="not-prose my-10 rounded-xl border border-purple/20 bg-purple/5 p-6 sm:p-8">
       <p className="text-base font-semibold text-gray-900 mb-2">
@@ -44,12 +42,14 @@ export function MidArticleCTAInjector({ slug }: { slug: string }) {
       <p className="text-sm text-gray-600 mb-4">
         Create a booking page, collect payments, and track who paid — all in one place.
       </p>
-      <a
-        href={signupUrl}
+      <SignupLink
+        source="guides"
+        medium="inline"
+        campaign={slug}
         className="btn-primary inline-block text-sm"
       >
         Get started for free
-      </a>
+      </SignupLink>
     </div>,
     targetEl
   );

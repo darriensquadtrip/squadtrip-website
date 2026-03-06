@@ -1,4 +1,7 @@
+"use client";
+
 import { SIGNUP_URL } from "@/lib/constants";
+import { SignupLink } from "@/components/common/SignupLink";
 
 interface HeroProps {
   headline: string;
@@ -10,19 +13,38 @@ interface HeroProps {
   eyebrow?: string;
   layout?: "centered" | "split";
   mockup?: React.ReactNode;
+  source?: string;
+  medium?: string;
+  campaign?: string;
 }
 
 export function Hero({
   headline,
   subheadline,
   ctaText = "Create your trip for free",
-  ctaHref = SIGNUP_URL,
+  ctaHref,
   secondaryCta,
   trustLine,
   eyebrow,
   layout = "centered",
   mockup,
+  source = "website",
+  medium = "hero",
+  campaign,
 }: HeroProps) {
+  // If ctaHref is the signup URL or not provided, use SignupLink for tracking
+  const isSignupLink = !ctaHref || ctaHref === SIGNUP_URL;
+
+  const ctaButton = isSignupLink ? (
+    <SignupLink source={source} medium={medium} campaign={campaign} className="btn-primary">
+      {ctaText}
+    </SignupLink>
+  ) : (
+    <a href={ctaHref} className="btn-primary">
+      {ctaText}
+    </a>
+  );
+
   if (layout === "split" && mockup) {
     return (
       <section className="hero">
@@ -36,9 +58,7 @@ export function Hero({
             </div>
           )}
           <div className="hero-ctas">
-            <a href={ctaHref} className="btn-primary">
-              {ctaText}
-            </a>
+            {ctaButton}
             {secondaryCta && (
               <a href={secondaryCta.href} className="btn-secondary">
                 {secondaryCta.text} &rarr;
@@ -51,7 +71,6 @@ export function Hero({
     );
   }
 
-  // Centered layout (default)
   return (
     <section className="hero" style={{ textAlign: "center" }}>
       <div style={{ maxWidth: 800, margin: "0 auto", padding: "0 24px" }}>
@@ -67,9 +86,7 @@ export function Hero({
           {subheadline}
         </p>
         <div className="hero-ctas" style={{ justifyContent: "center" }}>
-          <a href={ctaHref} className="btn-primary">
-            {ctaText}
-          </a>
+          {ctaButton}
           {secondaryCta && (
             <a href={secondaryCta.href} className="btn-secondary">
               {secondaryCta.text} &rarr;

@@ -3,7 +3,8 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { NAV_ITEMS, SIGNUP_URL, LOGIN_URL } from "@/lib/constants";
+import { NAV_ITEMS, LOGIN_URL } from "@/lib/constants";
+import { SignupLink } from "@/components/common/SignupLink";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -105,9 +106,9 @@ export function Header() {
             <a href={LOGIN_URL} className="btn-login">
               Log in
             </a>
-            <a href={SIGNUP_URL} className="btn-signup">
+            <SignupLink source="website" medium="header" className="btn-signup">
               Sign up for free
-            </a>
+            </SignupLink>
           </div>
 
           <button
@@ -164,9 +165,9 @@ export function Header() {
           <a href={LOGIN_URL} className="btn-login">
             Log in
           </a>
-          <a href={SIGNUP_URL} className="btn-signup-mobile">
+          <SignupLink source="website" medium="header-mobile" className="btn-signup-mobile">
             Sign up for free
-          </a>
+          </SignupLink>
         </div>
       </div>
     </>

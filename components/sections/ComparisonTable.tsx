@@ -1,5 +1,8 @@
+"use client";
+
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { SIGNUP_URL } from "@/lib/constants";
+import { SignupLink } from "@/components/common/SignupLink";
 
 interface ComparisonRow {
   task: string;
@@ -14,6 +17,9 @@ interface ComparisonTableProps {
   rows: ComparisonRow[];
   ctaText?: string;
   ctaHref?: string;
+  source?: string;
+  medium?: string;
+  campaign?: string;
 }
 
 export function ComparisonTable({
@@ -22,8 +28,13 @@ export function ComparisonTable({
   columnHeaders = ["Task", "DIY", "SquadTrip"],
   rows,
   ctaText = "Try SquadTrip free",
-  ctaHref = SIGNUP_URL,
+  ctaHref,
+  source = "website",
+  medium = "comparison",
+  campaign,
 }: ComparisonTableProps) {
+  const isSignupLink = !ctaHref || ctaHref === SIGNUP_URL;
+
   return (
     <section className="comparison-section">
       <div className="comparison-container">
@@ -62,9 +73,15 @@ export function ComparisonTable({
         </ScrollReveal>
 
         <div className="cta-center">
-          <a href={ctaHref} className="btn-primary">
-            {ctaText}
-          </a>
+          {isSignupLink ? (
+            <SignupLink source={source} medium={medium} campaign={campaign} className="btn-primary">
+              {ctaText}
+            </SignupLink>
+          ) : (
+            <a href={ctaHref} className="btn-primary">
+              {ctaText}
+            </a>
+          )}
         </div>
       </div>
     </section>

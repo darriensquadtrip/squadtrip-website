@@ -1,5 +1,8 @@
+"use client";
+
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { SIGNUP_URL } from "@/lib/constants";
+import { SignupLink } from "@/components/common/SignupLink";
 
 interface Step {
   step: string;
@@ -11,6 +14,9 @@ interface HowItWorksProps {
   steps?: Step[];
   ctaText?: string;
   ctaHref?: string;
+  source?: string;
+  medium?: string;
+  campaign?: string;
 }
 
 const defaultSteps: Step[] = [
@@ -37,8 +43,13 @@ const defaultSteps: Step[] = [
 export function HowItWorks({
   steps = defaultSteps,
   ctaText = "Create your trip for free",
-  ctaHref = SIGNUP_URL,
+  ctaHref,
+  source = "website",
+  medium = "how-it-works",
+  campaign,
 }: HowItWorksProps) {
+  const isSignupLink = !ctaHref || ctaHref === SIGNUP_URL;
+
   return (
     <section className="how-it-works">
       <div className="how-it-works-container">
@@ -59,9 +70,15 @@ export function HowItWorks({
         </ScrollReveal>
 
         <div className="cta-center">
-          <a href={ctaHref} className="btn-primary">
-            {ctaText}
-          </a>
+          {isSignupLink ? (
+            <SignupLink source={source} medium={medium} campaign={campaign} className="btn-primary">
+              {ctaText}
+            </SignupLink>
+          ) : (
+            <a href={ctaHref} className="btn-primary">
+              {ctaText}
+            </a>
+          )}
         </div>
       </div>
     </section>

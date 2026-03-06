@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import { getHomepageUrl } from "@/lib/constants";
+import { SignupLink } from "@/components/common/SignupLink";
 
 export function MobilePopupCTA({ slug }: { slug: string }) {
   const [visible, setVisible] = useState(false);
@@ -31,8 +31,6 @@ export function MobilePopupCTA({ slug }: { slug: string }) {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [dismissed]);
-
-  const url = getHomepageUrl("guides", "mobile-popup", slug);
 
   if (!visible || dismissed) return null;
 
@@ -147,12 +145,14 @@ export function MobilePopupCTA({ slug }: { slug: string }) {
           <p className="text-sm text-white/55 leading-relaxed mb-4">
             Booking pages, payments, and guest tracking — all in one place.
           </p>
-          <a
-            href={url}
+          <SignupLink
+            source="guides"
+            medium="mobile-popup"
+            campaign={slug}
             className="block text-center text-sm font-semibold text-gray-900 bg-yellow hover:bg-yellow-hover transition-colors rounded-lg py-3"
           >
             Get started free
-          </a>
+          </SignupLink>
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { SIGNUP_URL } from "@/lib/constants";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { SignupLink } from "@/components/common/SignupLink";
 
 const starterFeatures = [
   "Unlimited trips",
@@ -230,23 +230,13 @@ export function PricingCards() {
                 </div>
               </div>
 
-              <a
-                href={SIGNUP_URL}
+              <SignupLink
+                source="pricing"
+                medium="pricing-starter"
                 className="btn-secondary"
-                style={{
-                  display: "block",
-                  width: "100%",
-                  textAlign: "center",
-                  padding: "14px 24px",
-                  borderRadius: "12px",
-                  fontWeight: 600,
-                  fontSize: "1rem",
-                  marginBottom: "32px",
-                  textDecoration: "none",
-                }}
               >
                 Get started free
-              </a>
+              </SignupLink>
 
               <ul style={{ listStyle: "none", padding: 0, margin: 0, flex: 1 }}>
                 {starterFeatures.map((feature) => (
@@ -371,23 +361,13 @@ export function PricingCards() {
                 </p>
               </div>
 
-              <a
-                href={SIGNUP_URL}
+              <SignupLink
+                source="pricing"
+                medium="pricing-pro"
                 className="btn-primary"
-                style={{
-                  display: "block",
-                  width: "100%",
-                  textAlign: "center",
-                  padding: "14px 24px",
-                  borderRadius: "12px",
-                  fontWeight: 600,
-                  fontSize: "1rem",
-                  marginBottom: "32px",
-                  textDecoration: "none",
-                }}
               >
                 Start free trial
-              </a>
+              </SignupLink>
 
               <ul style={{ listStyle: "none", padding: 0, margin: 0, flex: 1 }}>
                 {launchFeatures.map((feature) => (

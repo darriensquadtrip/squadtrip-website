@@ -3,6 +3,7 @@
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { CountUpAnimation } from "@/components/ui/CountUpAnimation";
 import { SIGNUP_URL } from "@/lib/constants";
+import { SignupLink } from "@/components/common/SignupLink";
 
 interface Stat {
   icon?: string;
@@ -19,6 +20,9 @@ interface ProblemValidationProps {
   caption?: string;
   ctaText?: string;
   ctaHref?: string;
+  source?: string;
+  medium?: string;
+  campaign?: string;
 }
 
 const defaultStats: Stat[] = [
@@ -30,12 +34,17 @@ const defaultStats: Stat[] = [
 
 export function ProblemValidation({
   headline = "Sound Familiar?",
-  subtitle = "Group travel planning shouldn’t feel like a second job.",
+  subtitle = "Group travel planning shouldn't feel like a second job.",
   stats = defaultStats,
   caption = "Based on surveys of 500+ group trip organizers",
-  ctaText = "There’s a better way ↓",
-  ctaHref = SIGNUP_URL,
+  ctaText = "There's a better way ↓",
+  ctaHref,
+  source = "website",
+  medium = "problem-validation",
+  campaign,
 }: ProblemValidationProps) {
+  const isSignupLink = !ctaHref || ctaHref === SIGNUP_URL;
+
   return (
     <section className="problem-section">
       <div className="problem-container">
@@ -60,9 +69,15 @@ export function ProblemValidation({
 
         {caption && <p className="stats-caption">{caption}</p>}
 
-        <a href={ctaHref} className="problem-cta">
-          {ctaText}
-        </a>
+        {isSignupLink ? (
+          <SignupLink source={source} medium={medium} campaign={campaign} className="problem-cta">
+            {ctaText}
+          </SignupLink>
+        ) : (
+          <a href={ctaHref} className="problem-cta">
+            {ctaText}
+          </a>
+        )}
       </div>
     </section>
   );

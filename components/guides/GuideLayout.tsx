@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { GuideFrontmatter, GuideSummary } from "@/lib/guides";
-import { getHomepageUrl } from "@/lib/constants";
+import { SignupLink } from "@/components/common/SignupLink";
 import { TableOfContents } from "./TableOfContents";
 import { RelatedGuides } from "./RelatedGuides";
 import { MidArticleCTAInjector } from "./MidArticleCTAInjector";
@@ -21,10 +21,6 @@ export function GuideLayout({
   children,
   relatedGuides,
 }: GuideLayoutProps) {
-  const sidebarUrl = getHomepageUrl("guides", "sidebar", frontmatter.slug);
-  const heroUrl = getHomepageUrl("guides", "hero", frontmatter.slug);
-  const bottomUrl = getHomepageUrl("guides", "bottom", frontmatter.slug);
-
   const showLastUpdated =
     frontmatter.lastModified &&
     frontmatter.lastModified !== frontmatter.date;
@@ -98,9 +94,9 @@ export function GuideLayout({
               <p className="text-sm font-semibold text-gray-900">Organizing a group trip?</p>
               <p className="text-xs text-gray-500 mt-0.5">Create a booking page and start collecting payments in minutes.</p>
             </div>
-            <a href={heroUrl} className="btn-primary shrink-0 text-sm !py-2.5 !px-6">
+            <SignupLink source="guides" medium="hero" campaign={frontmatter.slug} className="btn-primary shrink-0 text-sm !py-2.5 !px-6">
               Start for free
-            </a>
+            </SignupLink>
           </div>
 
           {/* Article body with mid-article CTA injected */}
@@ -113,9 +109,9 @@ export function GuideLayout({
           <div className="mt-12 rounded-2xl bg-bg-light p-10 text-center">
             <h3 className="text-xl font-bold text-gray-900 mb-2">Ready to plan your group trip?</h3>
             <p className="text-gray-500 mb-6">Create a booking page, collect payments, and manage travelers — all in one place.</p>
-            <a href={bottomUrl} className="btn-primary">
+            <SignupLink source="guides" medium="bottom" campaign={frontmatter.slug} className="btn-primary">
               Create your trip for free
-            </a>
+            </SignupLink>
           </div>
 
           {frontmatter.faq && frontmatter.faq.length > 0 && (
@@ -219,12 +215,14 @@ export function GuideLayout({
                 <p className="text-xs text-white/55 leading-relaxed mb-3">
                   Booking pages, payments, and guest tracking — all in one place.
                 </p>
-                <a
-                  href={sidebarUrl}
+                <SignupLink
+                  source="guides"
+                  medium="sidebar"
+                  campaign={frontmatter.slug}
                   className="block text-center text-sm font-semibold text-gray-900 bg-yellow hover:bg-yellow-hover transition-colors rounded-lg py-2.5"
                 >
                   Get started free
-                </a>
+                </SignupLink>
               </div>
             </div>
           </div>
